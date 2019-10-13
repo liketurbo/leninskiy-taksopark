@@ -8,6 +8,9 @@ const Title = styled.h1`
 
 const Footer = styled.footer`
   padding: 0 calc(50% - ${props => props.theme.spacing["144"]});
+  border: ${props => props.theme.spacing["4"]} solid transparent;
+  border-top-width: 0;
+  border-bottom-width: 0;
 
   ${tw`bg-black text-white py-4 items-center`}
 
@@ -17,8 +20,6 @@ const Footer = styled.footer`
     "info hours"
     "info contacts";
   grid-gap: ${props => props.theme.spacing["4"]};
-
-  border: ${props => props.theme.spacing["4"]} solid transparent;
 
   @media (max-width: ${props => props.theme.screens.sm}) {
     grid-template-areas:

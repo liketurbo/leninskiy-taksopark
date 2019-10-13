@@ -13,19 +13,6 @@ we've done our very best to explain each section.
 View the full documentation at https://tailwindcss.com.
 
 
-|-------------------------------------------------------------------------------
-| The default config
-|-------------------------------------------------------------------------------
-|
-| This variable contains the default Tailwind config. You don't have
-| to use it, but it can sometimes be helpful to have available. For
-| example, you may choose to merge your custom configuration
-| values with some of the Tailwind defaults.
-|
-*/
-
-// let defaultConfig = require('tailwindcss/defaultConfig')()
-
 /*
 |-------------------------------------------------------------------------------
 | Colors                                    https://tailwindcss.com/docs/colors
@@ -737,6 +724,11 @@ module.exports = {
 
   zIndex: {
     auto: "auto",
+    "-50": -50,
+    "-40": -40,
+    "-30": -30,
+    "-20": -20,
+    "-10": -10,
     "0": 0,
     "10": 10,
     "20": 20,
