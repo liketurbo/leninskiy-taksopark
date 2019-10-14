@@ -16,8 +16,32 @@ module.exports = {
     },
   },
   plugins: [
+    /**
+     * Gatsby style handling
+     * START
+     */
     "gatsby-plugin-tailwindcss",
     "gatsby-plugin-styled-components",
+    /**
+     * END
+     */
+    /**
+     * Gatsby image handling
+     * START
+     */
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: `${__dirname}/src/images`,
+      },
+    },
+    /**
+     * Adds in Gatsby image handling
+     * END
+     */
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-typescript",
     {
