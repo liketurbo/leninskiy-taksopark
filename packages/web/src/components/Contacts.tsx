@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
-import { Map, Placemark, TypeSelector, YMaps, ZoomControl } from "react-yandex-maps"
+import { Map, Placemark, YMaps, ZoomControl } from "react-yandex-maps"
 import styled from "styled-components"
 
 // @ts-ignore
@@ -81,8 +81,12 @@ export default () => {
           width={"100%"}
           height={"100%"}
         >
-          <ZoomControl options={{ float: "right" }} />
-          <TypeSelector options={{ float: "right" }} />
+          <ZoomControl
+            options={{
+              size: "small",
+              position: { left: 10, top: 180 },
+            }}
+          />
           <Placemark
             geometry={data.coordinates}
             properties={{ iconCaption: data.brand }}
