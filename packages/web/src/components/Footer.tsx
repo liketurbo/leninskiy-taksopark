@@ -1,4 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby"
+import { parsePhoneNumberFromString } from "libphonenumber-js"
 import React from "react"
 import styled from "styled-components"
 
@@ -49,7 +50,7 @@ const Contacts = styled.section`
 `
 
 const Link = styled.a`
-  ${tw`underline hover:no-underline`}
+  ${tw`block underline hover:no-underline`}
 `
 
 export default () => {
@@ -95,7 +96,9 @@ export default () => {
       <Contacts>
         <Title>Контакты</Title>
         <Link href={`mailto:taxi@${data.url}`}>taxi@{data.url}</Link>
-        <p>{data.number}</p>
+        <Link href={parsePhoneNumberFromString(data.number)!.getURI()}>
+          {parsePhoneNumberFromString(data.number)!.formatNational()}
+        </Link>
       </Contacts>
     </Footer>
   )

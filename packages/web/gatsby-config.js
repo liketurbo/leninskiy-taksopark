@@ -8,7 +8,7 @@ module.exports = {
     taxiData: {
       brand,
       inn: "060200202147",
-      number: "+7 (967) 696-94-06",
+      number: "+79676969406",
       url: "reno-perevozki.ru",
       address: "РФ, Краснодарский край, г. Сочи, ул. Петрозаводская, д. 26/2",
       coordinates: [43.460418, 39.925793],

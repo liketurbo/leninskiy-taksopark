@@ -1,4 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby"
+import { parsePhoneNumberFromString } from "libphonenumber-js"
 import React from "react"
 import { Map, Placemark, YMaps, ZoomControl } from "react-yandex-maps"
 import styled from "styled-components"
@@ -14,6 +15,10 @@ const Container = styled.div`
   ${tw`relative overflow-hidden my-4`}
 
   height: 70vh;
+`
+
+const Link = styled.a`
+  ${tw`block underline hover:no-underline`}
 `
 
 const Contacts = styled.section`
@@ -67,9 +72,11 @@ export default () => {
     <Container>
       <Contacts>
         <Title>Контакты</Title>
-        <p>{data.number}</p>
-        <p>{data.workTime}</p>
+        <Link href={parsePhoneNumberFromString(data.number)!.getURI()}>
+          {parsePhoneNumberFromString(data.number)!.formatNational()}
+        </Link>
         <p>{data.address}</p>
+        <p>{data.workTime}</p>
       </Contacts>
       <YMaps>
         <Map
