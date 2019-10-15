@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, Link as GatsbyLink, useStaticQuery } from "gatsby"
 import { parsePhoneNumberFromString } from "libphonenumber-js"
 import React from "react"
 import styled from "styled-components"
@@ -8,18 +8,18 @@ const Title = styled.h1`
 `
 
 const Footer = styled.footer`
-  padding: 0 calc(50% - ${props => props.theme.spacing["144"]});
+  padding: 0 calc(50% - ${props => props.theme.spacing["112"]});
   border: ${props => props.theme.spacing["4"]} solid transparent;
   border-top-width: 0;
   border-bottom-width: 0;
 
-  ${tw`bg-black text-white py-4 items-center`}
+  ${tw`bg-black text-white py-4`}
 
   display: grid;
   grid-template-areas:
     "info address"
     "info hours"
-    "info contacts";
+    "policy contacts";
   grid-gap: ${props => props.theme.spacing["4"]};
 
   @media (max-width: ${props => props.theme.screens.sm}) {
@@ -49,8 +49,18 @@ const Contacts = styled.section`
   grid-area: contacts;
 `
 
+const Policy = styled(GatsbyLink)`
+  ${tw`underline hover:no-underline font-semibold text-lg`}
+
+  grid-area: policy;
+
+  display: contents;
+`
+
 const Link = styled.a`
-  ${tw`block underline hover:no-underline`}
+  ${tw`underline hover:no-underline`}
+
+  display: contents;
 `
 
 export default () => {
@@ -66,6 +76,7 @@ export default () => {
             address
             brand
             inn
+            email
             number
             url
             workTime
@@ -85,6 +96,7 @@ export default () => {
           © {new Date().getFullYear()} {data.brand}, Все права защищены.
         </p>
       </Info>
+      <Policy to="/policy">Политика конфиденциальности</Policy>
       <Address>
         <Title>Адрес офиса</Title>
         <address style={{ fontStyle: "normal" }}>{data.address}</address>
@@ -95,7 +107,8 @@ export default () => {
       </Hours>
       <Contacts>
         <Title>Контакты</Title>
-        <Link href={`mailto:taxi@${data.url}`}>taxi@{data.url}</Link>
+        <Link href={`mailto:${data.email}`}>{data.email}</Link>
+        <br />
         <Link href={parsePhoneNumberFromString(data.number)!.getURI()}>
           {parsePhoneNumberFromString(data.number)!.formatNational()}
         </Link>

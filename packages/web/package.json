@@ -16,6 +16,7 @@
     "gatsby-plugin-typescript": "^2.1.12",
     "gatsby-source-filesystem": "^2.1.32",
     "gatsby-transformer-sharp": "^2.2.22",
+    "graphql": "^14.5.8",
     "libphonenumber-js": "^1.7.25",
     "prop-types": "^15.6.2",
     "react": "^16.5.1",
@@ -23,6 +24,7 @@
     "react-helmet": "^5.2.0",
     "react-hook-form": "^3.24.0",
     "react-yandex-maps": "^4.0.1",
+    "react-youtube": "^7.9.0",
     "styled-components": "^4.1.1",
     "tailwindcss": "^1.1.2"
   },
@@ -33,11 +35,13 @@
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop -p 3000",
-    "format": "prettier --write '**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "generate": "graphql-codegen"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^1.8.1",
+    "@graphql-codegen/typescript": "1.8.1",
     "@types/react-helmet": "^5.0.11",
+    "@types/react-youtube": "^7.6.2",
     "@types/styled-components": "^4.1.19",
     "@typescript-eslint/eslint-plugin": "^2.3.3",
     "@typescript-eslint/parser": "^2.3.3",
