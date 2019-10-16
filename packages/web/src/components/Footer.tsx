@@ -3,9 +3,7 @@ import { parsePhoneNumberFromString } from "libphonenumber-js"
 import React from "react"
 import styled from "styled-components"
 
-const Title = styled.h1`
-  ${tw`font-semibold text-lg`}
-`
+import H2 from "./H/H2"
 
 const Footer = styled.footer`
   padding: 0 calc(50% - ${props => props.theme.spacing["112"]});
@@ -89,7 +87,7 @@ export default () => {
   return (
     <Footer>
       <Info>
-        <Title>О нас</Title>
+        <H2>О нас</H2>
         <p>ООО "{data.brand}"</p>
         <p>ИНН: {data.inn}</p>
         <p>
@@ -98,15 +96,15 @@ export default () => {
       </Info>
       <Policy to="/policy">Политика конфиденциальности</Policy>
       <Address>
-        <Title>Адрес офиса</Title>
+        <H2>Адрес офиса</H2>
         <address style={{ fontStyle: "normal" }}>{data.address}</address>
       </Address>
       <Hours>
-        <Title>Время работы</Title>
+        <H2>Время работы</H2>
         <p>{data.workTime}</p>
       </Hours>
       <Contacts>
-        <Title>Контакты</Title>
+        <H2>Контакты</H2>
         <Link href={`mailto:${data.email}`}>{data.email}</Link>
         <br />
         <Link href={parsePhoneNumberFromString(data.number)!.getURI()}>

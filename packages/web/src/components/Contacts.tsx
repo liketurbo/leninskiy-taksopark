@@ -6,15 +6,24 @@ import styled from "styled-components"
 
 // @ts-ignore
 import { colors } from "../../tailwind"
-
-const Title = styled.h1`
-  ${tw`font-semibold text-lg`}
-`
+import H1 from "./H/H1"
 
 const Container = styled.div`
   ${tw`relative overflow-hidden my-4`}
 
-  height: 70vh;
+  height: 90vh;
+
+  @media (max-width: ${props => props.theme.screens.lg}) {
+    height: 80vh;
+  }
+
+  @media (max-width: ${props => props.theme.screens.md}) {
+    height: 70vh;
+  }
+
+  @media (max-width: ${props => props.theme.screens.sm}) {
+    height: 60vh;
+  }
 `
 
 const Link = styled.a`
@@ -71,7 +80,7 @@ export default () => {
   return (
     <Container>
       <Contacts>
-        <Title>Контакты</Title>
+        <H1>Контакты</H1>
         <Link href={parsePhoneNumberFromString(data.number)!.getURI()}>
           {parsePhoneNumberFromString(data.number)!.formatNational()}
         </Link>

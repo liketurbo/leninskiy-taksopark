@@ -2,13 +2,15 @@ import React from "react"
 import Youtube from "react-youtube"
 import styled from "styled-components"
 
+import PH1 from "./H/H1"
+
 const Container = styled.section`
   padding: 0 calc(50% - ${props => props.theme.spacing["112"]});
   border: ${props => props.theme.spacing["4"]} solid transparent;
 `
 
-const Title = styled.h1`
-  ${tw`text-black text-center mb-4 text-2xl font-bold`}
+const H1 = styled(PH1)`
+  ${tw`text-center`}
 `
 
 const Video = styled(Youtube)`
@@ -16,21 +18,21 @@ const Video = styled(Youtube)`
   height: 90vh;
 
   @media (max-width: ${props => props.theme.screens.lg}) {
-    height: 70vh;
+    height: 80vh;
   }
 
   @media (max-width: ${props => props.theme.screens.md}) {
-    height: 60vh;
+    height: 70vh;
   }
 
   @media (max-width: ${props => props.theme.screens.sm}) {
-    height: 50vh;
+    height: 60vh;
   }
 `
 
 export default () => (
   <Container>
-    <Title>Обучение по работе с таксометром</Title>
+    <H1>Обучение по работе с таксометром</H1>
     <Video videoId="Qz0xUI-PXV0" />
   </Container>
 )

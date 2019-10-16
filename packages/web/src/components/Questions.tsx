@@ -4,16 +4,19 @@ import React from "react"
 import useForm from "react-hook-form"
 import styled from "styled-components"
 
+import PH1 from "./H/H1"
+import PH2 from "./H/H2"
+
 const Background = styled(BackgroundImage)`
-  ${tw`py-8`}
+  ${tw`py-24`}
 `
 
-const Title = styled.h1`
-  ${tw`text-white text-center mb-4 text-2xl font-semibold`}
+const H1 = styled(PH1)`
+  ${tw`text-center text-white`}
 `
 
-const Subtitle = styled.h2`
-  ${tw`text-white text-center mb-4 text-xl font-medium`}
+const H2 = styled(PH2)`
+  ${tw`text-center text-white`}
 `
 
 const Form = styled.form`
@@ -54,13 +57,7 @@ export default () => {
         fluid: { originalName: { eq: "background-1.jpg" } }
       ) {
         fluid(quality: 90, maxWidth: 1024) {
-          aspectRatio
-          sizes
-          src
-          srcSet
-          srcWebp
-          srcSetWebp
-          base64
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
@@ -74,8 +71,8 @@ export default () => {
       ]}
       Tag="section"
     >
-      <Title>У вас есть вопросы?</Title>
-      <Subtitle>Получите консультацию по телефону. Это бесплатно 😄.</Subtitle>
+      <H1>У вас есть вопросы?</H1>
+      <H2>Получите консультацию по телефону. Это бесплатно 😄.</H2>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Input name="name" ref={register} placeholder="Ваше имя" />
         <Input name="phone" ref={register} placeholder="Ваш телефон" />
