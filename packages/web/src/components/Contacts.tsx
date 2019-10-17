@@ -27,7 +27,9 @@ const Container = styled.div`
 `
 
 const Link = styled.a`
-  ${tw`block underline hover:no-underline`}
+  ${tw`underline hover:no-underline`}
+
+  display: contents;
 `
 
 const Contacts = styled.section`

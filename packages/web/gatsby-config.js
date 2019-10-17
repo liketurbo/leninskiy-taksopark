@@ -1,10 +1,11 @@
 const brand = "Рено перевозки"
+const city = "Сочи"
 
 module.exports = {
   siteMetadata: {
-    title: brand,
+    title: `Таксопарк ${brand} - официальный партер Яндекс.Такси в ${city}`,
     author: "Ramzan Chasygov <theliketurbo@gmail.com>",
-    description: `Таксопарк - ${brand}`,
+    description: `Подключитесь к Яндекс.Такси в ${city}. Получите первые деньги с заказов уже сегодня. Стабильный заработная плата. Гибкий график. Самая маленькая комиссия автопарка. Работа на наших автомобилях - требуются водители!`,
     taxiData: {
       brand,
       inn: "060200202147",

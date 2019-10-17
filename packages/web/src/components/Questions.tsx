@@ -2,6 +2,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 import React from "react"
 import useForm from "react-hook-form"
+import InputMask from "react-input-mask"
 import styled from "styled-components"
 
 import PH1 from "./H/H1"
@@ -29,6 +30,10 @@ const Form = styled.form`
 `
 
 const Input = styled.input`
+  ${tw`p-2 mb-4 w-full`}
+`
+
+const PhoneInput = styled(InputMask)`
   ${tw`p-2 mb-4 w-full`}
 `
 
@@ -75,7 +80,12 @@ export default () => {
       <H2>Получите консультацию по телефону. Это бесплатно 😄.</H2>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Input name="name" ref={register} placeholder="Ваше имя" />
-        <Input name="phone" ref={register} placeholder="Ваш телефон" />
+        <PhoneInput
+          mask="8 (999) 999-99-99"
+          name="phone"
+          placeholder="Ваш номер"
+          ref={register}
+        />
         <Input name="question" ref={register} placeholder="Ваш вопрос" />
         <Button type="submit">Получить консультацию</Button>
       </Form>
