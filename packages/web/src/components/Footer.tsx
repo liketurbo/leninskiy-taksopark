@@ -88,7 +88,6 @@ export default () => {
     <Footer>
       <Info>
         <H2>О нас</H2>
-        <p>ООО "{data.brand}"</p>
         <p>ИНН: {data.inn}</p>
         <p>
           © {new Date().getFullYear()} {data.brand}, Все права защищены.

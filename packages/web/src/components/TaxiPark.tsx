@@ -6,6 +6,7 @@ import styled from "styled-components"
 import PH1 from "./H/H1"
 import PH2 from "./H/H2"
 import PH3 from "./H/H3"
+import PList from "./List"
 
 const Container = styled.section`
   display: grid;
@@ -46,14 +47,10 @@ const H3 = styled(PH3)`
   grid-area: h3;
 `
 
-const List = styled.ul`
-  ${tw`pl-5 mb-4 md:mb-0`}
+const List = styled(PList)`
+  ${tw`mb-4 md:mb-0`}
 
   grid-area: list;
-
-  & > li {
-    list-style-type: disc;
-  }
 `
 
 const Img = styled(PImg)`

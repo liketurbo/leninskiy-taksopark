@@ -3,13 +3,13 @@ import BackgroundImage from "gatsby-background-image"
 import React from "react"
 import useForm from "react-hook-form"
 import InputMask from "react-input-mask"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 import PH1 from "./H/H1"
 import PH2 from "./H/H2"
 
 const Background = styled(BackgroundImage)`
-  ${tw`py-24`}
+  ${tw`py-20`}
 `
 
 const H1 = styled(PH1)`
@@ -29,12 +29,22 @@ const Form = styled.form`
   border-bottom-width: 0;
 `
 
-const Input = styled.input`
+const Input = css`
   ${tw`p-2 mb-4 w-full`}
 `
 
+const TextInput = styled.input`
+  ${Input}
+`
+
 const PhoneInput = styled(InputMask)`
-  ${tw`p-2 mb-4 w-full`}
+  ${Input}
+`
+
+const TextArea = styled.textarea`
+  ${Input}
+
+  height: 6em;
 `
 
 const Button = styled.button`
@@ -79,14 +89,14 @@ export default () => {
       <H1>У вас есть вопросы?</H1>
       <H2>Получите консультацию по телефону. Это бесплатно 😄.</H2>
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <Input name="name" ref={register} placeholder="Ваше имя" />
+        <TextInput name="name" ref={register} placeholder="Ваше имя" />
         <PhoneInput
           mask="8 (999) 999-99-99"
           name="phone"
           placeholder="Ваш номер"
           ref={register}
         />
-        <Input name="question" ref={register} placeholder="Ваш вопрос" />
+        <TextArea name="question" ref={register} placeholder="Ваш вопрос" />
         <Button type="submit">Получить консультацию</Button>
       </Form>
     </Background>
