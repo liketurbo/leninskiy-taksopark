@@ -18,13 +18,22 @@ const H2 = styled(PH2)`
   grid-area: h2;
 `
 
+const Background = styled(PContent)`
+  ${tw`m-0 py-8 bg-grey-lighter flex flex-wrap items-center justify-around`}
+`
+
+const Strong = styled(PH2)`
+  ${tw`m-0 w-56`}
+`
+
 const Content = styled(PContent)`
+  ${tw`mb-0`}
+
   display: grid;
   grid-template-areas:
     "h1 h1 h1"
     "h2 h2 h2"
-    "pic1 pic2 pic3"
-    "btn btn btn";
+    "pic1 pic2 pic3";
   justify-items: center;
   align-items: center;
 
@@ -34,8 +43,7 @@ const Content = styled(PContent)`
       "h2 h2 h2"
       "pic1 pic1 pic1"
       "pic2 pic2 pic2"
-      "pic3 pic3 pic3"
-      "btn btn btn";
+      "pic3 pic3 pic3";
   }
 `
 
@@ -73,13 +81,18 @@ export default () => {
   `)
 
   return (
-    <Content>
-      <H1>Работать и зарабатывать с нами - просто!</H1>
-      <H2>Официальные партнеры:</H2>
-      <Img pic1 fixed={data.uber.fixed} />
-      <Img pic2 fixed={data.gett.fixed} />
-      <Img pic3 fixed={data.yandex.fixed} />
-      <Button>Подключиться</Button>
-    </Content>
+    <>
+      <Content>
+        <H1>Работать и зарабатывать с нами - просто!</H1>
+        <H2>Официальные партнеры:</H2>
+        <Img pic1 fixed={data.uber.fixed} />
+        <Img pic2 fixed={data.gett.fixed} />
+        <Img pic3 fixed={data.yandex.fixed} />
+      </Content>
+      <Background>
+        <Strong>Подключитесь сегодня: просто оставьте заявку</Strong>
+        <Button>Подключиться</Button>
+      </Background>
+    </>
   )
 }

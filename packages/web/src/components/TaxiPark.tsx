@@ -9,9 +9,7 @@ import PH2 from "./H/H2"
 import PH3 from "./H/H3"
 import PList from "./List"
 
-const Content = styled(({ ...rest }) => <PContent {...rest} collapse />)`
-  ${tw`my-12`}
-
+const Content = styled(PContent)`
   display: grid;
   grid-template-rows: repeat(4, auto);
   grid-template-columns: repeat(2, 1fr);

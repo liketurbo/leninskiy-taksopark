@@ -10,7 +10,7 @@ import PH1 from "./H/H1"
 import PH2 from "./H/H2"
 
 const Background = styled(BackgroundImage)`
-  ${tw`py-20 my-12`}
+  ${tw`py-20`}
 `
 
 const H1 = styled(PH1)`

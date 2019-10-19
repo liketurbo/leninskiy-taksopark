@@ -9,7 +9,7 @@ import { colors } from "../../tailwind"
 import H1 from "./H/H1"
 
 const Container = styled.div`
-  ${tw`relative overflow-hidden my-12`}
+  ${tw`relative overflow-hidden`}
 
   height: 90vh;
 
