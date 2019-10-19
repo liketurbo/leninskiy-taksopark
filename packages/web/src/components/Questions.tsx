@@ -5,11 +5,12 @@ import useForm from "react-hook-form"
 import InputMask from "react-input-mask"
 import styled, { css } from "styled-components"
 
+import Button from "./Button"
 import PH1 from "./H/H1"
 import PH2 from "./H/H2"
 
 const Background = styled(BackgroundImage)`
-  ${tw`py-20`}
+  ${tw`py-20 my-12`}
 `
 
 const H1 = styled(PH1)`
@@ -46,13 +47,6 @@ const TextArea = styled.textarea`
 
   height: 6em;
 `
-
-const Button = styled.button`
-  ${tw`bg-yellow hover:bg-yellow-dark text-black py-1 px-3 w-full`}
-
-  transition: background-color 0.15s ease;
-`
-
 const onSubmit = (data: {
   name?: string
   phone?: number

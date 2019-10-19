@@ -2,11 +2,11 @@ import React from "react"
 import Youtube from "react-youtube"
 import styled from "styled-components"
 
+import PContent from "./Content"
 import PH1 from "./H/H1"
 
-const Container = styled.section`
-  padding: 0 calc(50% - ${props => props.theme.spacing["112"]});
-  border: ${props => props.theme.spacing["4"]} solid transparent;
+const Content = styled(PContent)`
+  ${tw`my-12`}
 `
 
 const H1 = styled(PH1)`
@@ -31,8 +31,8 @@ const Video = styled(Youtube)`
 `
 
 export default () => (
-  <Container>
+  <Content>
     <H1>Обучение по работе с таксометром</H1>
     <Video videoId="Qz0xUI-PXV0" />
-  </Container>
+  </Content>
 )

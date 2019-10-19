@@ -3,12 +3,15 @@ import PImg from "gatsby-image"
 import React from "react"
 import styled from "styled-components"
 
+import PContent from "./Content"
 import PH1 from "./H/H1"
 import PH2 from "./H/H2"
 import PH3 from "./H/H3"
 import PList from "./List"
 
-const Container = styled.section`
+const Content = styled(({ ...rest }) => <PContent {...rest} collapse />)`
+  ${tw`my-12`}
+
   display: grid;
   grid-template-rows: repeat(4, auto);
   grid-template-columns: repeat(2, 1fr);
@@ -28,11 +31,6 @@ const Container = styled.section`
       "list"
       "photo";
   }
-
-  padding: 0 calc(50% - ${props => props.theme.spacing["112"]});
-  border: ${props => props.theme.spacing["4"]} solid transparent;
-  border-top-width: 0;
-  border-bottom-width: 0;
 `
 
 const H1 = styled(PH1)`
@@ -71,7 +69,7 @@ export default () => {
   `)
 
   return (
-    <Container>
+    <Content>
       <H1>Обновляем таксопарк</H1>
       <H2>
         Мы непрерывно развиваемся и обновляем автопарк. Также все наши
@@ -87,6 +85,6 @@ export default () => {
         <li>Автомобили застрахованы</li>
       </List>
       <Img fluid={data} />
-    </Container>
+    </Content>
   )
 }
