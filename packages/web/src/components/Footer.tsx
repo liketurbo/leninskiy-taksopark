@@ -3,6 +3,7 @@ import { parsePhoneNumberFromString } from "libphonenumber-js"
 import React from "react"
 import styled from "styled-components"
 
+import { Query } from "../../types/graphqlTypes"
 import H2 from "./H/H2"
 
 const Footer = styled.footer`
@@ -62,11 +63,7 @@ const Link = styled.a`
 `
 
 export default () => {
-  const {
-    site: {
-      siteMetadata: { taxiData: data },
-    },
-  } = useStaticQuery(graphql`
+  const { site } = useStaticQuery<Query>(graphql`
     query {
       site {
         siteMetadata {
@@ -78,16 +75,20 @@ export default () => {
             number
             url
             workTime
+            owner
           }
         }
       }
     }
   `)
 
+  const data = site!.siteMetadata!.taxiData!
+
   return (
     <Footer>
       <Info>
         <H2>О нас</H2>
+        <p>{data.owner}</p>
         <p>ИНН: {data.inn}</p>
         <p>
           © {new Date().getFullYear()} {data.brand}, Все права защищены.
@@ -106,8 +107,8 @@ export default () => {
         <H2>Контакты</H2>
         <Link href={`mailto:${data.email}`}>{data.email}</Link>
         <br />
-        <Link href={parsePhoneNumberFromString(data.number)!.getURI()}>
-          {parsePhoneNumberFromString(data.number)!.formatNational()}
+        <Link href={parsePhoneNumberFromString(data.number!)!.getURI()}>
+          {parsePhoneNumberFromString(data.number!)!.formatNational()}
         </Link>
       </Contacts>
     </Footer>
