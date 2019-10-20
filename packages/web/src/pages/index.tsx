@@ -6,13 +6,13 @@ import Learning from "../components/Learning"
 import Questions from "../components/Questions"
 import SEO from "../components/SEO"
 import Services from "../components/Services"
-import Steps from "../components/Steps"
 import TaxiPark from "../components/TaxiPark"
+import WorkStart from "../components/WorkStart"
 
 export default () => (
   <Layout>
     <SEO title="Главная" />
-    <Steps />
+    <WorkStart />
     <Services />
     <TaxiPark />
     <Learning />

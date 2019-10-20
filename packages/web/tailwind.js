@@ -153,12 +153,12 @@ const screens = {
 module.exports = {
   /*
   |-----------------------------------------------------------------------------
-  | Spacing                                  n/a
+  | Spacing                                  N/A
   |-----------------------------------------------------------------------------
   |
-  | n/a
+  | N/A
   |
-  | n/a
+  | N/A
   |
   */
 
@@ -177,7 +177,7 @@ module.exports = {
   |
   */
 
-  colors: colors,
+  colors,
 
   /*
   |-----------------------------------------------------------------------------
@@ -198,7 +198,7 @@ module.exports = {
   |
   */
 
-  screens: screens,
+  screens,
 
   /*
   |-----------------------------------------------------------------------------
@@ -437,7 +437,7 @@ module.exports = {
   |
   */
 
-  borderColors: global.Object.assign({ default: colors["grey-light"] }, colors),
+  borderColors: { ...colors, default: colors["grey-light"] },
 
   /*
   |-----------------------------------------------------------------------------
@@ -592,6 +592,7 @@ module.exports = {
   */
 
   maxWidth: {
+    ...spacing,
     xs: "20rem",
     sm: "30rem",
     md: "40rem",
@@ -619,6 +620,7 @@ module.exports = {
   */
 
   maxHeight: {
+    ...spacing,
     full: "100%",
     screen: "100vh",
   },
@@ -658,8 +660,8 @@ module.exports = {
   */
 
   margin: {
-    auto: "auto",
     ...spacing,
+    auto: "auto",
   },
 
   /*
