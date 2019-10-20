@@ -9,7 +9,7 @@ import Paragraph from "./Paragraph"
 import Steps, { Step } from "./Steps"
 
 const H1 = styled(PH1)`
-  ${tw`text-center mb-8`}
+  ${tw`text-center mb-8 pt-8`}
 `
 
 const Content = styled(PContent)`
