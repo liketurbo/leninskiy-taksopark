@@ -64,17 +64,17 @@ export default () => {
     query {
       uber: imageSharp(fluid: { originalName: { eq: "uber.png" } }) {
         fixed(quality: 90, width: 250) {
-          ...GatsbyImageSharpFixed
+          ...GatsbyImageSharpFixed_withWebp
         }
       }
       gett: imageSharp(fluid: { originalName: { eq: "gett.png" } }) {
         fixed(quality: 90, width: 250) {
-          ...GatsbyImageSharpFixed
+          ...GatsbyImageSharpFixed_withWebp
         }
       }
       yandex: imageSharp(fluid: { originalName: { eq: "yandex.png" } }) {
         fixed(quality: 90, width: 250) {
-          ...GatsbyImageSharpFixed
+          ...GatsbyImageSharpFixed_withWebp
         }
       }
     }

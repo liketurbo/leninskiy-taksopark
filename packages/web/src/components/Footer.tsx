@@ -51,15 +51,11 @@ const Contacts = styled.section`
 const Policy = styled(GatsbyLink)`
   ${tw`underline hover:no-underline font-semibold text-lg`}
 
-  grid-area: policy;
-
-  display: contents;
+  justify-self: flex-start;
 `
 
 const Link = styled.a`
   ${tw`underline hover:no-underline`}
-
-  display: contents;
 `
 
 export default () => {
