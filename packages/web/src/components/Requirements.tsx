@@ -31,7 +31,7 @@ const H2 = styled(PH2)`
 `
 
 const H3 = styled(PH3)`
-  ${tw`mt-3 whitespace-no-wrap`}
+  ${tw`mt-3 whitespace-no-wrap mb-6 md:mb-0`}
 `
 
 const Img = styled(PImg)`
@@ -40,6 +40,12 @@ const Img = styled(PImg)`
 
 const Article = styled.article`
   ${tw`flex flex-col justify-center items-center`}
+
+  :last-child {
+    > ${H3} {
+      ${tw`mb-0`}
+    }
+  }
 `
 
 export default () => {
@@ -68,15 +74,15 @@ export default () => {
       <H1>Требования к водителям</H1>
       <H2>Если вы проходите по этим 3 пунктам - звоните!</H2>
       <Article>
-        <Img fixed={data.doc.fixed} />
+        <Img {...data.doc} />
         <H3>Возраст более 23 лет</H3>
       </Article>
       <Article>
-        <Img fixed={data.russian.fixed} />
+        <Img {...data.russian} />
         <H3>Гражданство РФ</H3>
       </Article>
       <Article>
-        <Img fixed={data.wheel.fixed} />
+        <Img {...data.wheel} />
         <H3>Стаж вождения более 3х лет</H3>
       </Article>
     </Content>

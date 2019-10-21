@@ -54,9 +54,7 @@ const Img = styled(PImg)`
 `
 
 export default () => {
-  const {
-    background: { fluid: data },
-  } = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query {
       background: imageSharp(fluid: { originalName: { eq: "cars.png" } }) {
         fluid(quality: 90, maxWidth: 1200) {
@@ -82,7 +80,7 @@ export default () => {
         <li>Оперативное ТО, нет простоев</li>
         <li>Автомобили застрахованы</li>
       </List>
-      <Img fluid={data} />
+      <Img {...data.background} />
     </Content>
   )
 }

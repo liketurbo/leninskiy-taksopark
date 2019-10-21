@@ -42,8 +42,10 @@ const Content = styled(PContent)`
   }
 `
 
-const Img = styled(PImg)<{ pic1?: boolean; pic2?: boolean; pic3?: boolean }>`
+const Img = styled(PImg)`
   ${tw`mb-8`}
+
+  justify-self: center;
 `
 
 const Button = styled(PButton)`
@@ -76,9 +78,9 @@ export default () => {
       <Content>
         <H1>Работать и зарабатывать с нами - просто!</H1>
         <H2>Официальные партнеры:</H2>
-        <Img pic1 fixed={data.uber.fixed} />
-        <Img pic2 fixed={data.gett.fixed} />
-        <Img pic3 fixed={data.yandex.fixed} />
+        <Img {...data.uber} />
+        <Img {...data.gett} />
+        <Img {...data.yandex} />
       </Content>
       <Background>
         <Strong>Подключитесь сегодня: просто оставьте заявку</Strong>
