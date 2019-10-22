@@ -53,17 +53,17 @@ export default () => {
     query {
       doc: imageSharp(fluid: { originalName: { eq: "doc.png" } }) {
         fixed(quality: 90, width: 200, height: 200) {
-          ...GatsbyImageSharpFixed
+          ...GatsbyImageSharpFixed_withWebp
         }
       }
       russian: imageSharp(fluid: { originalName: { eq: "russian.jpg" } }) {
         fixed(quality: 90, width: 200, height: 200) {
-          ...GatsbyImageSharpFixed
+          ...GatsbyImageSharpFixed_withWebp
         }
       }
       wheel: imageSharp(fluid: { originalName: { eq: "wheel.png" } }) {
         fixed(quality: 90, width: 200, height: 200) {
-          ...GatsbyImageSharpFixed
+          ...GatsbyImageSharpFixed_withWebp
         }
       }
     }

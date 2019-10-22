@@ -15,6 +15,7 @@ const Footer = styled.footer`
   ${tw`bg-black text-white py-4`}
 
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
   grid-template-areas:
     "info address"
     "info hours"
@@ -22,6 +23,7 @@ const Footer = styled.footer`
   grid-gap: ${props => props.theme.spacing["4"]};
 
   @media (max-width: ${props => props.theme.screens.sm}) {
+    grid-template-columns: 1fr;
     grid-template-areas:
       "info"
       "info"

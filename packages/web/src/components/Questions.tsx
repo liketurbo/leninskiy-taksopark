@@ -75,7 +75,7 @@ export default () => {
   return (
     <Background
       fluid={[
-        "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65))",
+        "linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75))",
         data,
       ]}
       Tag="section"

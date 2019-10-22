@@ -1,5 +1,6 @@
 import React from "react"
 
+import Connection from "../components/Connection"
 import Contacts from "../components/Contacts"
 import Layout from "../components/Layout"
 import Learning from "../components/Learning"
@@ -13,6 +14,7 @@ import WorkStart from "../components/WorkStart"
 export default () => (
   <Layout>
     <SEO title="Главная" />
+    <Connection />
     <Requirements />
     <WorkStart />
     <Services />

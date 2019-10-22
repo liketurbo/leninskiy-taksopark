@@ -1700,6 +1700,8 @@ export enum SiteFieldsEnum {
   SiteMetadataAuthor = 'siteMetadata___author',
   SiteMetadataDescription = 'siteMetadata___description',
   SiteMetadataTaxiDataBrand = 'siteMetadata___taxiData___brand',
+  SiteMetadataTaxiDataCity = 'siteMetadata___taxiData___city',
+  SiteMetadataTaxiDataCar = 'siteMetadata___taxiData___car',
   SiteMetadataTaxiDataOwner = 'siteMetadata___taxiData___owner',
   SiteMetadataTaxiDataInn = 'siteMetadata___taxiData___inn',
   SiteMetadataTaxiDataNumber = 'siteMetadata___taxiData___number',
@@ -2292,6 +2294,8 @@ export type SiteSiteMetadataFilterInput = {
 export type SiteSiteMetadataTaxiData = {
    __typename?: 'SiteSiteMetadataTaxiData',
   brand?: Maybe<Scalars['String']>,
+  city?: Maybe<Scalars['String']>,
+  car?: Maybe<Scalars['String']>,
   owner?: Maybe<Scalars['String']>,
   inn?: Maybe<Scalars['String']>,
   number?: Maybe<Scalars['String']>,
@@ -2304,6 +2308,8 @@ export type SiteSiteMetadataTaxiData = {
 
 export type SiteSiteMetadataTaxiDataFilterInput = {
   brand?: Maybe<StringQueryOperatorInput>,
+  city?: Maybe<StringQueryOperatorInput>,
+  car?: Maybe<StringQueryOperatorInput>,
   owner?: Maybe<StringQueryOperatorInput>,
   inn?: Maybe<StringQueryOperatorInput>,
   number?: Maybe<StringQueryOperatorInput>,
