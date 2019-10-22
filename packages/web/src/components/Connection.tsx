@@ -25,13 +25,10 @@ const H2 = styled(PH2)`
 `
 
 const Tile = styled(BackgroundImage)`
-  ${tw`overflow-hidden max-w-sm p-10 flex-col`}
+  ${tw`overflow-hidden max-w-sm p-10 flex-col rounded`}
 
   ::before {
-    transition: filter 0.15s ease !important;
-
-    filter: blur(2px);
-    transform: translateZ(0) scale(1.1);
+    transition: opacity 0.15s ease !important;
   }
 
   :hover {
@@ -40,8 +37,7 @@ const Tile = styled(BackgroundImage)`
     }
 
     ::before {
-      filter: blur(15px);
-      transform: translateZ(0) scale(1.3);
+      opacity: 0.5 !important;
     }
   }
 
@@ -51,7 +47,7 @@ const Tile = styled(BackgroundImage)`
 `
 
 const H1 = styled(PH1)`
-  ${tw`mb-0 `}
+  ${tw`mb-0`}
 
   grid-column: 1 / -1;
 `
@@ -95,7 +91,7 @@ export default () => {
   return (
     <Content>
       <H1>
-        Таксопарк Фаворит-Авто - партнер Яндекс в{" "}
+        Таксопарк {data.site!.siteMetadata!.taxiData!.brand} - партнер Яндекс в{" "}
         {data.site!.siteMetadata!.taxiData!.city}!
       </H1>
       <Tile

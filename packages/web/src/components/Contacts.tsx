@@ -41,7 +41,7 @@ const Contacts = styled.section`
   }
 
   &::before {
-    ${tw`absolute z--10 opacity-75`}
+    ${tw`absolute z--10 opacity-75 rounded`}
 
     top: 0;
     right: 0;
@@ -90,7 +90,7 @@ export default () => {
       <YMaps>
         <Map
           defaultState={{
-            center: data.coordinates,
+            center: [data.coordinates[0] + 0.001, data.coordinates[1]],
             zoom: 15,
             behaviors: ["drag"],
           }}

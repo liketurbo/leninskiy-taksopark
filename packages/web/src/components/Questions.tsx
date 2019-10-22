@@ -31,7 +31,7 @@ const Form = styled.form`
 `
 
 const Input = css`
-  ${tw`p-2 mb-4 w-full`}
+  ${tw`p-2 mb-4 w-full rounded`}
 `
 
 const TextInput = styled.input`
