@@ -29,6 +29,7 @@ const Tile = styled(BackgroundImage)`
 
   ::before {
     transition: filter 0.15s ease !important;
+
     filter: blur(2px);
     transform: translateZ(0) scale(1.1);
   }

@@ -26,6 +26,12 @@ const Background = styled(PContent)`
 
 const Strong = styled(PH2)`
   ${tw`m-0 w-56`}
+
+  @media (max-width: ${props => props.theme.screens.sm}) {
+    ${tw`mb-4`}
+
+    flex-basis: 100%;
+  }
 `
 
 const Content = styled(PContent)`
