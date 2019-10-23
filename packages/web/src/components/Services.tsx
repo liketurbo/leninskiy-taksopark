@@ -9,6 +9,8 @@ import PH1 from "./H/H1"
 import PH2 from "./H/H2"
 
 const H1 = styled(PH1)`
+  ${tw`text-center`}
+
   grid-column: 1 / -1;
   justify-self: center;
 `
@@ -28,7 +30,7 @@ const Strong = styled(PH2)`
   ${tw`m-0 w-56`}
 
   @media (max-width: ${props => props.theme.screens.sm}) {
-    ${tw`mb-4`}
+    ${tw`mb-4 text-center`}
 
     flex-basis: 100%;
   }
@@ -84,9 +86,9 @@ export default () => {
       <Content>
         <H1>Работать и зарабатывать с нами - просто!</H1>
         <H2>Официальные партнеры:</H2>
-        <Img {...data.uber} />
-        <Img {...data.gett} />
-        <Img {...data.yandex} />
+        <Img {...data.uber} alt="Uber" />
+        <Img {...data.gett} alt="Gett" />
+        <Img {...data.yandex} alt="Яндекс" />
       </Content>
       <Background>
         <Strong>Подключитесь сегодня: просто оставьте заявку</Strong>

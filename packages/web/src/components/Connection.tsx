@@ -47,7 +47,7 @@ const Tile = styled(BackgroundImage)`
 `
 
 const H1 = styled(PH1)`
-  ${tw`mb-0`}
+  ${tw`mb-0 text-center`}
 
   grid-column: 1 / -1;
 `
