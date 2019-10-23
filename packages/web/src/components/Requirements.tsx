@@ -19,6 +19,8 @@ const Content = styled(PContent)`
 `
 
 const H1 = styled(PH1)`
+  ${tw`text-center`}
+
   grid-column: 1 / -1;
   justify-self: center;
 `
