@@ -9,7 +9,7 @@ module.exports = {
     taxiData: {
       brand,
       city,
-      car: "Renault Logan 2019 г.",
+      car: "Renault Logan 2019",
       owner: "ИП Часыгов Ахмед Абдулмажитович",
       inn: "060200202147",
       number: "+79676969406",
