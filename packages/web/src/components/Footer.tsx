@@ -22,7 +22,7 @@ const Footer = styled.footer`
     "policy contacts";
   grid-gap: ${props => props.theme.spacing["4"]};
 
-  @media (max-width: ${props => props.theme.screens.sm}) {
+  @media (max-width: ${props => props.theme.screens.md}) {
     grid-template-columns: 1fr;
     grid-template-areas:
       "info"
