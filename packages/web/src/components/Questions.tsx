@@ -3,14 +3,20 @@ import BackgroundImage from "gatsby-background-image"
 import React from "react"
 import useForm from "react-hook-form"
 import InputMask from "react-input-mask"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 
 import Button from "./Button"
+import PContent from "./Content"
 import PH1 from "./H/H1"
 import PH2 from "./H/H2"
+import Input from "./Input"
 
 const Background = styled(BackgroundImage)`
-  ${tw`py-20`}
+  ${tw`py-4`}
+`
+
+const Content = styled(PContent)`
+  ${tw`flex flex-col items-center`}
 `
 
 const H1 = styled(PH1)`
@@ -22,16 +28,7 @@ const H2 = styled(PH2)`
 `
 
 const Form = styled.form`
-  ${tw`flex flex-col items-center px-4`}
-
-  padding: 0 calc(50% - ${props => props.theme.spacing["64"]});
-  border: ${props => props.theme.spacing["8"]} solid transparent;
-  border-top-width: 0;
-  border-bottom-width: 0;
-`
-
-const Input = css`
-  ${tw`p-2 mb-4 w-full rounded`}
+  ${tw`flex flex-col items-center p-5 w-full sm:w-2/3`}
 `
 
 const TextInput = styled.input`
@@ -80,19 +77,21 @@ export default () => {
       ]}
       Tag="section"
     >
-      <H1>У вас есть вопросы?</H1>
-      <H2>Получите консультацию по телефону. Это бесплатно 😄.</H2>
-      <Form onSubmit={handleSubmit(onSubmit)}>
-        <TextInput name="name" ref={register} placeholder="Ваше имя" />
-        <PhoneInput
-          mask="8 (999) 999-99-99"
-          name="phone"
-          placeholder="Ваш номер"
-          ref={register}
-        />
-        <TextArea name="question" ref={register} placeholder="Ваш вопрос" />
-        <Button type="submit">Получить консультацию</Button>
-      </Form>
+      <Content>
+        <H1>У вас есть вопросы?</H1>
+        <H2>Получите консультацию по телефону. Это бесплатно 😄.</H2>
+        <Form onSubmit={handleSubmit(onSubmit)}>
+          <TextInput name="name" ref={register} placeholder="Ваше имя" />
+          <PhoneInput
+            mask="8 (999) 999-99-99"
+            name="phone"
+            placeholder="Ваш номер"
+            ref={register}
+          />
+          <TextArea name="question" ref={register} placeholder="Ваш вопрос" />
+          <Button type="submit">Получить консультацию</Button>
+        </Form>
+      </Content>
     </Background>
   )
 }

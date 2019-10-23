@@ -4,6 +4,7 @@ import Connection from "../components/Connection"
 import Contacts from "../components/Contacts"
 import Layout from "../components/Layout"
 import Learning from "../components/Learning"
+import NewCars from "../components/NewCars"
 import Questions from "../components/Questions"
 import Requirements from "../components/Requirements"
 import SEO from "../components/SEO"
@@ -14,6 +15,7 @@ import WorkStart from "../components/WorkStart"
 export default () => (
   <Layout>
     <SEO title="Главная" />
+    <NewCars />
     <Connection />
     <Requirements />
     <WorkStart />

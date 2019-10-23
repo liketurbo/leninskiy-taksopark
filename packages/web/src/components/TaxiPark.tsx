@@ -80,7 +80,7 @@ export default () => {
         <li>Оперативное ТО, нет простоев</li>
         <li>Автомобили застрахованы</li>
       </List>
-      <Img {...data.background} />
+      <Img {...data.background} alt="Наши машины" />
     </Content>
   )
 }
