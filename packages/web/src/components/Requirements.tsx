@@ -38,7 +38,7 @@ const Img = styled(PImg)`
   ${tw`rounded-full`}
 `
 
-const Article = styled.article`
+const Card = styled.figure`
   ${tw`flex flex-col justify-center items-center`}
 
   :last-child {
@@ -73,18 +73,18 @@ export default () => {
     <Content>
       <H1>Требования к водителям</H1>
       <H2>Если вы проходите по этим 3 пунктам - звоните!</H2>
-      <Article>
+      <Card>
         <Img {...data.doc} />
-        <H3>Возраст более 23 лет</H3>
-      </Article>
-      <Article>
+        <H3 as="figcaption">Возраст более 23 лет</H3>
+      </Card>
+      <Card>
         <Img {...data.russian} />
-        <H3>Гражданство РФ</H3>
-      </Article>
-      <Article>
+        <H3 as="figcaption">Гражданство РФ</H3>
+      </Card>
+      <Card>
         <Img {...data.wheel} />
-        <H3>Стаж вождения более 3х лет</H3>
-      </Article>
+        <H3 as="figcaption">Стаж вождения более 3х лет</H3>
+      </Card>
     </Content>
   )
 }
