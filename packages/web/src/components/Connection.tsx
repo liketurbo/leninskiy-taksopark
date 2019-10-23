@@ -13,7 +13,7 @@ const Content = styled(PContent)`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
-  grid-gap: ${props => props.theme.spacing["4"]};
+  grid-gap: ${props => props.theme.spacing["6"]};
 
   @media (max-width: ${props => props.theme.screens.md}) {
     grid-template-columns: 1fr;
@@ -42,7 +42,7 @@ const Tile = styled(BackgroundImage)`
   }
 
   @media (max-width: ${props => props.theme.screens.sm}) {
-    ${tw`p-5`}
+    ${tw`px-5`}
   }
 `
 
@@ -71,16 +71,12 @@ export default () => {
           }
         }
       }
-      connectOnline: imageSharp(
-        fluid: { originalName: { eq: "connect-online.jpg" } }
-      ) {
+      topLight: imageSharp(fluid: { originalName: { eq: "top-light.jpg" } }) {
         fluid(quality: 90, maxWidth: 1080) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
-      connectOffline: imageSharp(
-        fluid: { originalName: { eq: "connect-offline.jpg" } }
-      ) {
+      taxi: imageSharp(fluid: { originalName: { eq: "taxi.jpg" } }) {
         fluid(quality: 90, maxWidth: 1080) {
           ...GatsbyImageSharpFluid_withWebp
         }
@@ -97,7 +93,7 @@ export default () => {
       <Tile
         fluid={[
           "linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75))",
-          (data as any).connectOnline.fluid,
+          (data as any).topLight.fluid,
         ]}
         Tag="button"
       >
@@ -113,7 +109,7 @@ export default () => {
       <Tile
         fluid={[
           "linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75))",
-          (data as any).connectOffline.fluid,
+          (data as any).taxi.fluid,
         ]}
         Tag="button"
       >
