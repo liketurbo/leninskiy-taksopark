@@ -6,6 +6,7 @@ import styled from "styled-components"
 
 // @ts-ignore
 import { colors } from "../../tailwind"
+import { Query } from "../../types/graphqlTypes"
 import H1 from "./H/H1"
 
 const Container = styled.div`
@@ -55,11 +56,7 @@ const Contacts = styled.section`
 `
 
 export default () => {
-  const {
-    site: {
-      siteMetadata: { taxiData: data },
-    },
-  } = useStaticQuery(graphql`
+  const data = useStaticQuery<Query>(graphql`
     query {
       site {
         siteMetadata {
@@ -77,20 +74,29 @@ export default () => {
     }
   `)
 
+  const {
+    brand,
+    address,
+    workTime,
+    number,
+    coordinates,
+  } = data.site!.siteMetadata!.taxiData!
+
   return (
     <Container>
       <Contacts>
         <H1>Контакты</H1>
-        <Link href={parsePhoneNumberFromString(data.number)!.getURI()}>
-          {parsePhoneNumberFromString(data.number)!.formatNational()}
+        <p>Таксопарк "{brand}"</p>
+        <p>{address}</p>
+        <p>{workTime}</p>
+        <Link href={parsePhoneNumberFromString(number!)!.getURI()}>
+          {parsePhoneNumberFromString(number!)!.formatNational()}
         </Link>
-        <p>{data.address}</p>
-        <p>{data.workTime}</p>
       </Contacts>
       <YMaps>
         <Map
           defaultState={{
-            center: [data.coordinates[0] + 0.001, data.coordinates[1]],
+            center: [coordinates![0]! + 0.001, coordinates![1]!],
             zoom: 15,
             behaviors: ["drag"],
           }}
@@ -100,12 +106,12 @@ export default () => {
           <ZoomControl
             options={{
               size: "small",
-              position: { left: 10, top: 180 },
+              position: { left: 10, top: 200 },
             }}
           />
           <Placemark
-            geometry={data.coordinates}
-            properties={{ iconCaption: data.brand }}
+            geometry={coordinates as any}
+            properties={{ iconCaption: brand }}
             options={{
               preset: "islands#blueAutoIcon",
               iconColor: colors["yellow-dark"],
