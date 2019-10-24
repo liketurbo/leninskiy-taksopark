@@ -117,6 +117,8 @@ export default () => {
     }
   `)
 
+  const { car, city } = data.site!.siteMetadata!.taxiData!
+
   return (
     <Background
       fluid={[
@@ -127,9 +129,7 @@ export default () => {
     >
       <Content>
         <H1>
-          Срочный набор водителей на новые автомобили{" "}
-          {data.site!.siteMetadata!.taxiData!.car} в{" "}
-          {data.site!.siteMetadata!.taxiData!.city}
+          Срочный набор водителей на новые автомобили {car} в {city}
         </H1>
         <ListH2>
           <List>

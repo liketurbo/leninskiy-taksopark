@@ -80,33 +80,41 @@ export default () => {
     }
   `)
 
-  const data = site!.siteMetadata!.taxiData!
+  const {
+    address,
+    brand,
+    email,
+    inn,
+    number,
+    owner,
+    workTime,
+  } = site!.siteMetadata!.taxiData!
 
   return (
     <Footer>
       <Info>
         <H2>О нас</H2>
-        <p>{data.owner}</p>
-        <p>ИНН: {data.inn}</p>
+        <p>{owner}</p>
+        <p>ИНН: {inn}</p>
         <p>
-          © {new Date().getFullYear()} {data.brand}, Все права защищены.
+          © {new Date().getFullYear()} {brand}, Все права защищены.
         </p>
       </Info>
       <Policy to="/policy">Политика конфиденциальности</Policy>
       <Address>
         <H2>Адрес офиса</H2>
-        <address style={{ fontStyle: "normal" }}>{data.address}</address>
+        <address style={{ fontStyle: "normal" }}>{address}</address>
       </Address>
       <Hours>
         <H2>Время работы</H2>
-        <p>{data.workTime}</p>
+        <p>{workTime}</p>
       </Hours>
       <Contacts>
         <H2>Контакты</H2>
-        <Link href={`mailto:${data.email}`}>{data.email}</Link>
+        <Link href={`mailto:${email}`}>{email}</Link>
         <br />
-        <Link href={parsePhoneNumberFromString(data.number!)!.getURI()}>
-          {parsePhoneNumberFromString(data.number!)!.formatNational()}
+        <Link href={parsePhoneNumberFromString(number!)!.getURI()}>
+          {parsePhoneNumberFromString(number!)!.formatNational()}
         </Link>
       </Contacts>
     </Footer>

@@ -84,11 +84,12 @@ export default () => {
     }
   `)
 
+  const { brand, car, city } = data.site!.siteMetadata!.taxiData!
+
   return (
     <Content>
       <H1>
-        Таксопарк {data.site!.siteMetadata!.taxiData!.brand} - партнер Яндекс в{" "}
-        {data.site!.siteMetadata!.taxiData!.city}!
+        Таксопарк {brand} - партнер Яндекс в {city}!
       </H1>
       <Tile
         fluid={[
@@ -97,10 +98,7 @@ export default () => {
         ]}
         Tag="button"
       >
-        <H2>
-          Подключение к сервисам такси в{" "}
-          {data.site!.siteMetadata!.taxiData!.city}
-        </H2>
+        <H2>Подключение к сервисам такси в {city}</H2>
         <Paragraph>
           Минимальная комиссия парка! Ежедневные быстрые выплаты! Выход на линию
           уже через 15 минут.
@@ -115,8 +113,7 @@ export default () => {
       >
         <H2>Работа на автомобилях таксопарка</H2>
         <Paragraph>
-          Мы предоставляем Вам новый автомобиль{" "}
-          {data.site!.siteMetadata!.taxiData!.car}, с нулевым пробегом.
+          Мы предоставляем Вам новый автомобиль {car}, с нулевым пробегом.
           Автомобиль на ГАЗу, бензине, брендированный и с лицензией.
         </Paragraph>
       </Tile>
