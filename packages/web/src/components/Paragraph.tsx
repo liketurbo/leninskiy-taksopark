@@ -1,5 +1,5 @@
 import styled from "styled-components"
 
-export default styled.p<{ indent?: boolean }>`
+export default styled.p`
   ${tw`mb-2`}
 `
