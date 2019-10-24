@@ -4,15 +4,13 @@ import React from "react"
 import styled from "styled-components"
 
 import { Query } from "../../types/graphqlTypes"
+import { CSSContent } from "./Content"
 import H2 from "./H/H2"
 
 const Footer = styled.footer`
-  padding: 0 calc(50% - ${props => props.theme.spacing["112"]});
-  border: ${props => props.theme.spacing["4"]} solid transparent;
-  border-top-width: 0;
-  border-bottom-width: 0;
+  ${CSSContent}
 
-  ${tw`bg-black text-white py-4`}
+  ${tw`bg-black text-white m-0 py-4`}
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -61,7 +59,7 @@ const Link = styled.a`
 `
 
 export default () => {
-  const { site } = useStaticQuery<Query>(graphql`
+  const data = useStaticQuery<Query>(graphql`
     query {
       site {
         siteMetadata {
@@ -88,7 +86,7 @@ export default () => {
     number,
     owner,
     workTime,
-  } = site!.siteMetadata!.taxiData!
+  } = data.site!.siteMetadata!.taxiData!
 
   return (
     <Footer>

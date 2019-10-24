@@ -2,12 +2,8 @@ import React from "react"
 import Youtube from "react-youtube"
 import styled from "styled-components"
 
-import PContent from "./Content"
+import Content from "./Content"
 import PH1 from "./H/H1"
-
-const Content = styled(PContent)`
-  ${tw`my-12`}
-`
 
 const H1 = styled(PH1)`
   ${tw`text-center`}
