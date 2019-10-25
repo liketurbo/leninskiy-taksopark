@@ -1,21 +1,24 @@
 import { Link } from "gatsby"
-import React from "react"
+import React, { BaseHTMLAttributes } from "react"
 import styled from "styled-components"
 
 import NavLink from "./NavLink"
 
 const List = styled.ul`
-  ${tw`flex`}
+  ${tw`flex flex-col items-center`} 
+
+  @media (min-width: ${props => props.theme.screens.md})  {
+    ${tw`flex-row`}
+  }
 `
 
 export default ({
   links,
-  className,
+  ...rest
 }: {
   links: { title: string; path: string }[]
-  className?: string
-}) => (
-  <nav {...{ className }}>
+} & BaseHTMLAttributes<any>) => (
+  <nav {...rest}>
     <List>
       {links.map(({ path, title }) => (
         <NavLink key={path}>

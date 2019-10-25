@@ -7,7 +7,7 @@ const Item = styled.li`
   > a {
     ${tw`px-2 pb-4 text-black hover:text-red border-b-2 border-transparent hover:border-red`}
 
-    transition: border-color 0.15s ease;
+    transition: all 0.15s ease;
   }
 
   :last-child {
