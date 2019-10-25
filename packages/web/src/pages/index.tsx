@@ -1,5 +1,6 @@
 import React from "react"
 
+import Conditions from "../components/Conditions"
 import Connection from "../components/Connection"
 import Contacts from "../components/Contacts"
 import Layout from "../components/Layout"
@@ -17,6 +18,7 @@ export default () => (
     <SEO title="Главная" />
     <NewCars />
     <Connection />
+    <Conditions />
     <Requirements />
     <WorkStart />
     <Services />

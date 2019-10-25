@@ -12,13 +12,11 @@ const H1 = styled(PH1)`
   ${tw`text-center`}
 
   grid-column: 1 / -1;
-  justify-self: center;
 `
 
 const H2 = styled(PH2)`
-  ${tw`mb-8 font-normal`}
+  ${tw`font-normal text-center mb-8`}
 
-  justify-self: center;
   grid-column: 1 / -1;
 `
 
