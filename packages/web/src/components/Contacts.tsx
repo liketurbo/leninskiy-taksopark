@@ -3,9 +3,8 @@ import React from "react"
 import { Map, Placemark, YMaps, ZoomControl } from "react-yandex-maps"
 import styled from "styled-components"
 
-// @ts-ignore
-import { colors } from "../../tailwind"
 import { Query } from "../../types/graphqlTypes"
+import theme from "../library/theme"
 import H1 from "./H/H1"
 import Phone from "./Phone"
 
@@ -104,7 +103,7 @@ export default () => {
             properties={{ iconCaption: brand }}
             options={{
               preset: "islands#blueAutoIcon",
-              iconColor: colors["yellow-dark"],
+              iconColor: theme.colors["yellow-dark"],
             }}
           />
         </Map>
