@@ -1,5 +1,4 @@
 import { graphql, useStaticQuery } from "gatsby"
-import { parsePhoneNumberFromString } from "libphonenumber-js"
 import React from "react"
 import { Map, Placemark, YMaps, ZoomControl } from "react-yandex-maps"
 import styled from "styled-components"
@@ -8,6 +7,7 @@ import styled from "styled-components"
 import { colors } from "../../tailwind"
 import { Query } from "../../types/graphqlTypes"
 import H1 from "./H/H1"
+import Phone from "./Phone"
 
 const Container = styled.div`
   ${tw`relative overflow-hidden`}
@@ -25,10 +25,6 @@ const Container = styled.div`
   @media (max-width: ${props => props.theme.screens.sm}) {
     height: 60vh;
   }
-`
-
-const Link = styled.a`
-  ${tw`underline hover:no-underline`}
 `
 
 const Contacts = styled.section`
@@ -63,11 +59,8 @@ export default () => {
           taxiData {
             address
             brand
-            inn
-            number
-            url
-            workTime
             coordinates
+            workTime
           }
         }
       }
@@ -75,11 +68,10 @@ export default () => {
   `)
 
   const {
-    brand,
     address,
-    workTime,
-    number,
+    brand,
     coordinates,
+    workTime,
   } = data.site!.siteMetadata!.taxiData!
 
   return (
@@ -89,9 +81,7 @@ export default () => {
         <p>Таксопарк "{brand}"</p>
         <p>{address}</p>
         <p>{workTime}</p>
-        <Link href={parsePhoneNumberFromString(number!)!.getURI()}>
-          {parsePhoneNumberFromString(number!)!.formatNational()}
-        </Link>
+        <Phone />
       </Contacts>
       <YMaps>
         <Map

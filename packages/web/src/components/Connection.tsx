@@ -58,16 +58,9 @@ export default () => {
       site {
         siteMetadata {
           taxiData {
-            address
             brand
             car
             city
-            inn
-            email
-            number
-            url
-            workTime
-            owner
           }
         }
       }

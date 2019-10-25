@@ -3,7 +3,7 @@ import { parsePhoneNumberFromString } from "libphonenumber-js"
 import React from "react"
 import styled from "styled-components"
 
-import { Query } from "../../../types/graphqlTypes"
+import { Query } from "../../types/graphqlTypes"
 
 const Link = styled.a`
   ${tw`underline hover:no-underline`}
@@ -15,25 +15,18 @@ export default () => {
       site {
         siteMetadata {
           taxiData {
-            address
-            brand
-            inn
-            email
-            number
-            url
-            workTime
-            owner
+            phone
           }
         }
       }
     }
   `)
 
-  const { number } = data.site!.siteMetadata!.taxiData!
+  const { phone } = data.site!.siteMetadata!.taxiData!
 
   return (
-    <Link href={parsePhoneNumberFromString(number!)!.getURI()}>
-      {parsePhoneNumberFromString(number!)!.formatNational()}
+    <Link href={parsePhoneNumberFromString(phone!)!.getURI()}>
+      {parsePhoneNumberFromString(phone!)!.formatNational()}
     </Link>
   )
 }

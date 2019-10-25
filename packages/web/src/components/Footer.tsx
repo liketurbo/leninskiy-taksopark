@@ -1,11 +1,11 @@
-import { graphql, Link as GatsbyLink, useStaticQuery } from "gatsby"
-import { parsePhoneNumberFromString } from "libphonenumber-js"
+import { graphql, Link, useStaticQuery } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 
 import { Query } from "../../types/graphqlTypes"
 import { CSSContent } from "./Content"
 import H2 from "./H/H2"
+import Phone from "./Phone"
 
 const Footer = styled.footer`
   ${CSSContent}
@@ -48,13 +48,13 @@ const Contacts = styled.section`
   grid-area: contacts;
 `
 
-const Policy = styled(GatsbyLink)`
+const Policy = styled(Link)`
   ${tw`underline hover:no-underline font-semibold text-lg`}
 
   justify-self: flex-start;
 `
 
-const Link = styled.a`
+const Email = styled.a`
   ${tw`underline hover:no-underline`}
 `
 
@@ -66,12 +66,10 @@ export default () => {
           taxiData {
             address
             brand
-            inn
             email
-            number
-            url
-            workTime
+            inn
             owner
+            workTime
           }
         }
       }
@@ -83,7 +81,6 @@ export default () => {
     brand,
     email,
     inn,
-    number,
     owner,
     workTime,
   } = data.site!.siteMetadata!.taxiData!
@@ -109,11 +106,9 @@ export default () => {
       </Hours>
       <Contacts>
         <H2>Контакты</H2>
-        <Link href={`mailto:${email}`}>{email}</Link>
+        <Email href={`mailto:${email}`}>{email}</Email>
         <br />
-        <Link href={parsePhoneNumberFromString(number!)!.getURI()}>
-          {parsePhoneNumberFromString(number!)!.formatNational()}
-        </Link>
+        <Phone />
       </Contacts>
     </Footer>
   )
