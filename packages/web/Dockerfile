@@ -1,5 +1,5 @@
 # Stage 1
-FROM node:alpine
+FROM node
 
 WORKDIR /usr/app
 
