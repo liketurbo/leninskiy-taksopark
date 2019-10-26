@@ -1,0 +1,6 @@
+version: "3"
+services:
+  web:
+    build: ./packages/web
+    ports:
+      - 80:80
