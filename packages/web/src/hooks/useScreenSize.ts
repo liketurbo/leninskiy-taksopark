@@ -16,7 +16,8 @@ export default (screenSize: "sm" | "md" | "lg" | "xl") => {
     const mediaQuery = window.matchMedia(
       `(min-width: ${theme.screens[screenSize]})`
     )
-    mediaQuery.addEventListener("change", mediaQueryChange)
+
+    mediaQuery.addListener(mediaQueryChange)
     mediaQueryChange(mediaQuery as any)
 
     return () => mediaQuery.removeEventListener("change", mediaQueryChange)
