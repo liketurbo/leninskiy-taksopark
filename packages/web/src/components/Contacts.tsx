@@ -4,6 +4,7 @@ import { Map, Placemark, YMaps, ZoomControl } from "react-yandex-maps"
 import styled from "styled-components"
 
 import { Query } from "../../types/graphqlTypes"
+import useScreenSize from "../hooks/useScreenSize"
 import theme from "../library/theme"
 import H1 from "./H/H1"
 import Phone from "./Phone"
@@ -51,6 +52,9 @@ const Contacts = styled.section`
 `
 
 export default () => {
+  const smallScreen = useScreenSize("sm")
+  const mediumScreen = useScreenSize("md")
+
   const data = useStaticQuery<Query>(graphql`
     query {
       site {
@@ -85,7 +89,12 @@ export default () => {
       <YMaps>
         <Map
           defaultState={{
-            center: [coordinates![0]! + 0.001, coordinates![1]!],
+            center: [
+              coordinates![0]! +
+                (mediumScreen ? 0 : 0.001) +
+                (smallScreen ? 0 : 0.002),
+              coordinates![1]!,
+            ],
             zoom: 15,
             behaviors: ["drag"],
           }}

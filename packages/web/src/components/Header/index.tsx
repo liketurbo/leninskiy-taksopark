@@ -62,7 +62,7 @@ const Phone = styled(PPhone)`
 `
 
 export default () => {
-  const smallScreen = useScreenSize("md")
+  const mediumScreen = useScreenSize("md")
   const [navVisible, setNavVisible] = useState(false)
 
   const toggleNav = useCallback(() => {
@@ -86,7 +86,7 @@ export default () => {
   return (
     <Header>
       <Logo>{brand}</Logo>
-      {(smallScreen || navVisible) && (
+      {(mediumScreen || navVisible) && (
         <>
           <Navigation
             links={[
