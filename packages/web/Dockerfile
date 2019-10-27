@@ -13,5 +13,5 @@ RUN yarn build
 # Stage 2
 FROM nginx:alpine
 
-# COPY ./nginx /etc/nginx
+COPY ./nginx /etc/nginx/conf.d
 COPY --from=0 /usr/app/public /usr/share/nginx/html
