@@ -1,5 +1,0 @@
-alias_database = hash:/etc/aliases
-virtual_alias_domains = localhost
-virtual_alias_maps = hash:/etc/postfix/virtual
-
-mydestination = reno-perevozki.ru

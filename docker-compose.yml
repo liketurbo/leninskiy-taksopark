@@ -17,8 +17,3 @@ services:
     volumes:
       - ./packages/cert/data/conf:/etc/letsencrypt
       - ./packages/cert/data/www:/var/www/certbot
-  smf:
-    build: ./packages/postfix
-    restart: unless-stopped
-    ports:
-      - 25:25
