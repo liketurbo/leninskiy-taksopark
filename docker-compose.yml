@@ -18,9 +18,7 @@ services:
       - ./packages/cert/data/conf:/etc/letsencrypt
       - ./packages/cert/data/www:/var/www/certbot
   smf:
-    image: zixia/simple-mail-forwarder
+    build: ./packages/postfix
     restart: unless-stopped
-    environment:
-      - SMF_CONFIG='@reno-perevozki.ru:ahmed.aa15613541@yandex.ru'
     ports:
       - 25:25
