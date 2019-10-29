@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, Link, useStaticQuery } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 import React from "react"
 import styled from "styled-components"
@@ -84,32 +84,36 @@ export default () => {
       <H1>
         Таксопарк {brand} - партнер Яндекс в {city}!
       </H1>
-      <Tile
-        fluid={[
-          "linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75))",
-          (data as any).topLight.fluid,
-        ]}
-        Tag="button"
-      >
-        <H2>Подключение к сервисам такси в {city}</H2>
-        <Paragraph>
-          Минимальная комиссия парка! Ежедневные быстрые выплаты! Выход на линию
-          уже через 15 минут.
-        </Paragraph>
-      </Tile>
-      <Tile
-        fluid={[
-          "linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75))",
-          (data as any).taxi.fluid,
-        ]}
-        Tag="button"
-      >
-        <H2>Работа на автомобилях таксопарка</H2>
-        <Paragraph>
-          Мы предоставляем Вам новый автомобиль {car}, с нулевым пробегом.
-          Автомобиль на ГАЗу, бензине, брендированный и с лицензией.
-        </Paragraph>
-      </Tile>
+      <Link to="/connection">
+        <Tile
+          fluid={[
+            "linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75))",
+            (data as any).topLight.fluid,
+          ]}
+          Tag="button"
+        >
+          <H2>Подключение к сервисам такси в {city}</H2>
+          <Paragraph>
+            Минимальная комиссия парка! Ежедневные быстрые выплаты! Выход на
+            линию уже через 15 минут.
+          </Paragraph>
+        </Tile>
+      </Link>
+      <Link to="/connection">
+        <Tile
+          fluid={[
+            "linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75))",
+            (data as any).taxi.fluid,
+          ]}
+          Tag="button"
+        >
+          <H2>Работа на автомобилях таксопарка</H2>
+          <Paragraph>
+            Мы предоставляем Вам новый автомобиль {car}, с нулевым пробегом.
+            Автомобиль на ГАЗу, бензине, брендированный и с лицензией.
+          </Paragraph>
+        </Tile>
+      </Link>
     </Content>
   )
 }
