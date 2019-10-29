@@ -1,9 +1,9 @@
 import { Link } from "gatsby"
 import React, { BaseHTMLAttributes } from "react"
-// @ts-ignore
 import AnchorLink from "react-anchor-link-smooth-scroll"
 import styled from "styled-components"
 
+import convertRemToPixels from "../../utils/convertRemToPixels"
 import NavLink from "./NavLink"
 
 const List = styled.ul`
@@ -13,9 +13,6 @@ const List = styled.ul`
     ${tw`flex-row`}
   }
 `
-
-const convertRemToPixels = (rem: number) =>
-  rem * parseFloat(getComputedStyle(document.documentElement).fontSize)
 
 export default ({
   links,

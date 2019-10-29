@@ -108,6 +108,7 @@ export default () => {
         (data as any).background.fluid,
       ]}
       Tag="section"
+      id="start"
     >
       <Content>
         <H1>
