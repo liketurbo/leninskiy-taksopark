@@ -88,7 +88,7 @@ export default () => {
   `)
 
   return (
-    <Background id="conditions">
+    <Background id="conditions" as="section">
       <H1>Комфортные условия работы</H1>
       <Card>
         <Img {...calc} />

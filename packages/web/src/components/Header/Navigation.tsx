@@ -1,5 +1,7 @@
 import { Link } from "gatsby"
 import React, { BaseHTMLAttributes } from "react"
+// @ts-ignore
+import AnchorLink from "react-anchor-link-smooth-scroll"
 import styled from "styled-components"
 
 import NavLink from "./NavLink"
@@ -12,6 +14,9 @@ const List = styled.ul`
   }
 `
 
+const convertRemToPixels = (rem: number) =>
+  rem * parseFloat(getComputedStyle(document.documentElement).fontSize)
+
 export default ({
   links,
   ...rest
@@ -22,7 +27,13 @@ export default ({
     <List>
       {links.map(({ path, title }) => (
         <NavLink key={path}>
-          <Link to={path}>{title}</Link>
+          {path.startsWith("#") ? (
+            <AnchorLink offset={convertRemToPixels(3.5)} href={path}>
+              {title}
+            </AnchorLink>
+          ) : (
+            <Link to={path}>{title}</Link>
+          )}
         </NavLink>
       ))}
     </List>

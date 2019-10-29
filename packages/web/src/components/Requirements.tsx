@@ -71,7 +71,7 @@ export default () => {
   `)
 
   return (
-    <Content>
+    <Content id="requirements">
       <H1>Требования к водителям</H1>
       <H2>Если вы проходите по этим 3 пунктам - звоните!</H2>
       <Card>

@@ -78,7 +78,7 @@ export default () => {
   } = data.site!.siteMetadata!.taxiData!
 
   return (
-    <Container>
+    <Container id="contacts">
       <Contacts>
         <H1>Контакты</H1>
         <p>Таксопарк "{brand}"</p>
