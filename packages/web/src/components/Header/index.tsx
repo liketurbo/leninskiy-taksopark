@@ -1,8 +1,7 @@
-import { graphql, useStaticQuery } from "gatsby"
 import React, { useCallback, useState } from "react"
 import styled from "styled-components"
 
-import { Query } from "../../../types/graphqlTypes"
+import useRouter from "../../hooks/useRouter"
 import useScreenSize from "../../hooks/useScreenSize"
 import { CSSContent } from "../Content"
 import PPhone from "../Phone"
@@ -63,39 +62,28 @@ const Phone = styled(PPhone)`
 
 export default () => {
   const mediumScreen = useScreenSize("md")
+  const { location } = useRouter()
   const [navVisible, setNavVisible] = useState(false)
 
   const toggleNav = useCallback(() => {
     setNavVisible(!navVisible)
   }, [navVisible])
 
-  const data = useStaticQuery<Query>(graphql`
-    query {
-      site {
-        siteMetadata {
-          taxiData {
-            brand
-          }
-        }
-      }
-    }
-  `)
-
-  const { brand } = data.site!.siteMetadata!.taxiData!
-
   return (
     <Header>
-      <Logo>{brand}</Logo>
+      <Logo />
       {(mediumScreen || navVisible) && (
         <>
-          <Navigation
-            links={[
-              { title: "Условия", path: "#conditions" },
-              { title: "Требования", path: "#requirements" },
-              { title: "Подключение", path: "/connection" },
-              { title: "Контакты", path: "#contacts" },
-            ]}
-          />
+          {location.pathname === "/" && (
+            <Navigation
+              links={[
+                { title: "Условия", path: "#conditions" },
+                { title: "Требования", path: "#requirements" },
+                { title: "Подключение", path: "/connection" },
+                { title: "Контакты", path: "#contacts" },
+              ]}
+            />
+          )}
           <Phone />
         </>
       )}
