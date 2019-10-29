@@ -17,25 +17,6 @@ const Content = styled(PContent)`
   ${tw`flex flex-col items-center`}
 `
 
-// const Form = styled.form`
-//   ${tw`flex flex-col items-center bg-yellow-dark rounded p-5`}
-
-//   grid-row: 1 / -1;
-//   grid-column: 2;
-
-//   @media (max-width: ${props => props.theme.screens.md}) {
-//     ${tw`w-2/3`}
-
-//     grid-row: 3;
-//     grid-column: 1;
-//     justify-self: center;
-//   }
-
-//   @media (max-width: ${props => props.theme.screens.sm}) {
-//     ${tw`w-full`}
-//   }
-// `
-
 const Form = styled.form`
   ${tw`flex flex-col items-center bg-yellow-dark rounded p-5 w-full sm:w-2/3`}
 `

@@ -1,4 +1,4 @@
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { graphql, navigate, useStaticQuery } from "gatsby"
 import PImg from "gatsby-image"
 import React from "react"
 import styled from "styled-components"
@@ -90,9 +90,7 @@ export default () => {
       </Content>
       <Background>
         <Strong>Подключитесь сегодня: просто оставьте заявку</Strong>
-        <Link to="/connection">
-          <Button>Подключиться</Button>
-        </Link>
+        <Button onClick={() => navigate("/connection")}>Подключиться</Button>
       </Background>
     </>
   )

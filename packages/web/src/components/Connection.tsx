@@ -1,4 +1,4 @@
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { graphql, navigate, useStaticQuery } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 import React from "react"
 import styled from "styled-components"
@@ -12,6 +12,7 @@ import Paragraph from "./Paragraph"
 const Content = styled(PContent)`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
   justify-items: center;
   grid-gap: ${props => props.theme.spacing["6"]};
 
@@ -84,36 +85,34 @@ export default () => {
       <H1>
         Таксопарк {brand} - партнер Яндекс в {city}!
       </H1>
-      <Link to="/connection">
-        <Tile
-          fluid={[
-            "linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75))",
-            (data as any).topLight.fluid,
-          ]}
-          Tag="button"
-        >
-          <H2>Подключение к сервисам такси в {city}</H2>
-          <Paragraph>
-            Минимальная комиссия парка! Ежедневные быстрые выплаты! Выход на
-            линию уже через 15 минут.
-          </Paragraph>
-        </Tile>
-      </Link>
-      <Link to="/connection">
-        <Tile
-          fluid={[
-            "linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75))",
-            (data as any).taxi.fluid,
-          ]}
-          Tag="button"
-        >
-          <H2>Работа на автомобилях таксопарка</H2>
-          <Paragraph>
-            Мы предоставляем Вам новый автомобиль {car}, с нулевым пробегом.
-            Автомобиль на ГАЗу, бензине, брендированный и с лицензией.
-          </Paragraph>
-        </Tile>
-      </Link>
+      <Tile
+        onClick={() => navigate("/connection")}
+        fluid={[
+          "linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75))",
+          (data as any).topLight.fluid,
+        ]}
+        Tag="button"
+      >
+        <H2>Подключение к сервисам такси в {city}</H2>
+        <Paragraph>
+          Минимальная комиссия парка! Ежедневные быстрые выплаты! Выход на линию
+          уже через 15 минут.
+        </Paragraph>
+      </Tile>
+      <Tile
+        onClick={() => navigate("/connection")}
+        fluid={[
+          "linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75))",
+          (data as any).taxi.fluid,
+        ]}
+        Tag="button"
+      >
+        <H2>Работа на автомобилях таксопарка</H2>
+        <Paragraph>
+          Мы предоставляем Вам новый автомобиль {car}, с нулевым пробегом.
+          Автомобиль на ГАЗу, бензине, брендированный и с лицензией.
+        </Paragraph>
+      </Tile>
     </Content>
   )
 }
