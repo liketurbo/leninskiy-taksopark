@@ -11,11 +11,13 @@ const Background = styled(Content)`
   ${tw`bg-grey-lighter py-8`}
 
   display: grid;
+  grid-template-rows: auto repeat(3, 1fr);
   grid-template-columns: repeat(2, 1fr);
   grid-gap: ${props => props.theme.spacing["4"]};
   justify-items: center;
 
   @media (max-width: ${props => props.theme.screens.md}) {
+    grid-template-rows: auto repeat(6, 1fr);
     grid-template-columns: 1fr;
   }
 `
@@ -86,7 +88,7 @@ export default () => {
   `)
 
   return (
-    <Background>
+    <Background id="conditions">
       <H1>Комфортные условия работы</H1>
       <Card>
         <Img {...calc} />
