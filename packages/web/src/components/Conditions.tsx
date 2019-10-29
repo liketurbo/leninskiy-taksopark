@@ -8,7 +8,7 @@ import PH1 from "./H/H1"
 import PH2 from "./H/H2"
 
 const Background = styled(Content)`
-  ${tw`bg-grey-lighter py-8`}
+  ${tw`bg-grey-lighter`}
 
   display: grid;
   grid-template-rows: auto repeat(3, 1fr);

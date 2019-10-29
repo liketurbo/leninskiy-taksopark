@@ -21,7 +21,7 @@ const H2 = styled(PH2)`
 `
 
 const Background = styled(PContent)`
-  ${tw`m-0 py-8 bg-grey-lighter flex flex-wrap items-center justify-around`}
+  ${tw`py-6 bg-grey-lighter flex flex-wrap items-center justify-around`}
 `
 
 const Strong = styled(PH2)`
@@ -35,7 +35,7 @@ const Strong = styled(PH2)`
 `
 
 const Content = styled(PContent)`
-  ${tw`mb-0`}
+  ${tw`pb-0`}
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);

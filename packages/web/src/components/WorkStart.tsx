@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import Content from "./Content"
+import PContent from "./Content"
 import PH1 from "./H/H1"
 import H2 from "./H/H2"
 import List from "./List"
@@ -12,12 +12,12 @@ const H1 = styled(PH1)`
   ${tw`text-center mb-8`}
 `
 
-const Background = styled(Content)`
-  ${tw`bg-grey-lighter pt-8`}
+const Content = styled(PContent)`
+  ${tw`bg-grey-lighter`}
 `
 
 export default () => (
-  <Background>
+  <Content>
     <H1>Как начать работу?</H1>
     <Steps>
       <Step
@@ -56,5 +56,5 @@ export default () => (
         }
       />
     </Steps>
-  </Background>
+  </Content>
 )

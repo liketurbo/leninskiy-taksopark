@@ -10,7 +10,7 @@ import Phone from "./Phone"
 const Footer = styled.footer`
   ${CSSContent}
 
-  ${tw`bg-black text-white m-0 py-4`}
+  ${tw`bg-black text-white`}
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);

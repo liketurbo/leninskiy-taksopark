@@ -13,10 +13,6 @@ import PH2 from "./H/H2"
 import Input from "./Input"
 import List from "./List"
 
-const Background = styled(BackgroundImage)`
-  ${tw`py-4`}
-`
-
 const Content = styled(PContent)`
   display: grid;
   grid-template-rows: repeat(2, auto);
@@ -106,7 +102,7 @@ export default () => {
   const { car, city } = data.site!.siteMetadata!.taxiData!
 
   return (
-    <Background
+    <BackgroundImage
       fluid={[
         "linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75))",
         (data as any).background.fluid,
@@ -144,6 +140,6 @@ export default () => {
           </Paragraph>
         </Form>
       </Content>
-    </Background>
+    </BackgroundImage>
   )
 }

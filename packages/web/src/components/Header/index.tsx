@@ -13,7 +13,7 @@ import PNavigation from "./Navigation"
 const Header = styled.header`
   ${CSSContent}
 
-  ${tw`bg-white m-0 shadow fixed z-20`}
+  ${tw`bg-white py-0 shadow fixed z-20`}
   
   top: 0;
   left: 0;

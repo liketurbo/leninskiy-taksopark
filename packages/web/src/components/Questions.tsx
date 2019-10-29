@@ -11,10 +11,6 @@ import PH1 from "./H/H1"
 import PH2 from "./H/H2"
 import Input from "./Input"
 
-const Background = styled(BackgroundImage)`
-  ${tw`py-4`}
-`
-
 const Content = styled(PContent)`
   ${tw`flex flex-col items-center`}
 `
@@ -70,7 +66,7 @@ export default () => {
   `)
 
   return (
-    <Background
+    <BackgroundImage
       fluid={[
         "linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75))",
         data,
@@ -92,6 +88,6 @@ export default () => {
           <Button type="submit">Получить консультацию</Button>
         </Form>
       </Content>
-    </Background>
+    </BackgroundImage>
   )
 }

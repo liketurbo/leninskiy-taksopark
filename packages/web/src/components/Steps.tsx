@@ -8,6 +8,10 @@ const Steps = styled.div`
 const SStep = styled.div<{ index: number }>`
   ${tw`relative w-full sm:w-4/5 md:w-1/2 pb-8`}
 
+  :last-child {
+    ${tw`pb-0`}
+  }
+
   ::before {
     ${tw`absolute bg-black`}
 
