@@ -1,1 +1,1 @@
-declare var tw: any
+declare const tw: any
