@@ -1,2 +1,3 @@
-export default (rem: number) =>
-  rem * parseFloat(getComputedStyle(document.documentElement).fontSize)
+const FONT_SIZE = 16
+
+export default (rem: number) => rem * FONT_SIZE
