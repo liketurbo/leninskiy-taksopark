@@ -44,14 +44,10 @@ const Navigation = styled(PNavigation)`
 `
 
 const Burger = styled(PBurger)`
-  ${tw`flex`}
+  ${tw`flex md:hidden`}
 
   grid-area: burger;
   justify-self: end;
-
-  @media (min-width: ${props => props.theme.screens.md}) {
-    ${tw`hidden`}
-  }
 `
 
 const Phone = styled(PPhone)`
