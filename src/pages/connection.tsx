@@ -70,7 +70,6 @@ export default () => {
         <Form onSubmit={handleSubmit(onSubmit)}>
           <H2>
             Подключитесь к официальному партнеру Яндекс Такси в городе {city}.
-            Оставляйте заявку, мы перезвоним!
           </H2>
           <TextInput name="name" ref={register} placeholder="Ваше имя" />
           <PhoneInput
