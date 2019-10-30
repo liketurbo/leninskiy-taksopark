@@ -2,7 +2,18 @@ import React, { BaseHTMLAttributes, useState } from "react"
 import styled, { css } from "styled-components"
 
 const Container = styled.div`
-  ${tw`cursor-pointer flex flex-col justify-around w-4 h-4`}
+  ${tw`relative cursor-pointer flex flex-col justify-around w-4 h-4`}
+
+  ::before {
+    ${tw`absolute`}
+
+    content: "";
+
+    top: -${props => props.theme.spacing[4]};
+    right: -${props => props.theme.spacing[4]};
+    bottom: -${props => props.theme.spacing[4]};
+    left: -${props => props.theme.spacing[4]};
+  }
 `
 
 const Bar = styled.div<{ active: boolean }>`
