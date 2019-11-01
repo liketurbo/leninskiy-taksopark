@@ -50,7 +50,7 @@ const onSubmit = (data: {
 }
 
 export default () => {
-  const { register, handleSubmit } = useForm()
+  const { register, handleSubmit, setValue } = useForm()
   const {
     background: { fluid: data },
   } = useStaticQuery(graphql`
@@ -80,9 +80,18 @@ export default () => {
           <TextInput name="name" ref={register} placeholder="Ваше имя" />
           <PhoneInput
             mask="8 (999) 999-99-99"
-            name="phone"
             placeholder="Ваш номер"
-            ref={register}
+            ref={register({ name: "phone" })}
+            onChange={({ target }) =>
+              setValue(
+                "phone",
+                "+7" +
+                  target.value
+                    .match(/\d/g)!
+                    .slice(1)
+                    .join("")
+              )
+            }
           />
           <TextArea name="question" ref={register} placeholder="Ваш вопрос" />
           <Button type="submit">Получить консультацию</Button>
