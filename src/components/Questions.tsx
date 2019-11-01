@@ -1,10 +1,14 @@
 import { graphql, useStaticQuery } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
-import React from "react"
+import gql from "graphql-tag"
+import React, { useState } from "react"
 import useForm from "react-hook-form"
 import InputMask from "react-input-mask"
 import styled from "styled-components"
 
+import { useMutation } from "@apollo/react-hooks"
+
+import extractNumbers from "../utils/extractNumbers"
 import Button from "./Button"
 import PContent from "./Content"
 import PH1 from "./H/H1"
@@ -40,17 +44,19 @@ const TextArea = styled.textarea`
 
   height: 6em;
 `
-const onSubmit = (data: {
-  name?: string
-  phone?: number
-  question?: string
-}) => {
-  //eslint-disable-next-line no-console
-  console.log(data)
-}
+
+const addQuestionMutation = gql`
+  mutation($input: QuestionInput!) {
+    addQuestion(input: $input)
+  }
+`
 
 export default () => {
-  const { register, handleSubmit, setValue } = useForm()
+  const [addQuestionFunc] = useMutation(addQuestionMutation)
+
+  const { register, handleSubmit, reset } = useForm()
+  const [phoneNumberValue, setPhoneNumberValue] = useState("")
+
   const {
     background: { fluid: data },
   } = useStaticQuery(graphql`
@@ -76,22 +82,34 @@ export default () => {
       <Content>
         <H1>У вас есть вопросы?</H1>
         <H2>Получите консультацию по телефону. Это бесплатно 😄.</H2>
-        <Form onSubmit={handleSubmit(onSubmit)}>
+        <Form
+          onSubmit={handleSubmit(async ({ name, phone, question }) => {
+            try {
+              phone = `${extractNumbers(phone)}`
+
+              if (phone) {
+                phone = `+7${phone.slice(1)}`
+              }
+
+              await addQuestionFunc({
+                variables: { input: { name, phone, question } },
+              })
+
+              reset()
+              setPhoneNumberValue("")
+            } catch (err) {
+              console.log(err.message)
+            }
+          })}
+        >
           <TextInput name="name" ref={register} placeholder="Ваше имя" />
           <PhoneInput
+            name="phone"
             mask="8 (999) 999-99-99"
             placeholder="Ваш номер"
-            ref={register({ name: "phone" })}
-            onChange={({ target }) =>
-              setValue(
-                "phone",
-                "+7" +
-                  target.value
-                    .match(/\d/g)!
-                    .slice(1)
-                    .join("")
-              )
-            }
+            value={phoneNumberValue}
+            onChange={e => setPhoneNumberValue(e.target.value)}
+            inputRef={register}
           />
           <TextArea name="question" ref={register} placeholder="Ваш вопрос" />
           <Button type="submit">Получить консультацию</Button>

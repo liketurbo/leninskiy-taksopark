@@ -1,11 +1,15 @@
 import { graphql, useStaticQuery } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
-import React from "react"
+import gql from "graphql-tag"
+import React, { useState } from "react"
 import useForm from "react-hook-form"
 import InputMask from "react-input-mask"
 import styled from "styled-components"
 
+import { useMutation } from "@apollo/react-hooks"
+
 import { Query } from "../../types/graphqlTypes"
+import extractNumbers from "../utils/extractNumbers"
 import PButton from "./Button"
 import PContent from "./Content"
 import PH1 from "./H/H1"
@@ -68,17 +72,18 @@ const Paragraph = styled.p`
   ${tw`text-sm font-light text-center mt-4`}
 `
 
-const onSubmit = (data: {
-  name?: string
-  phone?: number
-  question?: string
-}) => {
-  //eslint-disable-next-line no-console
-  console.log(data)
-}
+const addRequestMutation = gql`
+  mutation($input: RequestInput!) {
+    addRequest(input: $input)
+  }
+`
 
 export default () => {
-  const { register, handleSubmit, setValue } = useForm()
+  const [addRequestFunc] = useMutation(addRequestMutation)
+
+  const { register, handleSubmit, reset } = useForm()
+  const [phoneNumberValue, setPhoneNumberValue] = useState("")
+
   const data = useStaticQuery<Query>(graphql`
     query {
       site {
@@ -122,26 +127,38 @@ export default () => {
             <li>Фирменная оклейка</li>
           </List>
         </ListH2>
-        <Form onSubmit={handleSubmit(onSubmit)}>
+        <Form
+          onSubmit={handleSubmit(async ({ name, phone }) => {
+            try {
+              phone = `${extractNumbers(phone)}`
+
+              if (phone) {
+                phone = `+7${phone.slice(1)}`
+              }
+
+              await addRequestFunc({
+                variables: { input: { name, phone } },
+              })
+
+              reset()
+              setPhoneNumberValue("")
+            } catch (err) {
+              console.log(err.message)
+            }
+          })}
+        >
           <FormH2>
             Хотите начать работать уже сегодня? Оставляйте заявку, мы
             перезвоним!
           </FormH2>
           <TextInput name="name" ref={register} placeholder="Ваше имя" />
           <PhoneInput
+            name="phone"
             mask="8 (999) 999-99-99"
             placeholder="Ваш номер"
-            ref={register({ name: "phone" })}
-            onChange={({ target }) =>
-              setValue(
-                "phone",
-                "+7" +
-                  target.value
-                    .match(/\d/g)!
-                    .slice(1)
-                    .join("")
-              )
-            }
+            value={phoneNumberValue}
+            onChange={e => setPhoneNumberValue(e.target.value)}
+            inputRef={register}
           />
           <Button type="submit">Отправить</Button>
           <Paragraph>
