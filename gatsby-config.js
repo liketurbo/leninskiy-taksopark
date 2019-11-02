@@ -1,19 +1,21 @@
 const brand = "Рено перевозки"
 const city = "Сочи"
+const url = "reno-perevozki.ru"
 
 module.exports = {
   siteMetadata: {
     title: `Таксопарк ${brand}`,
     author: "Ramzan Chasygov <theliketurbo@gmail.com>",
     description: `Подключитесь к Яндекс.Такси в городе ${city}. Получите первые деньги с заказов уже сегодня. Стабильный заработная плата. Гибкий график. Самая маленькая комиссия автопарка. Работа на наших автомобилях - требуются водители!`,
+    siteUrl: `https://${url}`,
     taxiData: {
       brand,
       city,
+      url,
       car: "Renault Logan 2019",
       owner: "ИП Часыгов Ахмед Абдулмажитович",
       inn: "060200202147",
       phone: "+79388780606",
-      url: "reno-perevozki.ru",
       email: "ahmed.aa15613541@yandex.ru",
       address: "РФ, Краснодарский край, г. Сочи, ул. Петрозаводская, д. 26/2",
       coordinates: [43.460418, 39.925793],
@@ -21,6 +23,7 @@ module.exports = {
     },
   },
   plugins: [
+    "gatsby-plugin-sitemap",
     "gatsby-plugin-tailwindcss",
     "gatsby-plugin-styled-components",
     "gatsby-plugin-sharp",
