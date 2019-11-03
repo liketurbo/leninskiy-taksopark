@@ -13,7 +13,6 @@ import PContent from "../components/Content"
 import H1 from "../components/H/H1"
 import H2 from "../components/H/H2"
 import Input from "../components/Input"
-import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import extractNumbers from "../utils/extractNumbers"
 
@@ -68,7 +67,7 @@ export default () => {
   const { city } = site!.siteMetadata!.taxiData!
 
   return (
-    <Layout>
+    <>
       <SEO title="Подключение" />
       <Content>
         <H1>Заявка на подключение</H1>
@@ -111,6 +110,6 @@ export default () => {
           </Paragraph>
         </Form>
       </Content>
-    </Layout>
+    </>
   )
 }

@@ -38,7 +38,7 @@ export default ({ ...rest }: BaseHTMLAttributes<any>) => {
           {brand}
         </AnchorLink>
       ) : (
-        <Link onClick={() => window.history.back()}>{brand}</Link>
+        <Link onClick={() => window.history.back()}>Назад</Link>
       )}
     </Logo>
   )

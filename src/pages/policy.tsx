@@ -6,7 +6,6 @@ import { Query } from "../../types/graphqlTypes"
 import Content from "../components/Content"
 import PH1 from "../components/H/H1"
 import H2 from "../components/H/H2"
-import Layout from "../components/Layout"
 import List from "../components/List"
 import Paragraph from "../components/Paragraph"
 import SEO from "../components/SEO"
@@ -33,7 +32,7 @@ export default () => {
   const { address, brand, email, url } = site!.siteMetadata!.taxiData!
 
   return (
-    <Layout>
+    <>
       <SEO title="Политика конфиденциальности" />
       <Content>
         <H1>Политика в отношении обработки и защиты персональных данных.</H1>
@@ -420,6 +419,6 @@ export default () => {
           {email}
         </Paragraph>
       </Content>
-    </Layout>
+    </>
   )
 }

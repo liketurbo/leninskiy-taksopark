@@ -3,9 +3,10 @@ import styled, { createGlobalStyle } from "styled-components"
 
 import Footer from "./Footer"
 import Header from "./Header"
+import Transition from "./Transition"
 
 const Padding = styled.div`
-  ${tw`pt-14 flex-1`}
+  ${tw`pt-14`}
 `
 
 const GlobalStyle = createGlobalStyle`
@@ -18,7 +19,11 @@ export default ({ children }: { children: ReactNode }) => (
   <>
     <GlobalStyle />
     <Header />
-    <Padding>{children}</Padding>
-    <Footer />
+    <Padding>
+      <Transition>
+        {children}
+        <Footer />
+      </Transition>
+    </Padding>
   </>
 )

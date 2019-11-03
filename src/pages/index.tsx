@@ -3,7 +3,6 @@ import React from "react"
 import Conditions from "../components/Conditions"
 import Connection from "../components/Connection"
 import Contacts from "../components/Contacts"
-import Layout from "../components/Layout"
 import Learning from "../components/Learning"
 import NewCars from "../components/NewCars"
 import Questions from "../components/Questions"
@@ -14,7 +13,7 @@ import TaxiPark from "../components/TaxiPark"
 import WorkStart from "../components/WorkStart"
 
 export default () => (
-  <Layout>
+  <>
     <SEO title="Главная" />
     <NewCars />
     <Connection />
@@ -26,5 +25,5 @@ export default () => (
     <Learning />
     <Questions />
     <Contacts />
-  </Layout>
+  </>
 )

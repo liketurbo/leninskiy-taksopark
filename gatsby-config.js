@@ -23,6 +23,12 @@ module.exports = {
     },
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-layout",
+      options: {
+        component: `${__dirname}/src/components/Layout`,
+      },
+    },
     "gatsby-plugin-sitemap",
     "gatsby-plugin-tailwindcss",
     "gatsby-plugin-styled-components",
