@@ -1,3 +1,6 @@
 import { createContext } from "react"
 
-export default createContext(null)
+const context = createContext(null)
+
+export const RouterProvider = context.Provider
+export default context
