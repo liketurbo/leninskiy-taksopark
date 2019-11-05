@@ -9,6 +9,7 @@ import styled from "styled-components"
 import { useMutation } from "@apollo/react-hooks"
 
 import { Query } from "../../types/graphqlTypes"
+import useToast from "../hooks/useToast"
 import extractNumbers from "../utils/extractNumbers"
 import PButton from "./Button"
 import PContent from "./Content"
@@ -84,6 +85,8 @@ export default () => {
   const { register, handleSubmit, reset } = useForm()
   const [phoneNumberValue, setPhoneNumberValue] = useState("")
 
+  const toast = useToast()
+
   const data = useStaticQuery<Query>(graphql`
     query {
       site {
@@ -142,8 +145,12 @@ export default () => {
 
               reset()
               setPhoneNumberValue("")
+
+              toast.show("Ваша заявка отправлена.", "success")
             } catch (err) {
               console.log(err.message)
+
+              toast.show("Ну удалось отправить заявку", "danger")
             }
           })}
         >

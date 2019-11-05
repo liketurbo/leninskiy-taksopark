@@ -6,15 +6,14 @@ import { ThemeProvider } from "styled-components"
 import RouterContext from "./routerContext"
 import theme from "./theme"
 import apolloClient from "./apolloClient"
+import { ToastProvider } from "./toastContext"
 
 export default ({ element }) => (
   <ApolloProvider client={apolloClient}>
     <ThemeProvider {...{ theme }}>
       <Location>
         {history => (
-          <RouterContext.Provider value={history}>
-            {element}
-          </RouterContext.Provider>
+            <ToastProvider>{element}</ToastProvider>
         )}
       </Location>
     </ThemeProvider>

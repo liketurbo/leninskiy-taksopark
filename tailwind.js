@@ -707,10 +707,7 @@ module.exports = {
   */
 
   negativeMargin: {
-    ...Object.keys(spacing).reduce((acc, key) => {
-      acc[key] = `-${spacing[key]}`
-      return acc
-    }, {}),
+    ...spacing,
   },
 
   /*
