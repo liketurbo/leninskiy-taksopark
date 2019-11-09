@@ -5,8 +5,8 @@ import useForm from "react-hook-form"
 import InputMask from "react-input-mask"
 import styled from "styled-components"
 
+import Button from "@-taxi-parks-ui/button"
 import { useMutation } from "@apollo/react-hooks"
-import Button from "@taxi-parks/ui/packages/Button"
 
 import { Query } from "../../types/graphqlTypes"
 import PContent from "../components/Content"
