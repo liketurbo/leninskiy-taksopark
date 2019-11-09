@@ -6,9 +6,9 @@ import InputMask from "react-input-mask"
 import styled from "styled-components"
 
 import { useMutation } from "@apollo/react-hooks"
+import Button from "@taxi-parks/ui/packages/Button"
 
 import { Query } from "../../types/graphqlTypes"
-import PButton from "../components/Button"
 import PContent from "../components/Content"
 import H1 from "../components/H/H1"
 import H2 from "../components/H/H2"
@@ -22,10 +22,6 @@ const Content = styled(PContent)`
 
 const Form = styled.form`
   ${tw`flex flex-col items-center bg-yellow-dark rounded p-5 w-full sm:w-2/3`}
-`
-
-const Button = styled(PButton)`
-  ${tw`bg-red hover:bg-red-dark text-grey-lightest`}
 `
 
 const TextInput = styled.input`

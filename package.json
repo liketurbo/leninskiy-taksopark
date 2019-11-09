@@ -1,7 +1,7 @@
 {
   "name": "@taxi-parks/reno-perevozki",
   "version": "1.0.0",
-	"private": true,
+  "private": true,
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop -p 3000",
@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@apollo/react-hooks": "3.1.3",
+    "@taxi-parks/ui": "1.0.0",
     "apollo-boost": "0.4.4",
     "babel-plugin-styled-components": "1.10.6",
     "gatsby": "2.17.7",

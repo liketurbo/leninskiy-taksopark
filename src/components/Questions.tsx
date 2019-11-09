@@ -7,9 +7,9 @@ import InputMask from "react-input-mask"
 import styled from "styled-components"
 
 import { useMutation } from "@apollo/react-hooks"
+import Button from "@taxi-parks/ui/packages/Button"
 
 import extractNumbers from "../utils/extractNumbers"
-import Button from "./Button"
 import PContent from "./Content"
 import PH1 from "./H/H1"
 import PH2 from "./H/H2"

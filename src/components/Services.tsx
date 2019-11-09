@@ -3,7 +3,8 @@ import PImg from "gatsby-image"
 import React from "react"
 import styled from "styled-components"
 
-import PButton from "./Button"
+import PButton from "@taxi-parks/ui/packages/Button"
+
 import PContent from "./Content"
 import PH1 from "./H/H1"
 import PH2 from "./H/H2"

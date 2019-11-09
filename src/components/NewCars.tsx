@@ -7,11 +7,11 @@ import InputMask from "react-input-mask"
 import styled from "styled-components"
 
 import { useMutation } from "@apollo/react-hooks"
+import Button from "@taxi-parks/ui/packages/Button"
 
 import { Query } from "../../types/graphqlTypes"
 import useToast from "../hooks/useToast"
 import extractNumbers from "../utils/extractNumbers"
-import PButton from "./Button"
 import PContent from "./Content"
 import PH1 from "./H/H1"
 import PH2 from "./H/H2"
@@ -55,10 +55,6 @@ const Form = styled.form`
     grid-column: 1;
     justify-self: center;
   }
-`
-
-const Button = styled(PButton)`
-  ${tw`bg-red hover:bg-red-dark text-grey-lightest`}
 `
 
 const TextInput = styled.input`
@@ -167,7 +163,9 @@ export default () => {
             onChange={e => setPhoneNumberValue(e.target.value)}
             inputRef={register}
           />
-          <Button type="submit">Отправить</Button>
+          <Button variant="danger" type="submit">
+            Отправить
+          </Button>
           <Paragraph>
             Отправляя заявку, вы соглашаетесь с правилами обработки персональных
             данных
