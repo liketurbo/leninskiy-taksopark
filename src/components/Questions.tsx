@@ -3,18 +3,18 @@ import { graphql, useStaticQuery } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 import gql from "graphql-tag"
 import React from "react"
-import InputMask from "react-input-mask"
 import styled from "styled-components"
 import { object as yupObject, string as yupString } from "yup"
 
 import Button from "@-taxi-parks-ui/button"
+import TextInput from "@-taxi-parks-ui/input-default"
+import PhoneInput from "@-taxi-parks-ui/input-phone"
 import { useMutation } from "@apollo/react-hooks"
 
 import useToast from "../hooks/useToast"
 import PContent from "./Content"
 import PH1 from "./H/H1"
 import PH2 from "./H/H2"
-import Input from "./Input"
 
 const Content = styled(PContent)`
   ${tw`flex flex-col items-center`}
@@ -30,20 +30,6 @@ const H2 = styled(PH2)`
 
 const Form = styled.form`
   ${tw`flex flex-col items-center p-5 w-full sm:w-2/3`}
-`
-
-const TextInput = styled.input`
-  ${Input}
-`
-
-const PhoneInput = styled(InputMask)`
-  ${Input}
-`
-
-const TextArea = styled.textarea`
-  ${Input}
-
-  height: 6em;
 `
 
 const addQuestionMutation = gql`
@@ -116,12 +102,12 @@ export default () => {
               />
               <PhoneInput
                 name="phone"
-                mask="8 (999) 999-99-99"
                 placeholder="Ваш номер"
                 value={values.phone}
                 onChange={handleChange}
               />
-              <TextArea
+              <TextInput
+                type="area"
                 name="question"
                 placeholder="Ваш вопрос"
                 value={values.question}

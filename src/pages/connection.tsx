@@ -2,18 +2,18 @@ import { Formik } from "formik"
 import { graphql, useStaticQuery } from "gatsby"
 import gql from "graphql-tag"
 import React from "react"
-import InputMask from "react-input-mask"
 import styled from "styled-components"
 import { object as yupObject, string as yupString } from "yup"
 
 import Button from "@-taxi-parks-ui/button"
+import TextInput from "@-taxi-parks-ui/input-default"
+import PhoneInput from "@-taxi-parks-ui/input-phone"
 import { useMutation } from "@apollo/react-hooks"
 
 import { Query } from "../../types/graphqlTypes"
 import PContent from "../components/Content"
 import H1 from "../components/H/H1"
 import H2 from "../components/H/H2"
-import Input from "../components/Input"
 import SEO from "../components/SEO"
 import useToast from "../hooks/useToast"
 
@@ -23,14 +23,6 @@ const Content = styled(PContent)`
 
 const Form = styled.form`
   ${tw`flex flex-col items-center bg-yellow-dark rounded p-5 w-full sm:w-2/3`}
-`
-
-const TextInput = styled.input`
-  ${Input}
-`
-
-const PhoneInput = styled(InputMask)`
-  ${Input}
 `
 
 const Paragraph = styled.p`
@@ -102,7 +94,6 @@ export default () => {
               />
               <PhoneInput
                 name="phone"
-                mask="8 (999) 999-99-99"
                 placeholder="Ваш номер"
                 value={values.phone}
                 onChange={handleChange}
