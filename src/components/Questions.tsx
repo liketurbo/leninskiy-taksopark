@@ -1,15 +1,16 @@
+import { Formik } from "formik"
 import { graphql, useStaticQuery } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 import gql from "graphql-tag"
-import React, { useState } from "react"
-import useForm from "react-hook-form"
+import React from "react"
 import InputMask from "react-input-mask"
 import styled from "styled-components"
+import { object as yupObject, string as yupString } from "yup"
 
 import Button from "@-taxi-parks-ui/button"
 import { useMutation } from "@apollo/react-hooks"
 
-import extractNumbers from "../utils/extractNumbers"
+import useToast from "../hooks/useToast"
 import PContent from "./Content"
 import PH1 from "./H/H1"
 import PH2 from "./H/H2"
@@ -54,8 +55,7 @@ const addQuestionMutation = gql`
 export default () => {
   const [addQuestionFunc] = useMutation(addQuestionMutation)
 
-  const { register, handleSubmit, reset } = useForm()
-  const [phoneNumberValue, setPhoneNumberValue] = useState("")
+  const toast = useToast()
 
   const {
     background: { fluid: data },
@@ -82,38 +82,55 @@ export default () => {
       <Content>
         <H1>У вас есть вопросы?</H1>
         <H2>Получите консультацию по телефону. Это бесплатно 😄.</H2>
-        <Form
-          onSubmit={handleSubmit(async ({ name, phone, question }) => {
-            try {
-              phone = `${extractNumbers(phone)}`
-
-              if (phone) {
-                phone = `+7${phone.slice(1)}`
-              }
-
-              await addQuestionFunc({
-                variables: { input: { name, phone, question } },
-              })
-
-              reset()
-              setPhoneNumberValue("")
-            } catch (err) {
-              console.log(err.message)
-            }
+        <Formik
+          initialValues={{ name: "", phone: "", question: "" }}
+          validationSchema={yupObject().shape({
+            name: yupString()
+              .trim()
+              .matches(/^[А-Яа-яA-Za-z\- ]{2,}$/)
+              .required(),
+            phone: yupString()
+              .trim()
+              .matches(/^8\ \(\d{3}\)\ \d{3}\-\d{2}\-\d{2}$/)
+              .required(),
+            question: yupString()
+              .trim()
+              .required(),
           })}
+          onSubmit={async ({ name, phone }) => {
+            try {
+              await addQuestionFunc({ variables: { input: { name, phone } } })
+              toast.show("Заявка успешно отправлена", "success")
+            } catch {
+              toast.show("Не удалось отправить заявку", "danger")
+            }
+          }}
         >
-          <TextInput name="name" ref={register} placeholder="Ваше имя" />
-          <PhoneInput
-            name="phone"
-            mask="8 (999) 999-99-99"
-            placeholder="Ваш номер"
-            value={phoneNumberValue}
-            onChange={e => setPhoneNumberValue(e.target.value)}
-            inputRef={register}
-          />
-          <TextArea name="question" ref={register} placeholder="Ваш вопрос" />
-          <Button type="submit">Получить консультацию</Button>
-        </Form>
+          {({ values, handleChange, handleSubmit }) => (
+            <Form onSubmit={handleSubmit}>
+              <TextInput
+                name="name"
+                placeholder="Ваше имя"
+                value={values.name}
+                onChange={handleChange}
+              />
+              <PhoneInput
+                name="phone"
+                mask="8 (999) 999-99-99"
+                placeholder="Ваш номер"
+                value={values.phone}
+                onChange={handleChange}
+              />
+              <TextArea
+                name="question"
+                placeholder="Ваш вопрос"
+                value={values.question}
+                onChange={handleChange}
+              />
+              <Button type="submit">Получить консультацию</Button>
+            </Form>
+          )}
+        </Formik>
       </Content>
     </BackgroundImage>
   )

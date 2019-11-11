@@ -1,17 +1,17 @@
+import { Formik } from "formik"
 import { graphql, useStaticQuery } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 import gql from "graphql-tag"
-import React, { useState } from "react"
-import useForm from "react-hook-form"
+import React from "react"
 import InputMask from "react-input-mask"
 import styled from "styled-components"
+import { object as yupObject, string as yupString } from "yup"
 
 import Button from "@-taxi-parks-ui/button"
 import { useMutation } from "@apollo/react-hooks"
 
 import { Query } from "../../types/graphqlTypes"
 import useToast from "../hooks/useToast"
-import extractNumbers from "../utils/extractNumbers"
 import PContent from "./Content"
 import PH1 from "./H/H1"
 import PH2 from "./H/H2"
@@ -78,9 +78,6 @@ const addRequestMutation = gql`
 export default () => {
   const [addRequestFunc] = useMutation(addRequestMutation)
 
-  const { register, handleSubmit, reset } = useForm()
-  const [phoneNumberValue, setPhoneNumberValue] = useState("")
-
   const toast = useToast()
 
   const data = useStaticQuery<Query>(graphql`
@@ -126,51 +123,56 @@ export default () => {
             <li>Фирменная оклейка</li>
           </List>
         </ListH2>
-        <Form
-          onSubmit={handleSubmit(async ({ name, phone }) => {
-            try {
-              phone = `${extractNumbers(phone)}`
-
-              if (phone) {
-                phone = `+7${phone.slice(1)}`
-              }
-
-              await addRequestFunc({
-                variables: { input: { name, phone } },
-              })
-
-              reset()
-              setPhoneNumberValue("")
-
-              toast.show("Ваша заявка отправлена.", "success")
-            } catch (err) {
-              console.log(err.message)
-
-              toast.show("Ну удалось отправить заявку", "danger")
-            }
+        <Formik
+          initialValues={{ name: "", phone: "" }}
+          validationSchema={yupObject().shape({
+            name: yupString()
+              .trim()
+              .matches(/^[А-Яа-яA-Za-z\- ]{2,}$/)
+              .required(),
+            phone: yupString()
+              .trim()
+              .matches(/^8\ \(\d{3}\)\ \d{3}\-\d{2}\-\d{2}$/)
+              .required(),
           })}
+          onSubmit={async ({ name, phone }) => {
+            try {
+              await addRequestFunc({ variables: { input: { name, phone } } })
+              toast.show("Заявка успешно отправлена", "success")
+            } catch {
+              toast.show("Не удалось отправить заявку", "danger")
+            }
+          }}
         >
-          <FormH2>
-            Хотите начать работать уже сегодня? Оставляйте заявку, мы
-            перезвоним!
-          </FormH2>
-          <TextInput name="name" ref={register} placeholder="Ваше имя" />
-          <PhoneInput
-            name="phone"
-            mask="8 (999) 999-99-99"
-            placeholder="Ваш номер"
-            value={phoneNumberValue}
-            onChange={e => setPhoneNumberValue(e.target.value)}
-            inputRef={register}
-          />
-          <Button variant="danger" type="submit">
-            Отправить
-          </Button>
-          <Paragraph>
-            Отправляя заявку, вы соглашаетесь с правилами обработки персональных
-            данных
-          </Paragraph>
-        </Form>
+          {({ values, handleChange, handleSubmit }) => (
+            <Form onSubmit={handleSubmit}>
+              <FormH2>
+                Хотите начать работать уже сегодня? Оставляйте заявку, мы
+                перезвоним!
+              </FormH2>
+              <TextInput
+                name="name"
+                placeholder="Ваше имя"
+                value={values.name}
+                onChange={handleChange}
+              />
+              <PhoneInput
+                name="phone"
+                mask="8 (999) 999-99-99"
+                placeholder="Ваш номер"
+                value={values.phone}
+                onChange={handleChange}
+              />
+              <Button variant="danger" type="submit">
+                Отправить
+              </Button>
+              <Paragraph>
+                Отправляя заявку, вы соглашаетесь с правилами обработки
+                персональных данных
+              </Paragraph>
+            </Form>
+          )}
+        </Formik>
       </Content>
     </BackgroundImage>
   )

@@ -1,9 +1,10 @@
+import { Formik } from "formik"
 import { graphql, useStaticQuery } from "gatsby"
 import gql from "graphql-tag"
-import React, { useState } from "react"
-import useForm from "react-hook-form"
+import React from "react"
 import InputMask from "react-input-mask"
 import styled from "styled-components"
+import { object as yupObject, string as yupString } from "yup"
 
 import Button from "@-taxi-parks-ui/button"
 import { useMutation } from "@apollo/react-hooks"
@@ -14,7 +15,7 @@ import H1 from "../components/H/H1"
 import H2 from "../components/H/H2"
 import Input from "../components/Input"
 import SEO from "../components/SEO"
-import extractNumbers from "../utils/extractNumbers"
+import useToast from "../hooks/useToast"
 
 const Content = styled(PContent)`
   ${tw`flex flex-col items-center`}
@@ -45,8 +46,7 @@ const addRequestMutation = gql`
 export default () => {
   const [addRequestFunc] = useMutation(addRequestMutation)
 
-  const { register, handleSubmit, reset } = useForm()
-  const [phoneNumberValue, setPhoneNumberValue] = useState("")
+  const toast = useToast()
 
   const { site } = useStaticQuery<Query>(graphql`
     query {
@@ -67,44 +67,56 @@ export default () => {
       <SEO title="Подключение" />
       <Content>
         <H1>Заявка на подключение</H1>
-        <Form
-          onSubmit={handleSubmit(async ({ name, phone }) => {
-            try {
-              phone = `${extractNumbers(phone)}`
-
-              if (phone) {
-                phone = `+7${phone.slice(1)}`
-              }
-
-              await addRequestFunc({
-                variables: { input: { name, phone } },
-              })
-
-              reset()
-              setPhoneNumberValue("")
-            } catch (err) {
-              console.log(err.message)
-            }
+        <Formik
+          initialValues={{ name: "", phone: "" }}
+          validationSchema={yupObject().shape({
+            name: yupString()
+              .trim()
+              .matches(/^[А-Яа-яA-Za-z\- ]{2,}$/)
+              .required(),
+            phone: yupString()
+              .trim()
+              .matches(/^8\ \(\d{3}\)\ \d{3}\-\d{2}\-\d{2}$/)
+              .required(),
           })}
+          onSubmit={async ({ name, phone }) => {
+            try {
+              await addRequestFunc({ variables: { input: { name, phone } } })
+              toast.show("Заявка успешно отправлена", "success")
+            } catch {
+              toast.show("Не удалось отправить заявку", "danger")
+            }
+          }}
         >
-          <H2>
-            Подключитесь к официальному партнеру Яндекс Такси в городе {city}.
-          </H2>
-          <TextInput name="name" ref={register} placeholder="Ваше имя" />
-          <PhoneInput
-            name="phone"
-            mask="8 (999) 999-99-99"
-            placeholder="Ваш номер"
-            value={phoneNumberValue}
-            onChange={e => setPhoneNumberValue(e.target.value)}
-            inputRef={register}
-          />
-          <Button type="submit">Отправить</Button>
-          <Paragraph>
-            Отправляя заявку, вы соглашаетесь с правилами обработки персональных
-            данных
-          </Paragraph>
-        </Form>
+          {({ values, handleChange, handleSubmit }) => (
+            <Form onSubmit={handleSubmit}>
+              <H2>
+                Подключитесь к официальному партнеру Яндекс Такси в городе{" "}
+                {city}.
+              </H2>
+              <TextInput
+                name="name"
+                placeholder="Ваше имя"
+                value={values.name}
+                onChange={handleChange}
+              />
+              <PhoneInput
+                name="phone"
+                mask="8 (999) 999-99-99"
+                placeholder="Ваш номер"
+                value={values.phone}
+                onChange={handleChange}
+              />
+              <Button variant="danger" type="submit">
+                Отправить
+              </Button>
+              <Paragraph>
+                Отправляя заявку, вы соглашаетесь с правилами обработки
+                персональных данных
+              </Paragraph>
+            </Form>
+          )}
+        </Formik>
       </Content>
     </>
   )
