@@ -7,8 +7,8 @@ import styled from "styled-components"
 import { object as yupObject, string as yupString } from "yup"
 
 import Button from "@-taxi-parks-ui/button"
-import TextInput from "@-taxi-parks-ui/input-default"
-import PhoneInput from "@-taxi-parks-ui/input-phone"
+import InputDefault from "@-taxi-parks-ui/input-default"
+import InputPhone from "@-taxi-parks-ui/input-phone"
 import { useMutation } from "@apollo/react-hooks"
 
 import { Query } from "../../types/graphqlTypes"
@@ -120,12 +120,15 @@ export default () => {
           validationSchema={yupObject().shape({
             name: yupString()
               .trim()
-              .matches(/^[А-Яа-яA-Za-z\- ]{2,}$/)
-              .required(),
+              .matches(/^[А-Яа-яA-Za-z\- ]{2,}$/, "Введите настоящее имя.")
+              .required("Обязательное поле."),
             phone: yupString()
               .trim()
-              .matches(/^8\ \(\d{3}\)\ \d{3}\-\d{2}\-\d{2}$/)
-              .required(),
+              .matches(
+                /^8\ \(\d{3}\)\ \d{3}\-\d{2}\-\d{2}$/,
+                "Неправильный формат номера."
+              )
+              .required("Обязательное поле."),
           })}
           onSubmit={async ({ name, phone }) => {
             try {
@@ -136,25 +139,40 @@ export default () => {
             }
           }}
         >
-          {({ values, handleChange, handleSubmit }) => (
+          {({
+            errors,
+            isValid,
+            isSubmitting,
+            handleChange,
+            handleSubmit,
+            values,
+          }) => (
             <Form onSubmit={handleSubmit}>
               <FormH2>
                 Хотите начать работать уже сегодня? Оставляйте заявку, мы
                 перезвоним!
               </FormH2>
-              <TextInput
+              <InputDefault
+                disabled={isSubmitting}
+                error={errors.name}
                 name="name"
+                onChange={handleChange}
                 placeholder="Ваше имя"
                 value={values.name}
-                onChange={handleChange}
               />
-              <PhoneInput
+              <InputPhone
+                disabled={isSubmitting}
+                error={errors.phone}
                 name="phone"
+                onChange={handleChange}
                 placeholder="Ваш номер"
                 value={values.phone}
-                onChange={handleChange}
               />
-              <Button variant="danger" type="submit">
+              <Button
+                disabled={isSubmitting || !isValid}
+                type="submit"
+                variant="danger"
+              >
                 Отправить
               </Button>
               <Paragraph>
