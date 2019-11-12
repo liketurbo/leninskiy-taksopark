@@ -5,6 +5,7 @@
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop -p 3000",
+    "deploy": "now --prod",
     "generate": "graphql-codegen"
   },
   "dependencies": {
@@ -65,6 +66,7 @@
     "eslint-config-prettier": "6.5.0",
     "eslint-plugin-prettier": "3.1.1",
     "eslint-plugin-react": "7.16.0",
+    "now": "^16.5.0",
     "prettier": "1.18.2",
     "typescript": "3.6.4"
   },
