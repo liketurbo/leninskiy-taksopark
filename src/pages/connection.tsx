@@ -30,7 +30,7 @@ const Paragraph = styled.p`
 `
 
 const addRequestMutation = gql`
-  mutation($input: RequestInput!) {
+  mutation($input: InputRequest!) {
     addRequest(input: $input)
   }
 `

@@ -33,7 +33,7 @@ const Form = styled.form`
 `
 
 const addQuestionMutation = gql`
-  mutation($input: QuestionInput!) {
+  mutation($input: InputQuestion!) {
     addQuestion(input: $input)
   }
 `
