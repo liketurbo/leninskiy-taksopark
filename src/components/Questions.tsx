@@ -69,7 +69,7 @@ export default () => {
         <H1>У вас есть вопросы?</H1>
         <H2>Получите консультацию по телефону. Это бесплатно 😄.</H2>
         <Formik
-          initialValues={{ name: "", phone: "", question: "" }}
+          initialValues={{ name: "", phone: "", content: "" }}
           validationSchema={yupObject().shape({
             name: yupString()
               .trim()
@@ -82,7 +82,7 @@ export default () => {
                 "Неправильный формат номера."
               )
               .required("Обязательное поле."),
-            question: yupString()
+            content: yupString()
               .trim()
               .required("Обязательное поле."),
           })}
@@ -122,12 +122,12 @@ export default () => {
               />
               <InputDefault
                 disabled={isSubmitting}
-                error={errors.question}
-                name="question"
+                error={errors.content}
+                name="content"
                 onChange={handleChange}
                 placeholder="Ваш вопрос"
                 type="area"
-                value={values.question}
+                value={values.content}
               />
               <Button disabled={isSubmitting || !isValid} type="submit">
                 Получить консультацию
