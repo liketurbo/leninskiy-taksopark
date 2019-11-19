@@ -45,6 +45,16 @@
     "@-taxi-parks-ui/input-error-msg" "^1.0.4"
     react-input-mask "^2.0.4"
 
+"@-taxi-parks-ui/list-item@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/list-item/-/list-item-1.0.1.tgz#de3f63a246900948b4a7e163bfd600c26a663a27"
+  integrity sha512-MhTWn43ZMuHmDvrqi6tK7gAUCfg2L9Z6ou01lnvRe7fY4Gm1Q/oRb5XzCkKSRiNszwaHPst3dAPBXehrsmaBpg==
+
+"@-taxi-parks-ui/list-ordered@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/list-ordered/-/list-ordered-1.0.1.tgz#c89c7783bc3dea994eef6ce39550d0dae31d5de8"
+  integrity sha512-Etablbxdt3EDQ1wgnqE06IUUHZgiYJTQKfaRKiaRimSiezsrAPMq4LzMNeLhvfQDAELNImX5fLcx6KqAQIurRQ==
+
 "@apollo/react-common@^3.1.3":
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/@apollo/react-common/-/react-common-3.1.3.tgz#ddc34f6403f55d47c0da147fd4756dfd7c73dac5"

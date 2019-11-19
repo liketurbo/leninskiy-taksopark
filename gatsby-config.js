@@ -1,6 +1,6 @@
 const brand = "Рено перевозки"
 const city = "Сочи"
-const url = "reno-perevozki.ru"
+const url = "https://reno-perevozki.ru"
 
 module.exports = {
   siteMetadata: {
