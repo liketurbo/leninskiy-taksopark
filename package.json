@@ -17,7 +17,7 @@
     "babel-plugin-styled-components": "1.10.6",
     "formik": "^2.0.4",
     "gatsby": "2.17.12",
-    "gatsby-background-image": "0.8.18",
+    "gatsby-background-image": "0.9.6",
     "gatsby-image": "2.2.32",
     "gatsby-plugin-layout": "^1.1.14",
     "gatsby-plugin-manifest": "2.2.27",
