@@ -3,7 +3,6 @@ import React from "react"
 import { Map, Placemark, YMaps, ZoomControl } from "react-yandex-maps"
 import styled from "styled-components"
 
-import { Query } from "../../types/graphqlTypes"
 import useScreenSize from "../hooks/useScreenSize"
 import theme from "../library/theme"
 import H1 from "./H/H1"
@@ -27,7 +26,7 @@ const Container = styled.div`
   }
 `
 
-const Contacts = styled.section`
+const SContacts = styled.section`
   ${tw`absolute z-10 p-2`}
 
   top: ${props => props.theme.spacing["2"]};
@@ -51,11 +50,11 @@ const Contacts = styled.section`
   }
 `
 
-export default () => {
+const Contacts = () => {
   const smallScreen = useScreenSize("sm")
   const mediumScreen = useScreenSize("md")
 
-  const data = useStaticQuery<Query>(graphql`
+  const data = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
@@ -75,48 +74,53 @@ export default () => {
     brand,
     coordinates,
     workTime,
-  } = data.site!.siteMetadata!.taxiData!
+  } = data.site.siteMetadata.taxiData
 
   return (
     <Container id="contacts">
-      <Contacts>
-        <H1>Контакты</H1>
-        <p>Таксопарк "{brand}"</p>
+      <SContacts>
+        <H1>{"Контакты"}</H1>
+        <p>{`Таксопарк "${brand}"`}</p>
         <p>{address}</p>
         <p>{workTime}</p>
         <Phone />
-      </Contacts>
+      </SContacts>
       <YMaps>
         <Map
           defaultState={{
+            behaviors: ["drag"],
             center: [
-              coordinates![0]! +
+              coordinates[0] +
                 (mediumScreen ? 0 : 0.001) +
                 (smallScreen ? 0 : 0.002),
-              coordinates![1]!,
+              coordinates[1],
             ],
             zoom: 15,
-            behaviors: ["drag"],
           }}
-          width={"100%"}
           height={"100%"}
+          width={"100%"}
         >
           <ZoomControl
             options={{
+              position: {
+                left: 10,
+                top: 200,
+              },
               size: "small",
-              position: { left: 10, top: 200 },
             }}
           />
           <Placemark
-            geometry={coordinates as any}
-            properties={{ iconCaption: brand }}
+            geometry={coordinates}
             options={{
-              preset: "islands#blueAutoIcon",
               iconColor: theme.colors["yellow-dark"],
+              preset: "islands#blueAutoIcon",
             }}
+            properties={{ iconCaption: brand }}
           />
         </Map>
       </YMaps>
     </Container>
   )
 }
+
+export default Contacts

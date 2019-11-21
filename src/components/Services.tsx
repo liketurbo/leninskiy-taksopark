@@ -1,4 +1,4 @@
-import { graphql, navigate, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import PImg from "gatsby-image"
 import React from "react"
 import styled from "styled-components"
@@ -59,7 +59,7 @@ const Button = styled(PButton)`
   grid-area: btn;
 `
 
-export default () => {
+const Services = () => {
   const data = useStaticQuery(graphql`
     query {
       uber: imageSharp(fluid: { originalName: { eq: "uber.png" } }) {
@@ -83,16 +83,18 @@ export default () => {
   return (
     <>
       <Content>
-        <H1>Работать и зарабатывать с нами - просто!</H1>
-        <H2>Официальные партнеры:</H2>
+        <H1>{"Работать и зарабатывать с нами - просто!"}</H1>
+        <H2>{"Официальные партнеры:"}</H2>
         <Img {...data.uber} alt="Uber" />
         <Img {...data.gett} alt="Gett" />
         <Img {...data.yandex} alt="Яндекс" />
       </Content>
       <Background>
-        <Strong>Подключитесь сегодня: просто оставьте заявку</Strong>
-        <Button onClick={() => navigate("/connection")}>Подключиться</Button>
+        <Strong>{"Подключитесь сегодня: просто оставьте заявку"}</Strong>
+        <Button>{"Подключиться"}</Button>
       </Background>
     </>
   )
 }
+
+export default Services

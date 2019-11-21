@@ -2,8 +2,12 @@ import React from "react"
 import Youtube from "react-youtube"
 import styled from "styled-components"
 
-import Content from "./Content"
+import PContent from "./Content"
 import PH1 from "./H/H1"
+
+const Content = styled(PContent)`
+  ${tw`bg-grey-lighter`}
+`
 
 const H1 = styled(PH1)`
   ${tw`text-center`}
@@ -26,9 +30,11 @@ const Video = styled(Youtube)`
   }
 `
 
-export default () => (
+const Learning = () => (
   <Content>
-    <H1>Обучение по работе с таксометром</H1>
+    <H1>{"Обучение по работе с таксометром"}</H1>
     <Video videoId="Qz0xUI-PXV0" />
   </Content>
 )
+
+export default Learning

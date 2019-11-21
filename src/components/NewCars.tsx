@@ -11,7 +11,6 @@ import InputDefault from "@-taxi-parks-ui/input-default"
 import InputPhone from "@-taxi-parks-ui/input-phone"
 import { useMutation } from "@apollo/react-hooks"
 
-import { Query } from "../../types/graphqlTypes"
 import useToast from "../hooks/useToast"
 import PContent from "./Content"
 import PH1 from "./H/H1"
@@ -67,12 +66,12 @@ const addRequestMutation = gql`
   }
 `
 
-export default () => {
+const NewCars = () => {
   const [addRequestFunc] = useMutation(addRequestMutation)
 
   const toast = useToast()
 
-  const data = useStaticQuery<Query>(graphql`
+  const data = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
@@ -92,52 +91,62 @@ export default () => {
     }
   `)
 
-  const { car, city } = data.site!.siteMetadata!.taxiData!
+  const { car, city } = data.site.siteMetadata.taxiData
 
   return (
     <BackgroundImage
       fluid={[
         "linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75))",
-        (data as any).background.fluid,
+        data.background.fluid,
       ]}
-      Tag="section"
       id="start"
+      Tag="section"
     >
       <Content>
         <H1>
-          Срочный набор водителей на новые автомобили {car} в {city}
+          {`Срочный набор водителей на новые автомобили ${car} в ${city}`}
         </H1>
         <ListH2>
           <List>
-            <li>Ежедневные выплаты</li>
-            <li>Удобный график, новые автомобили</li>
-            <li>Опыт работы не требуется, стаж вождения от 3-х лет</li>
-            <li>Фирменная оклейка</li>
+            <li>{"Ежедневные выплаты"}</li>
+            <li>{"Удобный график, новые автомобили"}</li>
+            <li>{"Опыт работы не требуется, стаж вождения от 3-х лет"}</li>
+            <li>{"Фирменная оклейка"}</li>
           </List>
         </ListH2>
         <Formik
-          initialValues={{ name: "", phone: "" }}
-          validationSchema={yupObject().shape({
-            name: yupString()
-              .trim()
-              .matches(/^[А-Яа-яA-Za-z\- ]{2,}$/, "Введите настоящее имя.")
-              .required("Обязательное поле."),
-            phone: yupString()
-              .trim()
-              .matches(
-                /^8\ \(\d{3}\)\ \d{3}\-\d{2}\-\d{2}$/,
-                "Неправильный формат номера."
-              )
-              .required("Обязательное поле."),
-          })}
+          initialValues={{
+            name: "",
+            phone: "",
+          }}
           onSubmit={async ({ name, phone }) => {
             try {
-              await addRequestFunc({ variables: { input: { name, phone } } })
+              await addRequestFunc({
+                variables: {
+                  input: {
+                    name,
+                    phone,
+                  },
+                },
+              })
               toast.show("Заявка успешно отправлена", "success")
             } catch {
               toast.show("Не удалось отправить заявку", "danger")
             }
           }}
+          validationSchema={yupObject().shape({
+            name: yupString()
+              .trim()
+              .matches(/^[А-Яа-яA-Za-z\- ]{2,}$/u, "Введите настоящее имя.")
+              .required("Обязательное поле."),
+            phone: yupString()
+              .trim()
+              .matches(
+                /^8 \(\d{3}\) \d{3}-\d{2}-\d{2}$/u,
+                "Неправильный формат номера."
+              )
+              .required("Обязательное поле."),
+          })}
         >
           {({
             errors,
@@ -149,8 +158,9 @@ export default () => {
           }) => (
             <Form onSubmit={handleSubmit}>
               <FormH2>
-                Хотите начать работать уже сегодня? Оставляйте заявку, мы
-                перезвоним!
+                {
+                  "Хотите начать работать уже сегодня? Оставляйте заявку, мы перезвоним!"
+                }
               </FormH2>
               <InputDefault
                 disabled={isSubmitting}
@@ -173,11 +183,12 @@ export default () => {
                 type="submit"
                 variant="danger"
               >
-                Отправить
+                {"Отправить"}
               </Button>
               <Paragraph>
-                Отправляя заявку, вы соглашаетесь с правилами обработки
-                персональных данных
+                {
+                  "Отправляя заявку, вы соглашаетесь с правилами обработки персональных данных"
+                }
               </Paragraph>
             </Form>
           )}
@@ -186,3 +197,5 @@ export default () => {
     </BackgroundImage>
   )
 }
+
+export default NewCars

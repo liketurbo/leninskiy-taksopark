@@ -2,12 +2,11 @@ import { graphql, Link, useStaticQuery } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 
-import { Query } from "../../types/graphqlTypes"
 import { CSSContent } from "./Content"
 import H2 from "./H/H2"
 import Phone from "./Phone"
 
-const Footer = styled.footer`
+const SFooter = styled.footer`
   ${CSSContent}
 
   ${tw`bg-black text-white`}
@@ -58,8 +57,8 @@ const Email = styled.a`
   ${tw`underline hover:no-underline`}
 `
 
-export default () => {
-  const data = useStaticQuery<Query>(graphql`
+const Footer = () => {
+  const data = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
@@ -83,33 +82,32 @@ export default () => {
     inn,
     owner,
     workTime,
-  } = data.site!.siteMetadata!.taxiData!
+  } = data.site.siteMetadata.taxiData
 
   return (
-    <Footer>
+    <SFooter>
       <Info>
-        <H2>О нас</H2>
+        <H2>{"О нас"}</H2>
         <p>{owner}</p>
-        <p>ИНН: {inn}</p>
-        <p>
-          © {new Date().getFullYear()} {brand}, Все права защищены.
-        </p>
+        <p>{`ИНН: ${inn}`}</p>
+        <p>{`© ${new Date().getFullYear()} ${brand}, Все права защищены.`}</p>
       </Info>
-      <Policy to="/policy">Политика конфиденциальности</Policy>
+      <Policy to="/policy">{"Политика конфиденциальности"}</Policy>
       <Address>
-        <H2>Адрес офиса</H2>
+        <H2>{"Адрес офиса"}</H2>
         <address style={{ fontStyle: "normal" }}>{address}</address>
       </Address>
       <Hours>
-        <H2>Время работы</H2>
+        <H2>{"Время работы"}</H2>
         <p>{workTime}</p>
       </Hours>
       <Contacts>
-        <H2>Контакты</H2>
+        <H2>{"Контакты"}</H2>
         <Email href={`mailto:${email}`}>{email}</Email>
-        <br />
         <Phone />
       </Contacts>
-    </Footer>
+    </SFooter>
   )
 }
+
+export default Footer

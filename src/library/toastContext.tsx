@@ -1,50 +1,69 @@
-import produce from "immer"
+import PropTypes from "prop-types"
 import React, { createContext, FC, Reducer, useReducer } from "react"
 
 import Toast, { Variant } from "../components/Toast"
 
-const toastContext = createContext({
-  show: (msg: any, variant: Variant) => {},
-})
+const toastContext = createContext<{
+  show: (msg: string, variant: Variant) => void
+} | null>(null)
 
-type State = { show: boolean; msg: string; variant?: Variant }
+type State = {
+  msg?: string
+  show: boolean
+  variant?: Variant
+}
 
 const reducer: Reducer<
   State,
   {
-    type: "success" | "danger" | "off"
     payload?: string
+    type: "success" | "danger" | "off"
   }
-> = (state, action) =>
-  produce(state, draft => {
-    if (action.payload) draft.msg = action.payload
+> = (state, action) => {
+  switch (action.type) {
+    case "success":
+      return {
+        msg: action.payload,
+        show: true,
+        variant: "success",
+      }
+    case "danger":
+      return {
+        msg: action.payload,
+        show: true,
+        variant: "danger",
+      }
+    case "off":
+      return {
+        show: false,
+      }
 
-    switch (action.type) {
-      case "success":
-        draft.variant = "success"
-        draft.show = true
-        return draft
-      case "danger":
-        draft.variant = "danger"
-        draft.show = true
-        return draft
-      case "off":
-        draft.show = false
-        return draft
-      default:
-        return draft
-    }
+    default:
+      return state
+  }
+}
+
+const ToastProvider: FC = ({ children }) => {
+  const [state, dispatch] = useReducer(reducer, {
+    msg: "",
+    show: false,
   })
-
-export const ToastProvider: FC = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, { show: false, msg: "" })
 
   return (
     <toastContext.Provider
       value={{
         show: (msg, variant) => {
-          dispatch({ type: variant, payload: msg })
-          setTimeout(() => dispatch({ type: "off" }), 3000)
+          dispatch({
+            payload: msg,
+            type: variant,
+          })
+          setTimeout(
+            () =>
+              dispatch({
+                type: "off",
+              }),
+            3000
+          )
         },
       }}
     >
@@ -55,5 +74,11 @@ export const ToastProvider: FC = ({ children }) => {
     </toastContext.Provider>
   )
 }
+
+ToastProvider.propTypes = {
+  children: PropTypes.node,
+}
+
+export { ToastProvider }
 
 export default toastContext

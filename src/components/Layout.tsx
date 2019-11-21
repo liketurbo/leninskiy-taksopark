@@ -1,9 +1,9 @@
-import React, { ReactNode } from "react"
+import PropTypes from "prop-types"
+import React, { FC } from "react"
 import styled, { createGlobalStyle } from "styled-components"
 
 import Footer from "./Footer"
 import Header from "./Header"
-import Transition from "./Transition"
 
 const Padding = styled.div`
   ${tw`pt-14`}
@@ -15,15 +15,19 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-export default ({ children }: { children: ReactNode }) => (
+const Layout: FC = ({ children }) => (
   <>
     <GlobalStyle />
     <Header />
     <Padding>
-      <Transition>
-        {children}
-        <Footer />
-      </Transition>
+      {children}
+      <Footer />
     </Padding>
   </>
 )
+
+Layout.propTypes = {
+  children: PropTypes.node,
+}
+
+export default Layout

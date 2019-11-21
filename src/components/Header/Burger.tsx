@@ -2,9 +2,7 @@ import React, { BaseHTMLAttributes, useState } from "react"
 import styled, { css } from "styled-components"
 
 const Container = styled.div`
-  ${tw`relative cursor-pointer flex flex-col justify-around w-4 h-4`}
-
-  ::before {
+  ${tw`relative cursor-pointer flex flex-col justify-around w-4 h-4`} ::before {
     ${tw`absolute`}
 
     content: "";
@@ -48,14 +46,15 @@ const ThirdBar = styled(Bar)`
     `}
 `
 
-export default ({ onClick, ...rest }: BaseHTMLAttributes<any>) => {
+const Burger = ({ onClick, ...rest }: BaseHTMLAttributes<HTMLDivElement>) => {
   const [active, setActive] = useState(false)
 
   return (
     <Container
       onClick={event => {
         setActive(!active)
-        onClick && onClick(event)
+
+        if (onClick) onClick(event)
       }}
       {...rest}
     >
@@ -65,3 +64,5 @@ export default ({ onClick, ...rest }: BaseHTMLAttributes<any>) => {
     </Container>
   )
 }
+
+export default Burger

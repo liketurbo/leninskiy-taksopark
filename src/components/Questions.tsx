@@ -38,7 +38,7 @@ const addQuestionMutation = gql`
   }
 `
 
-export default () => {
+const Questions = () => {
   const [addQuestionFunc] = useMutation(addQuestionMutation)
 
   const toast = useToast()
@@ -63,22 +63,42 @@ export default () => {
         "linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75))",
         data,
       ]}
+      id="connection"
       Tag="section"
     >
       <Content>
-        <H1>У вас есть вопросы?</H1>
-        <H2>Получите консультацию по телефону. Это бесплатно 😄.</H2>
+        <H1>{"У вас есть вопросы?"}</H1>
+        <H2>{"Получите консультацию по телефону. Это бесплатно 😄."}</H2>
         <Formik
-          initialValues={{ name: "", phone: "", question: "" }}
+          initialValues={{
+            name: "",
+            phone: "",
+            question: "",
+          }}
+          onSubmit={async ({ name, phone }) => {
+            try {
+              await addQuestionFunc({
+                variables: {
+                  input: {
+                    name,
+                    phone,
+                  },
+                },
+              })
+              toast.show("Заявка успешно отправлена", "success")
+            } catch {
+              toast.show("Не удалось отправить заявку", "danger")
+            }
+          }}
           validationSchema={yupObject().shape({
             name: yupString()
               .trim()
-              .matches(/^[А-Яа-яA-Za-z\- ]{2,}$/, "Введите настоящее имя.")
+              .matches(/^[А-Яа-яA-Za-z\- ]{2,}$/u, "Введите настоящее имя.")
               .required("Обязательное поле."),
             phone: yupString()
               .trim()
               .matches(
-                /^8\ \(\d{3}\)\ \d{3}\-\d{2}\-\d{2}$/,
+                /^8 \(\d{3}\) \d{3}-\d{2}-\d{2}$/u,
                 "Неправильный формат номера."
               )
               .required("Обязательное поле."),
@@ -86,14 +106,6 @@ export default () => {
               .trim()
               .required("Обязательное поле."),
           })}
-          onSubmit={async ({ name, phone }) => {
-            try {
-              await addQuestionFunc({ variables: { input: { name, phone } } })
-              toast.show("Заявка успешно отправлена", "success")
-            } catch {
-              toast.show("Не удалось отправить заявку", "danger")
-            }
-          }}
         >
           {({
             errors,
@@ -130,7 +142,7 @@ export default () => {
                 value={values.question}
               />
               <Button disabled={isSubmitting || !isValid} type="submit">
-                Получить консультацию
+                {"Получить консультацию"}
               </Button>
             </Form>
           )}
@@ -139,3 +151,5 @@ export default () => {
     </BackgroundImage>
   )
 }
+
+export default Questions

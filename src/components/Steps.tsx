@@ -1,7 +1,8 @@
-import React, { ReactNode } from "react"
+import PropTypes from "prop-types"
+import React, { FC, ReactNode } from "react"
 import styled from "styled-components"
 
-const Steps = styled.div`
+const SSteps = styled.div`
   ${tw`relative flex flex-col pl-8 md:pl-0`}
 `
 
@@ -79,7 +80,7 @@ const SStep = styled.div<{ index: number }>`
   }
 `
 
-export const Step = ({
+const Step = ({
   title,
   content,
   ...rest
@@ -87,20 +88,28 @@ export const Step = ({
   title: ReactNode
   content: ReactNode
 }) => (
-  <SStep index={(rest as any).index}>
+  <SStep index={rest.index}>
     {title}
     {content}
   </SStep>
 )
 
-export default ({ children }: { children: ReactNode }) => (
-  <Steps>
-    {(children as any).map((child: any, index: number) => ({
+const Steps: FC = ({ children }) => (
+  <SSteps>
+    {children.map((child: ReactNode, index: number) => ({
       ...child,
       props: {
         ...child.props,
         index,
       },
     }))}
-  </Steps>
+  </SSteps>
 )
+
+Steps.propTypes = {
+  children: PropTypes.node,
+}
+
+export { Step }
+
+export default Steps

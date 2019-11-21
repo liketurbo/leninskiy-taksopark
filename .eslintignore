@@ -1,0 +1,10 @@
+# Config files
+/tailwind.js
+/gatsby-*.js
+
+# Builded files
+/.cache/
+/public/
+
+# Node.js modules
+/node_modules/

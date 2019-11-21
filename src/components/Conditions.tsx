@@ -51,7 +51,7 @@ const Img = styled(PImg)`
   grid-row: 1 / -1;
 `
 
-export default () => {
+const Conditions = () => {
   const { calc, map, umb, cal, atm, perc } = useStaticQuery(graphql`
     query {
       calc: imageSharp(fluid: { originalName: { eq: "calc.png" } }) {
@@ -88,38 +88,40 @@ export default () => {
   `)
 
   return (
-    <Background id="conditions" as="section">
-      <H1>Комфортные условия работы</H1>
+    <Background as="section" id="conditions">
+      <H1>{"Комфортные условия работы"}</H1>
       <Card>
         <Img {...calc} />
-        <H2 as="figcaption">Выгодные условия</H2>
-        <p>Выплаты ежедневные!</p>
+        <H2 as="figcaption">{"Выгодные условия"}</H2>
+        <p>{"Выплаты ежедневные!"}</p>
       </Card>
       <Card>
         <Img {...map} />
-        <H2 as="figcaption">Обеспечиваем заказами 24 часа</H2>
-        <p>Наши автомобили имеют высокий приоритет</p>
+        <H2 as="figcaption">{"Обеспечиваем заказами 24 часа"}</H2>
+        <p>{"Наши автомобили имеют высокий приоритет"}</p>
       </Card>
       <Card>
         <Img {...umb} />
-        <H2 as="figcaption">Отсутствие рисков и предоплат</H2>
-        <p>Автомобили застрахованы ОСАГО/КАСКО</p>
+        <H2 as="figcaption">{"Отсутствие рисков и предоплат"}</H2>
+        <p>{"Автомобили застрахованы ОСАГО/КАСКО"}</p>
       </Card>
       <Card>
         <Img {...cal} />
-        <H2 as="figcaption">Удобный график работы</H2>
-        <p>Работайте в удобное время посменно 2д/2н/2в</p>
+        <H2 as="figcaption">{"Удобный график работы"}</H2>
+        <p>{"Работайте в удобное время посменно 2д/2н/2в"}</p>
       </Card>
       <Card>
         <Img {...atm} />
-        <H2 as="figcaption">Старт работы за 15 минут</H2>
-        <p>Приезжаете, подключаетесь и выходите на линию!</p>
+        <H2 as="figcaption">{"Старт работы за 15 минут"}</H2>
+        <p>{"Приезжаете, подключаетесь и выходите на линию!"}</p>
       </Card>
       <Card>
         <Img {...perc} />
-        <H2 as="figcaption">Возможность работы на своём авто</H2>
-        <p>Если вы хотите работать на своем авто - звоните!</p>
+        <H2 as="figcaption">{"Возможность работы на своём авто"}</H2>
+        <p>{"Если вы хотите работать на своем авто - звоните!"}</p>
       </Card>
     </Background>
   )
 }
+
+export default Conditions

@@ -1,7 +1,6 @@
 import React, { useCallback, useState } from "react"
 import styled from "styled-components"
 
-import useRouter from "../../hooks/useRouter"
 import useScreenSize from "../../hooks/useScreenSize"
 import { CSSContent } from "../Content"
 import PPhone from "../Phone"
@@ -9,11 +8,11 @@ import PBurger from "./Burger"
 import PLogo from "./Logo"
 import PNavigation from "./Navigation"
 
-const Header = styled.header`
+const SHeader = styled.header`
   ${CSSContent}
 
   ${tw`bg-white py-0 shadow fixed z-20`}
-  
+
   top: 0;
   left: 0;
   right: 0;
@@ -56,9 +55,8 @@ const Phone = styled(PPhone)`
   grid-area: phone;
 `
 
-export default () => {
+const Header = () => {
   const mediumScreen = useScreenSize("md")
-  const { location } = useRouter()
   const [navVisible, setNavVisible] = useState(false)
 
   const toggleNav = useCallback(() => {
@@ -66,24 +64,36 @@ export default () => {
   }, [navVisible])
 
   return (
-    <Header>
+    <SHeader>
       <Logo />
       {(mediumScreen || navVisible) && (
         <>
-          {location.pathname === "/" && (
-            <Navigation
-              links={[
-                { title: "Условия", path: "#conditions" },
-                { title: "Требования", path: "#requirements" },
-                { title: "Подключение", path: "/connection" },
-                { title: "Контакты", path: "#contacts" },
-              ]}
-            />
-          )}
+          <Navigation
+            links={[
+              {
+                path: "#conditions",
+                title: "Условия",
+              },
+              {
+                path: "#requirements",
+                title: "Требования",
+              },
+              {
+                path: "#connection",
+                title: "Подключение",
+              },
+              {
+                path: "#contacts",
+                title: "Контакты",
+              },
+            ]}
+          />
           <Phone />
         </>
       )}
       <Burger onClick={toggleNav} />
-    </Header>
+    </SHeader>
   )
 }
+
+export default Header

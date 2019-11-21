@@ -40,16 +40,14 @@ const Img = styled(PImg)`
 `
 
 const Card = styled.figure`
-  ${tw`flex flex-col justify-center items-center`}
-
-  :last-child {
+  ${tw`flex flex-col justify-center items-center`} :last-child {
     > ${H3} {
       ${tw`mb-0`}
     }
   }
 `
 
-export default () => {
+const Requirements = () => {
   const data = useStaticQuery(graphql`
     query {
       doc: imageSharp(fluid: { originalName: { eq: "doc.png" } }) {
@@ -72,20 +70,22 @@ export default () => {
 
   return (
     <Content id="requirements">
-      <H1>Требования к водителям</H1>
-      <H2>Если вы проходите по этим 3 пунктам - звоните!</H2>
+      <H1>{"Требования к водителям"}</H1>
+      <H2>{"Если вы проходите по этим 3 пунктам - звоните!"}</H2>
       <Card>
         <Img {...data.doc} />
-        <H3 as="figcaption">Возраст более 23 лет</H3>
+        <H3 as="figcaption">{"Возраст более 23 лет"}</H3>
       </Card>
       <Card>
         <Img {...data.russian} />
-        <H3 as="figcaption">Гражданство РФ</H3>
+        <H3 as="figcaption">{"Гражданство РФ"}</H3>
       </Card>
       <Card>
         <Img {...data.wheel} />
-        <H3 as="figcaption">Стаж вождения более 3х лет</H3>
+        <H3 as="figcaption">{"Стаж вождения более 3х лет"}</H3>
       </Card>
     </Content>
   )
 }
+
+export default Requirements

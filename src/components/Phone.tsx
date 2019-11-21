@@ -3,14 +3,12 @@ import { parsePhoneNumberFromString } from "libphonenumber-js"
 import React, { AnchorHTMLAttributes } from "react"
 import styled from "styled-components"
 
-import { Query } from "../../types/graphqlTypes"
-
 const Link = styled.a`
   ${tw`underline hover:no-underline`}
 `
 
-export default ({ ...rest }: AnchorHTMLAttributes<any>) => {
-  const data = useStaticQuery<Query>(graphql`
+const Phone = ({ ...rest }: AnchorHTMLAttributes<HTMLAnchorElement>) => {
+  const data = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
@@ -22,11 +20,13 @@ export default ({ ...rest }: AnchorHTMLAttributes<any>) => {
     }
   `)
 
-  const { phone } = data.site!.siteMetadata!.taxiData!
+  const { phone } = data.site.siteMetadata.taxiData
 
   return (
-    <Link href={parsePhoneNumberFromString(phone!)!.getURI()} {...rest}>
-      {parsePhoneNumberFromString(phone!)!.formatNational()}
+    <Link href={parsePhoneNumberFromString(phone).getURI()} {...rest}>
+      {parsePhoneNumberFromString(phone).formatNational()}
     </Link>
   )
 }
+
+export default Phone

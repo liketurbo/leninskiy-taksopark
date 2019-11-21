@@ -1,7 +1,6 @@
 import React, { ReactNode } from "react"
 import styled, { css, keyframes } from "styled-components"
 
-export type Variant = "success" | "danger"
 type ToastProps = { variant?: Variant; show: boolean }
 
 const fadeIn = keyframes`
@@ -14,7 +13,7 @@ const fadeOut = keyframes`
   to {top: 0; opacity: 0;}
 `
 
-const Toast = styled.div<ToastProps>`
+const SToast = styled.div<ToastProps>`
   ${tw`fixed text-grey-lightest text-lg font-medium rounded py-2 px-4 z-20`}
 
   top: ${props => props.theme.spacing[4]};
@@ -42,6 +41,10 @@ const Toast = styled.div<ToastProps>`
   }};
 `
 
-export default ({ ...rest }: { children: ReactNode } & ToastProps) => (
-  <Toast {...rest} />
+const Toast = ({ ...rest }: { children: ReactNode } & ToastProps) => (
+  <SToast {...rest} />
 )
+
+export type Variant = "success" | "danger"
+
+export default Toast

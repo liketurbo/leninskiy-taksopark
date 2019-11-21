@@ -1,7 +1,7 @@
 import React, { LiHTMLAttributes } from "react"
 import styled from "styled-components"
 
-const Item = styled.li`
+const SNavLink = styled.li`
   ${tw`mx-1`}
 
   > a {
@@ -15,4 +15,8 @@ const Item = styled.li`
   }
 `
 
-export default ({ ...rest }: LiHTMLAttributes<any>) => <Item {...rest} />
+const NavLink = ({ ...rest }: LiHTMLAttributes<HTMLLIElement>) => (
+  <SNavLink {...rest} />
+)
+
+export default NavLink
