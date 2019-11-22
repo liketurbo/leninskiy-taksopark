@@ -2,14 +2,10 @@
 # yarn lockfile v1
 
 
-"@-taxi-parks-ui/button@1.0.7":
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/button/-/button-1.0.7.tgz#c6caedfd048d766ef01d82b77286da70c324e9c6"
-  integrity sha512-NASasxB8C73fsfm+Lr6wV6xkTiEtkmI2J4xe8AkRBvmT3kyZdyQ1ShHGE2D+JRI0QcdLkhqMBRjDm5d/iy1EUQ==
-  dependencies:
-    react "16.12.0"
-    react-dom "16.12.0"
-    styled-components "4.4.1"
+"@-taxi-parks-ui/button@1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/button/-/button-1.1.1.tgz#3d275ee63758537ae63c1cc30d3841a55ee67b9d"
+  integrity sha512-5Biik+ZXW395TDI94rF1GHHnCKUjz10Ygc5xdOutHd3KTEEPNQ8x0m2LVwyBXm9/dar3ZalPni63mAbIwKkh0Q==
 
 "@-taxi-parks-ui/input-base@^1.0.4":
   version "1.0.4"
@@ -10852,16 +10848,6 @@ react-dom@16.11.0:
     prop-types "^15.6.2"
     scheduler "^0.17.0"
 
-react-dom@16.12.0:
-  version "16.12.0"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.12.0.tgz#0da4b714b8d13c2038c9396b54a92baea633fe11"
-  integrity sha512-LMxFfAGrcS3kETtQaCkTKjMiifahaMySFDn71fZUNpPHZQEzmk/GiAeIT8JSOrHB23fnuCOMruL2a8NYlw+8Gw==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    prop-types "^15.6.2"
-    scheduler "^0.18.0"
-
 react-error-overlay@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-3.0.0.tgz#c2bc8f4d91f1375b3dad6d75265d51cd5eeaf655"
@@ -10968,7 +10954,7 @@ react@16.11.0:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
 
-react@16.12.0, react@^16.11.0:
+react@^16.11.0:
   version "16.12.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.12.0.tgz#0c0a9c6a142429e3614834d5a778e18aa78a0b83"
   integrity sha512-fglqy3k5E+81pA8s+7K0/T3DBCF0ZDOher1elBFzF7O6arXJgzyu/FW+COxFvAWXJoJN9KIZbT2LXlukwphYTA==
@@ -11542,14 +11528,6 @@ scheduler@^0.17.0:
   version "0.17.0"
   resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.17.0.tgz#7c9c673e4ec781fac853927916d1c426b6f3ddfe"
   integrity sha512-7rro8Io3tnCPuY4la/NuI5F2yfESpnfZyT6TtkXnSWVkcu0BCDJ+8gk5ozUaFaxpIyNuWAPXrH0yFcSi28fnDA==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-
-scheduler@^0.18.0:
-  version "0.18.0"
-  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.18.0.tgz#5901ad6659bc1d8f3fdaf36eb7a67b0d6746b1c4"
-  integrity sha512-agTSHR1Nbfi6ulI0kYNK0203joW2Y5W4po4l+v03tOoiJKpTBbxpNhWDvqc/4IcOw+KLmSiQLTasZ4cab2/UWQ==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"

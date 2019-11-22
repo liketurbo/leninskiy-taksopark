@@ -9,7 +9,7 @@
     "generate": "graphql-codegen"
   },
   "dependencies": {
-    "@-taxi-parks-ui/button": "1.0.7",
+    "@-taxi-parks-ui/button": "1.1.1",
     "@-taxi-parks-ui/input-default": "1.0.5",
     "@-taxi-parks-ui/input-phone": "1.0.5",
     "@apollo/react-hooks": "3.1.3",
