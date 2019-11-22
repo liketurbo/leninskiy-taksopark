@@ -97,7 +97,9 @@ const Questions = () => {
               .trim()
               .matches(/^[А-Яа-яA-Za-z\- ]{2,}$/u, "Введите настоящее имя.")
               .required("Обязательное поле."),
-            note: yupString().trim(),
+            note: yupString()
+              .trim()
+              .notRequired(),
             phone: yupString()
               .trim()
               .matches(

@@ -1,5 +1,3 @@
-interface CSSObject {
-  [key: string]: CSSObject | string | number | undefined
-}
-
-declare const tw: (arg: TemplateStringsArray) => CSSObject
+declare const tw: (
+  arg: TemplateStringsArray
+) => import("styled-components").CSSObject
