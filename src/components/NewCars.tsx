@@ -168,6 +168,7 @@ const NewCars = () => {
                 name="name"
                 onChange={handleChange}
                 placeholder="Ваше имя"
+                required
                 value={values.name}
               />
               <InputPhone
@@ -176,6 +177,7 @@ const NewCars = () => {
                 name="phone"
                 onChange={handleChange}
                 placeholder="Ваш номер"
+                required
                 value={values.phone}
               />
               <Button
@@ -183,7 +185,7 @@ const NewCars = () => {
                 type="submit"
                 variant="danger"
               >
-                {"Отправить"}
+                {"Заказать звонок"}
               </Button>
               <Paragraph>
                 {

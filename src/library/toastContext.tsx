@@ -5,7 +5,7 @@ import Toast, { Variant } from "../components/Toast"
 
 const toastContext = createContext<{
   show: (msg: string, variant: Variant) => void
-} | null>(null)
+}>(null as any)
 
 type State = {
   msg?: string

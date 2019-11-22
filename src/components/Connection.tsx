@@ -7,6 +7,7 @@ import styled from "styled-components"
 import { object as yupObject, string as yupString } from "yup"
 
 import Button from "@-taxi-parks-ui/button"
+import InputArea from "@-taxi-parks-ui/input-area"
 import InputDefault from "@-taxi-parks-ui/input-default"
 import InputPhone from "@-taxi-parks-ui/input-phone"
 import { useMutation } from "@apollo/react-hooks"
@@ -32,14 +33,14 @@ const Form = styled.form`
   ${tw`flex flex-col items-center p-5 w-full sm:w-2/3`}
 `
 
-const addQuestionMutation = gql`
-  mutation($input: InputQuestion!) {
-    addQuestion(input: $input)
+const mutationAddRequest = gql`
+  mutation($input: InputRequest!) {
+    addRequest(input: $input)
   }
 `
 
 const Questions = () => {
-  const [addQuestionFunc] = useMutation(addQuestionMutation)
+  const [funcAddRequest] = useMutation(mutationAddRequest)
 
   const toast = useToast()
 
@@ -67,20 +68,21 @@ const Questions = () => {
       Tag="section"
     >
       <Content>
-        <H1>{"У вас есть вопросы?"}</H1>
-        <H2>{"Получите консультацию по телефону. Это бесплатно 😄."}</H2>
+        <H1>{"Подключитесь к Яндекс.Такси"}</H1>
+        <H2>{"Начните зарабатывать прямо сейчас 💰"}</H2>
         <Formik
           initialValues={{
             name: "",
+            note: "",
             phone: "",
-            question: "",
           }}
-          onSubmit={async ({ name, phone }) => {
+          onSubmit={async ({ name, note, phone }) => {
             try {
-              await addQuestionFunc({
+              await funcAddRequest({
                 variables: {
                   input: {
                     name,
+                    note,
                     phone,
                   },
                 },
@@ -95,15 +97,13 @@ const Questions = () => {
               .trim()
               .matches(/^[А-Яа-яA-Za-z\- ]{2,}$/u, "Введите настоящее имя.")
               .required("Обязательное поле."),
+            note: yupString().trim(),
             phone: yupString()
               .trim()
               .matches(
                 /^8 \(\d{3}\) \d{3}-\d{2}-\d{2}$/u,
                 "Неправильный формат номера."
               )
-              .required("Обязательное поле."),
-            question: yupString()
-              .trim()
               .required("Обязательное поле."),
           })}
         >
@@ -122,6 +122,7 @@ const Questions = () => {
                 name="name"
                 onChange={handleChange}
                 placeholder="Ваше имя"
+                required
                 value={values.name}
               />
               <InputPhone
@@ -130,19 +131,19 @@ const Questions = () => {
                 name="phone"
                 onChange={handleChange}
                 placeholder="Ваш номер"
+                required
                 value={values.phone}
               />
-              <InputDefault
+              <InputArea
                 disabled={isSubmitting}
-                error={errors.question}
-                name="question"
+                error={errors.note}
+                name="note"
                 onChange={handleChange}
-                placeholder="Ваш вопрос"
-                type="area"
-                value={values.question}
+                placeholder="Ваши примечания"
+                value={values.note}
               />
               <Button disabled={isSubmitting || !isValid} type="submit">
-                {"Получить консультацию"}
+                {"Отправить заявку"}
               </Button>
             </Form>
           )}

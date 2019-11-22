@@ -1,11 +1,11 @@
 import React from "react"
 
 import Conditions from "../components/Conditions"
+import Connection from "../components/Connection"
 import Contacts from "../components/Contacts"
 import Layout from "../components/Layout"
 import Learning from "../components/Learning"
 import NewCars from "../components/NewCars"
-import Questions from "../components/Questions"
 import Requirements from "../components/Requirements"
 import Seo from "../components/Seo"
 import Services from "../components/Services"
@@ -22,7 +22,7 @@ const Index = () => (
     <Services />
     <TaxiPark />
     <Learning />
-    <Questions />
+    <Connection />
     <Contacts />
   </Layout>
 )
