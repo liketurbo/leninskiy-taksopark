@@ -68,7 +68,6 @@ const Footer = () => {
             address
             brand
             email
-            inn
             owner
             workTime
           }
@@ -81,7 +80,6 @@ const Footer = () => {
     address,
     brand,
     email,
-    inn,
     owner,
     workTime,
   } = data.site.siteMetadata.taxiData
@@ -91,7 +89,6 @@ const Footer = () => {
       <Info>
         <H2>{"О нас"}</H2>
         <p>{owner}</p>
-        <p>{`ИНН: ${inn}`}</p>
         <p>{`© ${new Date().getFullYear()} ${brand}, Все права защищены.`}</p>
       </Info>
       <Policy href="/policy" target="_blank">

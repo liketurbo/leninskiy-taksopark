@@ -14,7 +14,6 @@ module.exports = {
       url,
       car: "Renault Logan 2019",
       owner: "ИП Часыгов Ахмед Абдулмажитович",
-      inn: "060200202147",
       phone: "+79388780606",
       email: "ahmed.aa15613541@yandex.ru",
       address: "РФ, Краснодарский край, г. Сочи, ул. Петрозаводская, д. 26/2",
