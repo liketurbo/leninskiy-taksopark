@@ -7,7 +7,7 @@ module.exports = {
     title: `Таксопарк ${brand}`,
     author: "Ramzan Chasygov <theliketurbo@gmail.com>",
     description: `Подключитесь к Яндекс.Такси в городе ${city}. Получите первые деньги с заказов уже сегодня. Стабильный заработная плата. Гибкий график. Самая маленькая комиссия автопарка. Работа на наших автомобилях - требуются водители!`,
-    siteUrl: `https://${url}`,
+    siteUrl: url,
     taxiData: {
       brand,
       city,
