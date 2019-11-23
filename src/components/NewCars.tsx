@@ -14,7 +14,7 @@ import { useMutation } from "@apollo/react-hooks"
 import useToast from "../hooks/useToast"
 import PContent from "./Content"
 import PH1 from "./H/H1"
-import PH2 from "./H/H2"
+import H2 from "./H/H2"
 import List from "./List"
 
 const Content = styled(PContent)`
@@ -35,13 +35,15 @@ const H1 = styled(PH1)`
   grid-column: 1;
 `
 
-const ListH2 = styled(PH2)`
+const ListH2 = styled(H2)`
   ${tw`text-white mb-0`}
 
   grid-column: 1;
 `
 
-const FormH2 = styled(PH2)``
+const Link = styled.a`
+  ${tw`font-medium underline hover:no-underline`}
+`
 
 const Form = styled.form`
   ${tw`flex flex-col items-center bg-yellow-dark rounded p-5 sm:w-2/3 md:w-full`}
@@ -157,11 +159,11 @@ const NewCars = () => {
             values,
           }) => (
             <Form onSubmit={handleSubmit}>
-              <FormH2>
+              <H2>
                 {
                   "Хотите начать работать уже сегодня? Оставляйте заявку, мы перезвоним!"
                 }
-              </FormH2>
+              </H2>
               <InputDefault
                 disabled={isSubmitting}
                 error={errors.name}
@@ -188,9 +190,11 @@ const NewCars = () => {
                 {"Заказать звонок"}
               </Button>
               <P>
-                {
-                  "Заказывая звонок, вы соглашаетесь с правилами обработки персональных данных."
-                }
+                {"Заказывая звонок, вы соглашаетесь с "}
+                <Link href="/policy" target="_blank">
+                  {"правилами обработки персональных данных"}
+                </Link>
+                {"."}
               </P>
             </Form>
           )}

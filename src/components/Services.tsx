@@ -1,10 +1,12 @@
 import { graphql, useStaticQuery } from "gatsby"
 import PImg from "gatsby-image"
 import React from "react"
+import AnchorLink from "react-anchor-link-smooth-scroll"
 import styled from "styled-components"
 
 import PButton from "@-taxi-parks-ui/button"
 
+import convertRemToPixels from "../utils/convertRemToPixels"
 import PContent from "./Content"
 import PH1 from "./H/H1"
 import PH2 from "./H/H2"
@@ -95,7 +97,9 @@ const Services = () => {
       </Content>
       <Background>
         <Strong>{"Подключитесь сегодня: просто оставьте заявку"}</Strong>
-        <Button>{"Подключиться"}</Button>
+        <AnchorLink href="#connection" offset={convertRemToPixels(3.5)}>
+          <Button>{"Подключиться"}</Button>
+        </AnchorLink>
       </Background>
     </>
   )

@@ -29,6 +29,10 @@ const H2 = styled(PH2)`
   ${tw`text-center text-white`}
 `
 
+const Link = styled.a`
+  ${tw`font-medium underline hover:no-underline`}
+`
+
 const Form = styled.form`
   ${tw`flex flex-col items-center p-5 w-full sm:w-2/3`}
 `
@@ -152,9 +156,11 @@ const Questions = () => {
                 {"Отправить заявку"}
               </Button>
               <P>
-                {
-                  "Отправляя заявку, вы соглашаетесь с правилами обработки персональных данных."
-                }
+                {"Отправляя заявку, вы соглашаетесь с "}
+                <Link href="/policy" target="_blank">
+                  {"правилами обработки персональных данных"}
+                </Link>
+                {"."}
               </P>
             </Form>
           )}
