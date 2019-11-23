@@ -2,11 +2,11 @@
 /.vscode/
 
 # Yarn logs
-yarn-error.log
+/yarn-error.log
 
 # Node.js modules
-node_modules/
+/node_modules/
 
-# Production 
-/public
-.cache
+# Production
+/public/
+/.cache/
