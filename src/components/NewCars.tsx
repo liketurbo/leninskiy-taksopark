@@ -56,7 +56,7 @@ const Form = styled.form`
   }
 `
 
-const Paragraph = styled.p`
+const P = styled.p`
   ${tw`text-sm font-light text-center mt-4`}
 `
 
@@ -187,11 +187,11 @@ const NewCars = () => {
               >
                 {"Заказать звонок"}
               </Button>
-              <Paragraph>
+              <P>
                 {
-                  "Отправляя заявку, вы соглашаетесь с правилами обработки персональных данных"
+                  "Заказывая звонок, вы соглашаетесь с правилами обработки персональных данных."
                 }
-              </Paragraph>
+              </P>
             </Form>
           )}
         </Formik>

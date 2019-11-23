@@ -33,6 +33,10 @@ const Form = styled.form`
   ${tw`flex flex-col items-center p-5 w-full sm:w-2/3`}
 `
 
+const P = styled.p`
+  ${tw`text-grey-lightest text-sm font-light text-center mt-4`}
+`
+
 const mutationAddRequest = gql`
   mutation($input: InputRequest!) {
     addRequest(input: $input)
@@ -147,6 +151,11 @@ const Questions = () => {
               <Button disabled={isSubmitting || !isValid} type="submit">
                 {"Отправить заявку"}
               </Button>
+              <P>
+                {
+                  "Отправляя заявку, вы соглашаетесь с правилами обработки персональных данных."
+                }
+              </P>
             </Form>
           )}
         </Formik>

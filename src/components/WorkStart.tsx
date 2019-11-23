@@ -5,11 +5,14 @@ import PContent from "./Content"
 import PH1 from "./H/H1"
 import H2 from "./H/H2"
 import List from "./List"
-import Paragraph from "./Paragraph"
 import Steps, { Step } from "./Steps"
 
 const H1 = styled(PH1)`
   ${tw`text-center mb-8`}
+`
+
+const P = styled.p`
+  ${tw`mb-2`}
 `
 
 const Content = styled(PContent)`
@@ -21,13 +24,13 @@ const WorkStart = () => (
     <H1>{"Как начать работу?"}</H1>
     <Steps>
       <Step
-        content={<Paragraph>{"Позвоните нам или оставьте заявку"}</Paragraph>}
+        content={<P>{"Позвоните нам или оставьте заявку"}</P>}
         title={<H2>{"Свяжитесь с нами"}</H2>}
       />
       <Step
         content={
           <>
-            <Paragraph>{"С собой нужно иметь:"}</Paragraph>
+            <P>{"С собой нужно иметь:"}</P>
             <List>
               <li>{"Паспорт РФ"}</li>
               <li>{"Водительское удостоверение"}</li>
@@ -43,17 +46,15 @@ const WorkStart = () => (
       />
       <Step
         content={
-          <Paragraph>
+          <P>
             {"Помогаем установить приложение Таксометр и проводим обучение"}
-          </Paragraph>
+          </P>
         }
         title={<H2>{"Активация Приложения"}</H2>}
       />
       <Step
         content={
-          <Paragraph>
-            {"Проходим фотоконтроль и вы можете приступать к работе"}
-          </Paragraph>
+          <P>{"Проходим фотоконтроль и вы можете приступать к работе"}</P>
         }
         title={<H2>{"Фотоконтроль"}</H2>}
       />
