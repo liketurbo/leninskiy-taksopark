@@ -1,4 +1,4 @@
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 
@@ -23,11 +23,10 @@ const SFooter = styled.footer`
     grid-template-columns: 1fr;
     grid-template-areas:
       "info"
-      "info"
-      "info"
       "address"
       "hours"
-      "contacts";
+      "contacts"
+      "policy";
   }
 `
 
@@ -44,12 +43,15 @@ const Hours = styled.section`
 `
 
 const Contacts = styled.section`
+  ${tw`flex flex-col items-start`}
+
   grid-area: contacts;
 `
 
-const Policy = styled(Link)`
+const Policy = styled.a`
   ${tw`underline hover:no-underline font-semibold text-lg`}
 
+  align-self: flex-start;
   justify-self: flex-start;
 `
 
@@ -92,7 +94,9 @@ const Footer = () => {
         <p>{`ИНН: ${inn}`}</p>
         <p>{`© ${new Date().getFullYear()} ${brand}, Все права защищены.`}</p>
       </Info>
-      <Policy to="/policy">{"Политика конфиденциальности"}</Policy>
+      <Policy href="/policy" target="_blank">
+        {"Политика конфиденциальности"}
+      </Policy>
       <Address>
         <H2>{"Адрес офиса"}</H2>
         <address style={{ fontStyle: "normal" }}>{address}</address>
