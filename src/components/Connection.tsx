@@ -7,17 +7,17 @@ import styled from "styled-components"
 import { object as yupObject, string as yupString } from "yup"
 
 import Button from "@-taxi-parks-ui/button"
+import PContainer from "@-taxi-parks-ui/container"
 import InputArea from "@-taxi-parks-ui/input-area"
 import InputDefault from "@-taxi-parks-ui/input-default"
 import InputPhone from "@-taxi-parks-ui/input-phone"
 import { useMutation } from "@apollo/react-hooks"
 
 import useToast from "../hooks/useToast"
-import PContent from "./Content"
 import PH1 from "./H/H1"
 import PH2 from "./H/H2"
 
-const Content = styled(PContent)`
+const Container = styled(PContainer)`
   ${tw`flex flex-col items-center`}
 `
 
@@ -75,7 +75,7 @@ const Questions = () => {
       id="connection"
       Tag="section"
     >
-      <Content>
+      <Container>
         <H1>{"Подключитесь к Яндекс.Такси"}</H1>
         <H2>{"Начните зарабатывать💰 прямо сейчас"}</H2>
         <Formik
@@ -165,7 +165,7 @@ const Questions = () => {
             </Form>
           )}
         </Formik>
-      </Content>
+      </Container>
     </BackgroundImage>
   )
 }

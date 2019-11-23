@@ -3,13 +3,14 @@ import PImg from "gatsby-image"
 import React from "react"
 import styled from "styled-components"
 
-import PContent from "./Content"
+import PContainer from "@-taxi-parks-ui/container"
+
 import PH1 from "./H/H1"
 import PH2 from "./H/H2"
 import PH3 from "./H/H3"
 import PList from "./List"
 
-const Content = styled(PContent)`
+const Container = styled(PContainer)`
   display: grid;
   grid-template-rows: repeat(4, auto);
   grid-template-columns: repeat(2, 1fr);
@@ -65,7 +66,7 @@ const TaxiPark = () => {
   `)
 
   return (
-    <Content>
+    <Container>
       <H1>{"Обновляем таксопарк"}</H1>
       <H2>
         {
@@ -82,7 +83,7 @@ const TaxiPark = () => {
         <li>{"Автомобили застрахованы"}</li>
       </List>
       <Img {...data.background} alt="Наши машины" />
-    </Content>
+    </Container>
   )
 }
 

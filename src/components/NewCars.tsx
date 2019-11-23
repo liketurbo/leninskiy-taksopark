@@ -7,17 +7,17 @@ import styled from "styled-components"
 import { object as yupObject, string as yupString } from "yup"
 
 import Button from "@-taxi-parks-ui/button"
+import PContainer from "@-taxi-parks-ui/container"
 import InputDefault from "@-taxi-parks-ui/input-default"
 import InputPhone from "@-taxi-parks-ui/input-phone"
 import { useMutation } from "@apollo/react-hooks"
 
 import useToast from "../hooks/useToast"
-import PContent from "./Content"
 import PH1 from "./H/H1"
 import H2 from "./H/H2"
 import List from "./List"
 
-const Content = styled(PContent)`
+const Container = styled(PContainer)`
   display: grid;
   grid-template-rows: repeat(2, auto);
   grid-template-columns: repeat(2, 1fr);
@@ -104,7 +104,7 @@ const NewCars = () => {
       id="start"
       Tag="section"
     >
-      <Content>
+      <Container>
         <H1>
           {`Срочный набор водителей на новые автомобили ${car} в ${city}`}
         </H1>
@@ -199,7 +199,7 @@ const NewCars = () => {
             </Form>
           )}
         </Formik>
-      </Content>
+      </Container>
     </BackgroundImage>
   )
 }

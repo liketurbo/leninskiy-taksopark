@@ -2,12 +2,13 @@ import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 
-import { CSSContent } from "./Content"
+import { ContainerRaw } from "@-taxi-parks-ui/container"
+
 import H2 from "./H/H2"
 import Phone from "./Phone"
 
 const SFooter = styled.footer`
-  ${CSSContent}
+  ${ContainerRaw}
 
   ${tw`bg-black text-white`}
 

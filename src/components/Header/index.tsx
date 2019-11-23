@@ -1,15 +1,16 @@
 import React, { useCallback, useState } from "react"
 import styled from "styled-components"
 
+import { ContainerRaw } from "@-taxi-parks-ui/container"
+
 import useScreenSize from "../../hooks/useScreenSize"
-import { CSSContent } from "../Content"
 import PPhone from "../Phone"
 import PBurger from "./Burger"
 import PLogo from "./Logo"
 import PNavigation from "./Navigation"
 
 const SHeader = styled.header`
-  ${CSSContent}
+  ${ContainerRaw}
 
   ${tw`bg-white py-0 shadow fixed z-20`}
 

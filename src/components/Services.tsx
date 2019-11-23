@@ -5,9 +5,9 @@ import AnchorLink from "react-anchor-link-smooth-scroll"
 import styled from "styled-components"
 
 import PButton from "@-taxi-parks-ui/button"
+import PContainer from "@-taxi-parks-ui/container"
 
 import convertRemToPixels from "../utils/convertRemToPixels"
-import PContent from "./Content"
 import PH1 from "./H/H1"
 import PH2 from "./H/H2"
 
@@ -23,7 +23,7 @@ const H2 = styled(PH2)`
   grid-column: 1 / -1;
 `
 
-const Background = styled(PContent)`
+const Background = styled(PContainer)`
   ${tw`py-6 bg-grey-lighter flex flex-wrap items-center justify-around`}
 `
 
@@ -37,7 +37,7 @@ const Strong = styled(PH2)`
   }
 `
 
-const Content = styled(PContent)`
+const Container = styled(PContainer)`
   ${tw`pb-6`}
 
   display: grid;
@@ -88,13 +88,13 @@ const Services = () => {
 
   return (
     <>
-      <Content>
+      <Container>
         <H1>{"Работать и зарабатывать с нами - просто!"}</H1>
         <H2>{"Официальные партнеры:"}</H2>
         <Img {...data.uber} alt="Uber" />
         <Img {...data.gett} alt="Gett" />
         <Img {...data.yandex} alt="Яндекс" />
-      </Content>
+      </Container>
       <Background>
         <Strong>{"Подключитесь сегодня: просто оставьте заявку"}</Strong>
         <AnchorLink href="#connection" offset={convertRemToPixels(3.5)}>

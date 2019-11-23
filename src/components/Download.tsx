@@ -3,11 +3,12 @@ import PImg from "gatsby-image"
 import React from "react"
 import styled from "styled-components"
 
-import PContent from "./Content"
+import PContainer from "@-taxi-parks-ui/container"
+
 import PH1 from "./H/H1"
 import PH2 from "./H/H2"
 
-const Content = styled(PContent)`
+const Container = styled(PContainer)`
   ${tw`flex flex-col items-center bg-grey-lighter py-6`}
 `
 
@@ -39,7 +40,7 @@ const Download = () => {
   `)
 
   return (
-    <Content>
+    <Container>
       <H1>{"Скачать Таксометр на Android устройство"}</H1>
       <H2>{"Внимание⚠️: требуется версия Android 5.0 и выше"}</H2>
       <Link
@@ -49,7 +50,7 @@ const Download = () => {
       >
         <Img {...data.android} />
       </Link>
-    </Content>
+    </Container>
   )
 }
 

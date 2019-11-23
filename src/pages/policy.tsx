@@ -2,10 +2,10 @@ import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 
+import Container from "@-taxi-parks-ui/container"
 import Li from "@-taxi-parks-ui/list-item"
 import Lo from "@-taxi-parks-ui/list-ordered"
 
-import Content from "../components/Content"
 import H1 from "../components/H/H1"
 import PH2 from "../components/H/H2"
 import Seo from "../components/Seo"
@@ -46,7 +46,7 @@ const Policy = () => {
   return (
     <>
       <Seo title="Политика конфиденциальности" />
-      <Content>
+      <Container>
         <H1>{"Политика в отношении обработки персональных данных"}</H1>
         <Lo>
           <LiLevel1>
@@ -227,7 +227,7 @@ const Policy = () => {
             </Lo>
           </LiLevel1>
         </Lo>
-      </Content>
+      </Container>
     </>
   )
 }

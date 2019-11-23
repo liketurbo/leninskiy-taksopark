@@ -1,7 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 
-import PContent from "./Content"
+import PContainer from "@-taxi-parks-ui/container"
+
 import PH1 from "./H/H1"
 import H2 from "./H/H2"
 import List from "./List"
@@ -15,12 +16,12 @@ const P = styled.p`
   ${tw`mb-2`}
 `
 
-const Content = styled(PContent)`
+const Container = styled(PContainer)`
   ${tw`bg-grey-lighter`}
 `
 
 const WorkStart = () => (
-  <Content>
+  <Container>
     <H1>{"Как начать работу?"}</H1>
     <Steps>
       <Step
@@ -59,7 +60,7 @@ const WorkStart = () => (
         title={<H2>{"Фотоконтроль"}</H2>}
       />
     </Steps>
-  </Content>
+  </Container>
 )
 
 export default WorkStart

@@ -2,10 +2,11 @@ import React from "react"
 import Youtube from "react-youtube"
 import styled from "styled-components"
 
-import PContent from "./Content"
+import PContainer from "@-taxi-parks-ui/container"
+
 import PH1 from "./H/H1"
 
-const Content = styled(PContent)`
+const Container = styled(PContainer)`
   ${tw`bg-grey-lighter pb-6`}
 `
 
@@ -31,10 +32,10 @@ const Video = styled(Youtube)`
 `
 
 const Learning = () => (
-  <Content>
+  <Container>
     <H1>{"Обучение по работе с Таксометром"}</H1>
     <Video videoId="Qz0xUI-PXV0" />
-  </Content>
+  </Container>
 )
 
 export default Learning

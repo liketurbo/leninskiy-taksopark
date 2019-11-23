@@ -3,11 +3,12 @@ import PImg from "gatsby-image"
 import React from "react"
 import styled from "styled-components"
 
-import Content from "./Content"
+import Container from "@-taxi-parks-ui/container"
+
 import PH1 from "./H/H1"
 import PH2 from "./H/H2"
 
-const Background = styled(Content)`
+const Background = styled(Container)`
   ${tw`bg-grey-lighter`}
 
   display: grid;

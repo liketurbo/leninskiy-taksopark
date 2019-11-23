@@ -3,12 +3,13 @@ import PImg from "gatsby-image"
 import React from "react"
 import styled from "styled-components"
 
-import PContent from "./Content"
+import PContainer from "@-taxi-parks-ui/container"
+
 import PH1 from "./H/H1"
 import PH2 from "./H/H2"
 import PH3 from "./H/H3"
 
-const Content = styled(PContent)`
+const Container = styled(PContainer)`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: space-around;
@@ -69,7 +70,7 @@ const Requirements = () => {
   `)
 
   return (
-    <Content id="requirements">
+    <Container id="requirements">
       <H1>{"Требования к водителям"}</H1>
       <H2>{"Если вы проходите по этим 3 пунктам - звоните!"}</H2>
       <Card>
@@ -84,7 +85,7 @@ const Requirements = () => {
         <Img {...data.wheel} />
         <H3 as="figcaption">{"Стаж вождения более 3х лет"}</H3>
       </Card>
-    </Content>
+    </Container>
   )
 }
 
