@@ -8,7 +8,7 @@ import List from "./List"
 import Steps, { Step } from "./Steps"
 
 const H1 = styled(PH1)`
-  ${tw`text-center mb-8`}
+  ${tw`text-center`}
 `
 
 const P = styled.p`

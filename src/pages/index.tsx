@@ -3,6 +3,7 @@ import React from "react"
 import Conditions from "../components/Conditions"
 import Connection from "../components/Connection"
 import Contacts from "../components/Contacts"
+import Download from "../components/Download"
 import Layout from "../components/Layout"
 import Learning from "../components/Learning"
 import NewCars from "../components/NewCars"
@@ -22,6 +23,7 @@ const Index = () => (
     <Services />
     <TaxiPark />
     <Learning />
+    <Download />
     <Connection />
     <Contacts />
   </Layout>

@@ -6,7 +6,7 @@ import PContent from "./Content"
 import PH1 from "./H/H1"
 
 const Content = styled(PContent)`
-  ${tw`bg-grey-lighter`}
+  ${tw`bg-grey-lighter pb-6`}
 `
 
 const H1 = styled(PH1)`
@@ -32,7 +32,7 @@ const Video = styled(Youtube)`
 
 const Learning = () => (
   <Content>
-    <H1>{"Обучение по работе с таксометром"}</H1>
+    <H1>{"Обучение по работе с Таксометром"}</H1>
     <Video videoId="Qz0xUI-PXV0" />
   </Content>
 )

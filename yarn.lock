@@ -7,15 +7,15 @@
   resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/button/-/button-1.1.1.tgz#3d275ee63758537ae63c1cc30d3841a55ee67b9d"
   integrity sha512-5Biik+ZXW395TDI94rF1GHHnCKUjz10Ygc5xdOutHd3KTEEPNQ8x0m2LVwyBXm9/dar3ZalPni63mAbIwKkh0Q==
 
-"@-taxi-parks-ui/input-area@1.1.3":
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/input-area/-/input-area-1.1.3.tgz#642ad42054abdb646a81e53dc9c7b93981087b54"
-  integrity sha512-YWK5cscuabQgBaQky54MPb5+V1LLai3GgAg8vFZ8m9rxcbbzQfZbXRH+FZeKJG8HaRdn3M6vOvldZ7uRXJQneQ==
+"@-taxi-parks-ui/input-area@1.1.4":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/input-area/-/input-area-1.1.4.tgz#c0e8e60d504b1f93cb084c86722dc174d37703a7"
+  integrity sha512-7gS6DwM6InCJ2EFPUlWrfGPMJdA4CBbp2AcYQHcVQQUy6yImiZfOluwYAdM5ZP9Nt+7i08a4jPkGWwghRNyHkA==
   dependencies:
     "@-taxi-parks-ui/input-base" "^1.1.1"
     "@-taxi-parks-ui/input-container" "^1.1.1"
     "@-taxi-parks-ui/input-error-msg" "^1.1.1"
-    "@-taxi-parks-ui/input-star" "^1.1.3"
+    "@-taxi-parks-ui/input-star" "^1.1.4"
 
 "@-taxi-parks-ui/input-base@^1.1.1":
   version "1.1.1"
@@ -27,36 +27,36 @@
   resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/input-container/-/input-container-1.1.1.tgz#c25d88f9a41ece1df32924ea5ead20d4dbedb80d"
   integrity sha512-S/QDzhGzhb51ZTCQDsAzRprqvtEOlrVcCsXQGZlIV9HUaQ+dUAnDYy9i3H71TE64Adgp7x5dNLJhbUx5iJcDNQ==
 
-"@-taxi-parks-ui/input-default@1.1.3":
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/input-default/-/input-default-1.1.3.tgz#f0b3e65e01af7b66769c6b81e6ca106918745471"
-  integrity sha512-f/LEsKV7bAyTt+I7GWbD2XFvFSRYpD5ki2+B3/2gj34v/H974fmzpirON//W3pyLZuNMgJFCiFZjkSmqV7lW0g==
+"@-taxi-parks-ui/input-default@1.1.4":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/input-default/-/input-default-1.1.4.tgz#ca93a6c305a0e12151c6724999b61d6400c72560"
+  integrity sha512-x4bQubEttwgIUXoLG8MTXBM/0IxtCrdbOj+F2K/XYTXrQk93t39VaPBgwvX8U8WPXox52laZxKr9zCXiWZ47Ng==
   dependencies:
     "@-taxi-parks-ui/input-base" "^1.1.1"
     "@-taxi-parks-ui/input-container" "^1.1.1"
     "@-taxi-parks-ui/input-error-msg" "^1.1.1"
-    "@-taxi-parks-ui/input-star" "^1.1.3"
+    "@-taxi-parks-ui/input-star" "^1.1.4"
 
 "@-taxi-parks-ui/input-error-msg@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/input-error-msg/-/input-error-msg-1.1.1.tgz#43a6075a76b1be84eb5552c612f87cd345d95eb1"
   integrity sha512-sw7xMjyrEuAYoR7AtDEseNbrB6EE/iHwolbAnt1UU5GwD+p3XJl5NmwuoogiFWHGZ79b5oKzAnMbNxcS31ZUZA==
 
-"@-taxi-parks-ui/input-phone@1.1.3":
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/input-phone/-/input-phone-1.1.3.tgz#dee4a3acc5aef5463d27bde3e7cfead0f3b7fd19"
-  integrity sha512-IphyiGPjonBCi1umfnaBX8xmQIuUkA5gsCj6X9TPtSVOdRs8pDkWt3hFcY4EMUMWyaqn1GqzS9g9+t9Y5z76SA==
+"@-taxi-parks-ui/input-phone@1.1.4":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/input-phone/-/input-phone-1.1.4.tgz#4b7325f64065a10aa36bc36c10d6ae9b3b04f93d"
+  integrity sha512-ijJ6s/4xeLT9Y/9cnYlcnPHJOGPLJu+6VR5Z3Q3ZWdqjeXgRvzl0Qypzaw4yqEJycBLBURipKbLY9NQCzJ1+eg==
   dependencies:
     "@-taxi-parks-ui/input-base" "^1.1.1"
     "@-taxi-parks-ui/input-container" "^1.1.1"
     "@-taxi-parks-ui/input-error-msg" "^1.1.1"
-    "@-taxi-parks-ui/input-star" "^1.1.3"
+    "@-taxi-parks-ui/input-star" "^1.1.4"
     react-input-mask "^2.0.4"
 
-"@-taxi-parks-ui/input-star@^1.1.3":
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/input-star/-/input-star-1.1.3.tgz#0145f498d64f1b9e2aa9ce0ab96bcd7672b6ab4b"
-  integrity sha512-0RoTzoc1zwfC9pRntA95n/DVasJPAMEJd3QEhgni58kscrqAZMSG0lxIdSWMGGVJJeojw6+BeW9xYKDJPIk2FA==
+"@-taxi-parks-ui/input-star@^1.1.4":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/input-star/-/input-star-1.1.4.tgz#4ef994552067f61d94fb558f8a1defe28726d567"
+  integrity sha512-9miEpSlsNq+xFCHcvNCawKzMS3Cug28DADCDw2V93xNBNTELIk9U2wGnxuXz7tcNNJmNk87D/tIOqpBSQ5MeNg==
 
 "@-taxi-parks-ui/list-item@1.1.1":
   version "1.1.1"

@@ -25,7 +25,7 @@ const H1 = styled(PH1)`
 `
 
 const H2 = styled(PH2)`
-  ${tw`font-normal text-center mb-8`}
+  ${tw`font-normal text-center`}
 
   grid-column: 1 / -1;
   justify-self: center;

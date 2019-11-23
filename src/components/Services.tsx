@@ -16,7 +16,7 @@ const H1 = styled(PH1)`
 `
 
 const H2 = styled(PH2)`
-  ${tw`font-normal text-center mb-8`}
+  ${tw`font-normal text-center`}
 
   grid-column: 1 / -1;
 `
@@ -36,7 +36,7 @@ const Strong = styled(PH2)`
 `
 
 const Content = styled(PContent)`
-  ${tw`pb-0`}
+  ${tw`pb-6`}
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -50,7 +50,11 @@ const Content = styled(PContent)`
 `
 
 const Img = styled(PImg)`
-  ${tw`mb-8`}
+  ${tw`mb-6 md:mb-0`}
+
+  &:last-child {
+    ${tw`mb-0`}
+  }
 
   justify-self: center;
 `
