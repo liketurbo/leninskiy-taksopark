@@ -7,15 +7,15 @@
   resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/button/-/button-1.1.1.tgz#3d275ee63758537ae63c1cc30d3841a55ee67b9d"
   integrity sha512-5Biik+ZXW395TDI94rF1GHHnCKUjz10Ygc5xdOutHd3KTEEPNQ8x0m2LVwyBXm9/dar3ZalPni63mAbIwKkh0Q==
 
-"@-taxi-parks-ui/input-area@1.1.3":
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/input-area/-/input-area-1.1.3.tgz#642ad42054abdb646a81e53dc9c7b93981087b54"
-  integrity sha512-YWK5cscuabQgBaQky54MPb5+V1LLai3GgAg8vFZ8m9rxcbbzQfZbXRH+FZeKJG8HaRdn3M6vOvldZ7uRXJQneQ==
+"@-taxi-parks-ui/input-area@1.1.4":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/input-area/-/input-area-1.1.4.tgz#c0e8e60d504b1f93cb084c86722dc174d37703a7"
+  integrity sha512-7gS6DwM6InCJ2EFPUlWrfGPMJdA4CBbp2AcYQHcVQQUy6yImiZfOluwYAdM5ZP9Nt+7i08a4jPkGWwghRNyHkA==
   dependencies:
     "@-taxi-parks-ui/input-base" "^1.1.1"
     "@-taxi-parks-ui/input-container" "^1.1.1"
     "@-taxi-parks-ui/input-error-msg" "^1.1.1"
-    "@-taxi-parks-ui/input-star" "^1.1.3"
+    "@-taxi-parks-ui/input-star" "^1.1.4"
 
 "@-taxi-parks-ui/input-base@^1.1.1":
   version "1.1.1"
@@ -57,6 +57,11 @@
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/input-star/-/input-star-1.1.3.tgz#0145f498d64f1b9e2aa9ce0ab96bcd7672b6ab4b"
   integrity sha512-0RoTzoc1zwfC9pRntA95n/DVasJPAMEJd3QEhgni58kscrqAZMSG0lxIdSWMGGVJJeojw6+BeW9xYKDJPIk2FA==
+
+"@-taxi-parks-ui/input-star@^1.1.4":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/input-star/-/input-star-1.1.4.tgz#4ef994552067f61d94fb558f8a1defe28726d567"
+  integrity sha512-9miEpSlsNq+xFCHcvNCawKzMS3Cug28DADCDw2V93xNBNTELIk9U2wGnxuXz7tcNNJmNk87D/tIOqpBSQ5MeNg==
 
 "@-taxi-parks-ui/list-item@1.1.1":
   version "1.1.1"
