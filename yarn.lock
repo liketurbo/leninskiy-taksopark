@@ -16,10 +16,20 @@
   resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/input-base/-/input-base-1.0.4.tgz#1522134dd5898f25cb5c7023e0da902c03341c1c"
   integrity sha512-8ld2uZYH5W1W6sQ926rPa/AETabDmM68Oh+RKYhlVLJp0o8wOwHv4wGoto2aH0DzFcQ0dLx2SXmHl9ncGrSR/w==
 
+"@-taxi-parks-ui/input-base@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/input-base/-/input-base-1.1.1.tgz#2ebdde35ff1913c53437ebdea4e3866dfeec01da"
+  integrity sha512-v4yAN6gvNj4QWlvjKUQpKYSvrQ9eznnOR/abzeEA184OpUMuOxskgrKXHwbJX/r9nBWXTJBkg6n/7+BNAYfIng==
+
 "@-taxi-parks-ui/input-container@^1.0.3":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/input-container/-/input-container-1.0.3.tgz#58cd5d2d5eeccd1d48ca632c061910c0c56677ac"
   integrity sha512-1vj8Ll0TkuCy67DZ1oqIruGyxF3Y1QzBzk0BDP6R7zAHFWfdnePwGFQnSSBb3jszZkeygINbHCozaKkb5/hNgQ==
+
+"@-taxi-parks-ui/input-container@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/input-container/-/input-container-1.1.1.tgz#c25d88f9a41ece1df32924ea5ead20d4dbedb80d"
+  integrity sha512-S/QDzhGzhb51ZTCQDsAzRprqvtEOlrVcCsXQGZlIV9HUaQ+dUAnDYy9i3H71TE64Adgp7x5dNLJhbUx5iJcDNQ==
 
 "@-taxi-parks-ui/input-default@1.0.5":
   version "1.0.5"
@@ -35,15 +45,26 @@
   resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/input-error-msg/-/input-error-msg-1.0.4.tgz#db8cb67e5d06a5a19187297e6c77330620c64007"
   integrity sha512-vaxe6pYlmYSKvnhosMBZEK1MIEBTQr4iJsglWru8eqGtQ+T/mwwTHQMmx0fku6Jz3YT/o75S8TJlcm3lUBZRVQ==
 
-"@-taxi-parks-ui/input-phone@1.0.5":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/input-phone/-/input-phone-1.0.5.tgz#091077699b5f5ab059e3e0c0798a7f51e6c74247"
-  integrity sha512-paBqpmNOqnNEWGFyJeOzuzL/WJ75IyurGWqYklRmS2b1ewC2Fi2MNBLUE4Vm4mrhFIf3XsIUBz8OpfelSPSPJw==
+"@-taxi-parks-ui/input-error-msg@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/input-error-msg/-/input-error-msg-1.1.1.tgz#43a6075a76b1be84eb5552c612f87cd345d95eb1"
+  integrity sha512-sw7xMjyrEuAYoR7AtDEseNbrB6EE/iHwolbAnt1UU5GwD+p3XJl5NmwuoogiFWHGZ79b5oKzAnMbNxcS31ZUZA==
+
+"@-taxi-parks-ui/input-phone@1.1.4":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/input-phone/-/input-phone-1.1.4.tgz#4b7325f64065a10aa36bc36c10d6ae9b3b04f93d"
+  integrity sha512-ijJ6s/4xeLT9Y/9cnYlcnPHJOGPLJu+6VR5Z3Q3ZWdqjeXgRvzl0Qypzaw4yqEJycBLBURipKbLY9NQCzJ1+eg==
   dependencies:
-    "@-taxi-parks-ui/input-base" "^1.0.4"
-    "@-taxi-parks-ui/input-container" "^1.0.3"
-    "@-taxi-parks-ui/input-error-msg" "^1.0.4"
+    "@-taxi-parks-ui/input-base" "^1.1.1"
+    "@-taxi-parks-ui/input-container" "^1.1.1"
+    "@-taxi-parks-ui/input-error-msg" "^1.1.1"
+    "@-taxi-parks-ui/input-star" "^1.1.4"
     react-input-mask "^2.0.4"
+
+"@-taxi-parks-ui/input-star@^1.1.4":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/input-star/-/input-star-1.1.4.tgz#4ef994552067f61d94fb558f8a1defe28726d567"
+  integrity sha512-9miEpSlsNq+xFCHcvNCawKzMS3Cug28DADCDw2V93xNBNTELIk9U2wGnxuXz7tcNNJmNk87D/tIOqpBSQ5MeNg==
 
 "@apollo/react-common@^3.1.3":
   version "3.1.3"
