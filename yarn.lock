@@ -7,6 +7,13 @@
   resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/button/-/button-1.1.1.tgz#3d275ee63758537ae63c1cc30d3841a55ee67b9d"
   integrity sha512-5Biik+ZXW395TDI94rF1GHHnCKUjz10Ygc5xdOutHd3KTEEPNQ8x0m2LVwyBXm9/dar3ZalPni63mAbIwKkh0Q==
 
+"@-taxi-parks-ui/container@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/container/-/container-1.0.1.tgz#a0dab44a230e5ab9038909a5d9f9dc298e947f00"
+  integrity sha512-HXgCc6HKRTSGGg6svhq3ZEC8uo57pnZui5Yybm3/eMR3GfYg8CJNzvry9lyu4pU2LJ3j9sSN9LfeP1fgNe9o5w==
+  dependencies:
+    "@-taxi-parks-ui/theme-spacing" "^1.0.1"
+
 "@-taxi-parks-ui/input-area@1.1.4":
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/input-area/-/input-area-1.1.4.tgz#c0e8e60d504b1f93cb084c86722dc174d37703a7"
@@ -67,6 +74,11 @@
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/list-ordered/-/list-ordered-1.1.1.tgz#e9fbe501a7081b36af3f23b1c2f57970d7c901d6"
   integrity sha512-/GR9BH1fAvGiafn40BbKxSfA2CIbzl4HsfMJy+RPZbvhGJOcJzMZmkB9DRjsZw6NrWH7NK2DLJeJscMG7SjUjg==
+
+"@-taxi-parks-ui/theme-spacing@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/theme-spacing/-/theme-spacing-1.0.1.tgz#7bb36b0d63524873b253322b9becc64491a612ac"
+  integrity sha512-eT61x8Ahhd5A1ss/a2UQhf2cTrM3oP8Qn3RaKg4Ybmjbj5z+Tt2Ygu7H+4tCRPTPwDZUvitDM64A5GTrStdhsw==
 
 "@apollo/react-common@^3.1.3":
   version "3.1.3"
@@ -892,6 +904,13 @@
   version "7.7.2"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.7.2.tgz#111a78002a5c25fc8e3361bedc9529c696b85a6a"
   integrity sha512-JONRbXbTXc9WQE2mAZd1p0Z3DZ/6vaQIkgYMSTP3KjRCyd7rCZCcfhCyX+YjwcKxcZ82UrxbRD358bpExNgrjw==
+  dependencies:
+    regenerator-runtime "^0.13.2"
+
+"@babel/runtime@^7.7.4":
+  version "7.7.4"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.7.4.tgz#b23a856751e4bf099262f867767889c0e3fe175b"
+  integrity sha512-r24eVUUr0QqNZa+qrImUk8fn5SPhHq+IfYvIoIMg0do3GdK9sMdiLKP3GYVVaxpPKORgm8KRKaNTEhAjgIpLMw==
   dependencies:
     regenerator-runtime "^0.13.2"
 
@@ -5820,12 +5839,12 @@ functional-red-black-tree@^1.0.1:
   resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
   integrity sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc=
 
-gatsby-background-image@0.9.6:
-  version "0.9.6"
-  resolved "https://registry.yarnpkg.com/gatsby-background-image/-/gatsby-background-image-0.9.6.tgz#cc4290cd451c6a23bb2523c0dd4f7c586144635f"
-  integrity sha512-APjlJbePar9pkJ3W4dqVmbA1hota49vMs2roh5OV747H+6sIT6lVD6WjKEiOmj1PfEl+hQZJJ4pZqB6V53Mxnw==
+gatsby-background-image@0.9.7:
+  version "0.9.7"
+  resolved "https://registry.yarnpkg.com/gatsby-background-image/-/gatsby-background-image-0.9.7.tgz#51ddccd66cec340db848ceb1ffd52b2f168ea7e4"
+  integrity sha512-71VwWTtEjO4pZbYSTTIA9ob/pbJ9td43LcW5cEYotK3wCjsBEB5dVJWO/C7ovpA4HpLfqyKWanzMDY+zZB4DtQ==
   dependencies:
-    "@babel/runtime" "^7.7.2"
+    "@babel/runtime" "^7.7.4"
     filter-invalid-dom-props "^2.0.0"
     global "^4.4.0"
     prop-types "^15.7.2"
