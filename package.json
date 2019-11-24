@@ -55,7 +55,7 @@
     "@types/escape-html": "0.0.20",
     "@types/isomorphic-fetch": "0.0.35",
     "@types/prop-types": "15.7.3",
-    "@types/react": "16.9.12",
+    "@types/react": "16.9.13",
     "@types/react-dom": "16.9.4",
     "@types/react-helmet": "5.0.14",
     "@types/react-input-mask": "2.0.4",
