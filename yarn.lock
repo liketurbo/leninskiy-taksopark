@@ -75,17 +75,17 @@
   resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/list-ordered/-/list-ordered-1.1.1.tgz#e9fbe501a7081b36af3f23b1c2f57970d7c901d6"
   integrity sha512-/GR9BH1fAvGiafn40BbKxSfA2CIbzl4HsfMJy+RPZbvhGJOcJzMZmkB9DRjsZw6NrWH7NK2DLJeJscMG7SjUjg==
 
-"@-taxi-parks-ui/theme-colors@^1.0.1":
+"@-taxi-parks-ui/theme-colors@1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/theme-colors/-/theme-colors-1.0.1.tgz#4100322c39fff74410ec472ca465c65f411ebede"
   integrity sha512-QIe1L2L5CF9qd4iuV3oH6p0N7T5M8zRAFijwrNtnHRwzh5aT4I4V6x23eu0Nku3bQgYsWMOLMMCrUyL+bF/YeQ==
 
-"@-taxi-parks-ui/theme-screens@^1.0.1":
+"@-taxi-parks-ui/theme-screens@1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/theme-screens/-/theme-screens-1.0.1.tgz#c67c413d44cb36c5a88b1bf97011af12810ee0f0"
   integrity sha512-LbfT6lesoTNOPa56S9TeDe9AU/0fd1jRtmk+PKF5yrP9oRRRMMlEte8Yejz6RSYUzordu8daTvJESNIh2vmCuA==
 
-"@-taxi-parks-ui/theme-spacing@^1.0.1":
+"@-taxi-parks-ui/theme-spacing@1.0.1", "@-taxi-parks-ui/theme-spacing@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/theme-spacing/-/theme-spacing-1.0.1.tgz#7bb36b0d63524873b253322b9becc64491a612ac"
   integrity sha512-eT61x8Ahhd5A1ss/a2UQhf2cTrM3oP8Qn3RaKg4Ybmjbj5z+Tt2Ygu7H+4tCRPTPwDZUvitDM64A5GTrStdhsw==
@@ -4938,7 +4938,7 @@ eslint-plugin-security@1.4.0:
   dependencies:
     safe-regex "^1.1.0"
 
-eslint-plugin-simple-import-sort@^5.0.0:
+eslint-plugin-simple-import-sort@5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-simple-import-sort/-/eslint-plugin-simple-import-sort-5.0.0.tgz#fd2abac52c0ae6050baf340c004b0b5d9aa76e8e"
   integrity sha512-Zn6OppySnbwl/UonkzmMBbiFXZwe/tI9ZlSXwQek5h1FfPv3hcDTE3kG0SC70pBsKuVE8IMwZCMl0tKwcY89rw==
@@ -6978,7 +6978,7 @@ human-signals@^1.1.1:
   resolved "https://registry.yarnpkg.com/human-signals/-/human-signals-1.1.1.tgz#c5b1cd14f50aeae09ab6c59fe63ba3395fe4dfa3"
   integrity sha512-SEQu7vl8KjNL2eoGBLF3+wAjpsNfA9XMlXAYj/3EdaNfAlxKthD1xjEQfGOUhllCGGJVNY34bRr6lPINhNjyZw==
 
-husky@^3.1.0:
+husky@3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/husky/-/husky-3.1.0.tgz#5faad520ab860582ed94f0c1a77f0f04c90b57c0"
   integrity sha512-FJkPoHHB+6s4a+jwPqBudBDvYZsoQW5/HBuMSehC8qDiCe50kpcxeqFoDSlow+9I6wg47YxBoT3WxaURlrDIIQ==
@@ -8104,7 +8104,7 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
-lint-staged@^9.5.0:
+lint-staged@9.5.0:
   version "9.5.0"
   resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-9.5.0.tgz#290ec605252af646d9b74d73a0fa118362b05a33"
   integrity sha512-nawMob9cb/G1J98nb8v3VC/E8rcX1rryUYXVZ69aT9kde6YWX+uvNOEHY5yf2gcWcTJGiD0kqXmCnS3oD75GIA==
