@@ -13,6 +13,7 @@ export default (screenSize: "sm" | "md" | "lg" | "xl") => {
     const mediaQuery = window.matchMedia(`(min-width: ${screens[screenSize]})`)
 
     mediaQuery.addListener(mediaQueryChange)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     mediaQueryChange(mediaQuery as any)
 
     return () => mediaQuery.removeEventListener("change", mediaQueryChange)

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types"
-import React, { FC, ReactNode } from "react"
+import React, { ReactElement, ReactNode } from "react"
 import styled from "styled-components"
 
 import screens from "@-taxi-parks-ui/theme-screens"
@@ -91,15 +91,17 @@ const Step = ({
   title: ReactNode
   content: ReactNode
 }) => (
+  // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+  // @ts-ignore
   <SStep index={rest.index}>
     {title}
     {content}
   </SStep>
 )
 
-const Steps: FC = ({ children }) => (
+const Steps = ({ children }: { children: ReactElement[] }) => (
   <SSteps>
-    {children.map((child: ReactNode, index: number) => ({
+    {React.Children.map(children, (child, index) => ({
       ...child,
       props: {
         ...child.props,

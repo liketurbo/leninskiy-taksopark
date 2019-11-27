@@ -5,6 +5,7 @@ import Toast, { Variant } from "../components/Toast"
 
 const toastContext = createContext<{
   show: (msg: string, variant: Variant) => void
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
 }>(null as any)
 
 type State = {

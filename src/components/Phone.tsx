@@ -22,10 +22,14 @@ const Phone = ({ ...rest }: AnchorHTMLAttributes<HTMLAnchorElement>) => {
 
   const { phone } = data.site.siteMetadata.taxiData
 
-  return (
-    <Link href={parsePhoneNumberFromString(phone).getURI()} {...rest}>
-      {parsePhoneNumberFromString(phone).formatNational()}
+  const parsedPhone = parsePhoneNumberFromString(phone)
+
+  return parsedPhone ? (
+    <Link href={parsedPhone.getURI()} {...rest}>
+      {parsedPhone.formatNational()}
     </Link>
+  ) : (
+    <Link href="tel:+70000000000">{"8 (000) 000-00-00"}</Link>
   )
 }
 
