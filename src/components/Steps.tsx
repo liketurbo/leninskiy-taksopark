@@ -2,6 +2,9 @@ import PropTypes from "prop-types"
 import React, { FC, ReactNode } from "react"
 import styled from "styled-components"
 
+import screens from "@-taxi-parks-ui/theme-screens"
+import spacing from "@-taxi-parks-ui/theme-spacing"
+
 const SSteps = styled.div`
   ${tw`relative flex flex-col pl-8 md:pl-0`}
 `
@@ -38,7 +41,7 @@ const SStep = styled.div<{ index: number }>`
     ::before {
       right: -1px;
 
-      @media (max-width: ${props => props.theme.screens["md"]}) {
+      @media (max-width: ${screens.md}) {
         left: -1px;
       }
     }
@@ -47,10 +50,10 @@ const SStep = styled.div<{ index: number }>`
       right: 0;
       transform: translateX(50%);
 
-      @media (max-width: ${props => props.theme.screens["md"]}) {
+      @media (max-width: ${screens.md}) {
         left: 0;
         transform: translateX(-50%)
-          translateY(-${props => props.theme.spacing["3"]});
+          translateY(-${spacing["3"]});
       }
     }
   }
@@ -61,7 +64,7 @@ const SStep = styled.div<{ index: number }>`
     ::before {
       left: -1px;
 
-      @media (max-width: ${props => props.theme.screens["md"]}) {
+      @media (max-width: ${screens.md}) {
         right: -1px;
       }
     }
@@ -69,7 +72,7 @@ const SStep = styled.div<{ index: number }>`
     ::after {
       left: 0;
       transform: translateX(-50%)
-        translateY(-${props => props.theme.spacing["3"]});
+        translateY(-${spacing["3"]});
     }
   }
 

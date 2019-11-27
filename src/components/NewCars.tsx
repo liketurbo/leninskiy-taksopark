@@ -10,6 +10,8 @@ import Button from "@-taxi-parks-ui/button"
 import PContainer from "@-taxi-parks-ui/container"
 import InputDefault from "@-taxi-parks-ui/input-default"
 import InputPhone from "@-taxi-parks-ui/input-phone"
+import screens from "@-taxi-parks-ui/theme-screens"
+import spacing from "@-taxi-parks-ui/theme-spacing"
 import { useMutation } from "@apollo/react-hooks"
 
 import useToast from "../hooks/useToast"
@@ -21,9 +23,9 @@ const Container = styled(PContainer)`
   display: grid;
   grid-template-rows: repeat(2, auto);
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: ${props => props.theme.spacing["6"]};
+  grid-gap: ${spacing["6"]};
 
-  @media (max-width: ${props => props.theme.screens.md}) {
+  @media (max-width: ${screens.md}) {
     grid-template-rows: repeat(3, auto);
     grid-template-columns: 1fr;
   }
@@ -51,7 +53,7 @@ const Form = styled.form`
   grid-row: 1 / -1;
   grid-column: 2;
 
-  @media (max-width: ${props => props.theme.screens.md}) {
+  @media (max-width: ${screens.md}) {
     grid-row: 3;
     grid-column: 1;
     justify-self: center;

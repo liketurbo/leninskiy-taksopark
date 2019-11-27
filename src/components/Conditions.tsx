@@ -4,6 +4,8 @@ import React from "react"
 import styled from "styled-components"
 
 import Container from "@-taxi-parks-ui/container"
+import screens from "@-taxi-parks-ui/theme-screens"
+import spacing from "@-taxi-parks-ui/theme-spacing"
 
 import PH1 from "./H/H1"
 import PH2 from "./H/H2"
@@ -14,10 +16,10 @@ const Background = styled(Container)`
   display: grid;
   grid-template-rows: auto repeat(3, 1fr);
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: ${props => props.theme.spacing["4"]};
+  grid-gap: ${spacing["4"]};
   justify-items: center;
 
-  @media (max-width: ${props => props.theme.screens.md}) {
+  @media (max-width: ${screens.md}) {
     grid-template-rows: auto repeat(6, 1fr);
     grid-template-columns: 1fr;
   }
@@ -35,9 +37,9 @@ const Card = styled.figure`
   display: grid;
   grid-template-rows: repeat(2, auto);
   grid-template-columns: auto 1fr;
-  grid-gap: ${props => props.theme.spacing["4"]};
+  grid-gap: ${spacing["4"]};
 
-  @media (max-width: ${props => props.theme.screens.sm}) {
+  @media (max-width: ${screens.sm}) {
     justify-items: center;
   }
 `

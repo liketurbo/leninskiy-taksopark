@@ -76,9 +76,7 @@ const ToastProvider: FC = ({ children }) => {
 }
 
 ToastProvider.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
 }
 
-export { ToastProvider }
-
-export default toastContext
+export { toastContext, ToastProvider }

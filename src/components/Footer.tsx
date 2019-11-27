@@ -3,6 +3,8 @@ import React from "react"
 import styled from "styled-components"
 
 import { ContainerRaw } from "@-taxi-parks-ui/container"
+import screens from "@-taxi-parks-ui/theme-screens"
+import spacing from "@-taxi-parks-ui/theme-spacing"
 
 import H2 from "./H/H2"
 import Phone from "./Phone"
@@ -18,9 +20,9 @@ const SFooter = styled.footer`
     "info address"
     "info hours"
     "policy contacts";
-  grid-gap: ${props => props.theme.spacing["4"]};
+  grid-gap: ${spacing["4"]};
 
-  @media (max-width: ${props => props.theme.screens.md}) {
+  @media (max-width: ${screens.md}) {
     grid-template-columns: 1fr;
     grid-template-areas:
       "info"

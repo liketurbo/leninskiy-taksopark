@@ -6,6 +6,7 @@ import styled from "styled-components"
 
 import PButton from "@-taxi-parks-ui/button"
 import PContainer from "@-taxi-parks-ui/container"
+import screens from "@-taxi-parks-ui/theme-screens"
 
 import convertRemToPixels from "../utils/convertRemToPixels"
 import PH1 from "./H/H1"
@@ -30,7 +31,7 @@ const Background = styled(PContainer)`
 const Strong = styled(PH2)`
   ${tw`m-0 w-56`}
 
-  @media (max-width: ${props => props.theme.screens.sm}) {
+  @media (max-width: ${screens.sm}) {
     ${tw`mb-4 text-center`}
 
     flex-basis: 100%;
@@ -45,7 +46,7 @@ const Container = styled(PContainer)`
   justify-items: space-around;
   align-items: center;
 
-  @media (max-width: ${props => props.theme.screens["md"]}) {
+  @media (max-width: ${screens["md"]}) {
     grid-template-columns: 1fr;
     justify-items: center;
   }

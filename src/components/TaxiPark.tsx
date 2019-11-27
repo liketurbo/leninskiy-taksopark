@@ -4,6 +4,8 @@ import React from "react"
 import styled from "styled-components"
 
 import PContainer from "@-taxi-parks-ui/container"
+import screens from "@-taxi-parks-ui/theme-screens"
+import spacing from "@-taxi-parks-ui/theme-spacing"
 
 import PH1 from "./H/H1"
 import PH2 from "./H/H2"
@@ -19,9 +21,9 @@ const Container = styled(PContainer)`
     "h2 photo"
     "h3 photo"
     "list photo";
-  grid-column-gap: ${props => props.theme.spacing["4"]};
+  grid-column-gap: ${spacing["4"]};
 
-  @media (max-width: ${props => props.theme.screens.md}) {
+  @media (max-width: ${screens.md}) {
     grid-template-columns: 1fr;
     grid-template-areas:
       "h1"

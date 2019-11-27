@@ -2,6 +2,8 @@ import React, { useCallback, useState } from "react"
 import styled from "styled-components"
 
 import { ContainerRaw } from "@-taxi-parks-ui/container"
+import screens from "@-taxi-parks-ui/theme-screens"
+import spacing from "@-taxi-parks-ui/theme-spacing"
 
 import useScreenSize from "../../hooks/useScreenSize"
 import PPhone from "../Phone"
@@ -12,7 +14,7 @@ import PNavigation from "./Navigation"
 const SHeader = styled.header`
   ${ContainerRaw}
 
-  ${tw`bg-white py-0 shadow fixed z-20`}
+  ${tw`bg-white py-px shadow fixed z-20`}
 
   top: 0;
   left: 0;
@@ -23,19 +25,18 @@ const SHeader = styled.header`
     "logo burger"
     "nav nav"
     "phone phone";
-  grid-template-rows: ${props => props.theme.spacing["14"]};
-  grid-template-columns: repeat(2, auto);
+  grid-template-rows: ${spacing["14"]};
   align-items: center;
   justify-items: center;
 
-  @media (min-width: ${props => props.theme.screens.md}) {
+  @media (min-width: ${screens.md}) {
     grid-template-areas: "logo nav phone";
-    grid-template-columns: auto 1fr auto;
   }
 `
 
 const Logo = styled(PLogo)`
   grid-area: logo;
+
   justify-self: start;
 `
 
@@ -47,6 +48,7 @@ const Burger = styled(PBurger)`
   ${tw`flex md:hidden`}
 
   grid-area: burger;
+
   justify-self: end;
 `
 

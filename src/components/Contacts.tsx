@@ -3,8 +3,11 @@ import React from "react"
 import { Map, Placemark, YMaps, ZoomControl } from "react-yandex-maps"
 import styled from "styled-components"
 
+import colors from "@-taxi-parks-ui/theme-colors"
+import screens from "@-taxi-parks-ui/theme-screens"
+import spacing from "@-taxi-parks-ui/theme-spacing"
+
 import useScreenSize from "../hooks/useScreenSize"
-import theme from "../library/theme"
 import H1 from "./H/H1"
 import Phone from "./Phone"
 
@@ -13,15 +16,15 @@ const Container = styled.div`
 
   height: 90vh;
 
-  @media (max-width: ${props => props.theme.screens.lg}) {
+  @media (max-width: ${screens.lg}) {
     height: 80vh;
   }
 
-  @media (max-width: ${props => props.theme.screens.md}) {
+  @media (max-width: ${screens.md}) {
     height: 70vh;
   }
 
-  @media (max-width: ${props => props.theme.screens.sm}) {
+  @media (max-width: ${screens.sm}) {
     height: 60vh;
   }
 `
@@ -29,11 +32,11 @@ const Container = styled.div`
 const SContacts = styled.section`
   ${tw`absolute z-10 p-2`}
 
-  top: ${props => props.theme.spacing["2"]};
-  left: ${props => props.theme.spacing["2"]};
+  top: ${spacing["2"]};
+  left: ${spacing["2"]};
 
-  @media (max-width: ${props => props.theme.screens.sm}) {
-    right: ${props => props.theme.spacing["2"]};
+  @media (max-width: ${screens.sm}) {
+    right: ${spacing["2"]};
   }
 
   &::before {
@@ -46,7 +49,7 @@ const SContacts = styled.section`
 
     content: "";
 
-    background: ${props => props.theme.colors["yellow-dark"]};
+    background: ${colors["yellow-dark"]};
   }
 `
 
@@ -112,7 +115,7 @@ const Contacts = () => {
           <Placemark
             geometry={coordinates}
             options={{
-              iconColor: theme.colors["yellow-dark"],
+              iconColor: colors["yellow-dark"],
               preset: "islands#blueAutoIcon",
             }}
             properties={{ iconCaption: brand }}

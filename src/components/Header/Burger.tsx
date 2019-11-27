@@ -1,16 +1,18 @@
 import React, { BaseHTMLAttributes, useState } from "react"
 import styled, { css } from "styled-components"
 
+import spacing from "@-taxi-parks-ui/theme-spacing"
+
 const Container = styled.div`
   ${tw`relative cursor-pointer flex flex-col justify-around w-4 h-4`} ::before {
     ${tw`absolute`}
 
     content: "";
 
-    top: -${props => props.theme.spacing[4]};
-    right: -${props => props.theme.spacing[4]};
-    bottom: -${props => props.theme.spacing[4]};
-    left: -${props => props.theme.spacing[4]};
+    top: -${spacing[4]};
+    right: -${spacing[4]};
+    bottom: -${spacing[4]};
+    left: -${spacing[4]};
   }
 `
 
