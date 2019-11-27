@@ -7,7 +7,7 @@ module.exports = {
     "prettier/@typescript-eslint",
     "get-off-my-lawn",
   ],
-  plugins: ["import"],
+  plugins: ["import", "simple-import-sort"],
   globals: {
     tw: true,
   },
@@ -18,8 +18,9 @@ module.exports = {
     // Disable react conflicts
     "react/jsx-filename-extension": [0, { extensions: [".tsx"] }],
 
-    // Disable sort extension conflicts
-    "import/no-useless-path-segments": 0,
+    // Enable sorter
+    "simple-import-sort/sort": "error",
+    "sort-imports": 0,
     "import/order": 0,
   },
   settings: {

@@ -1,6 +1,5 @@
-import React, { ReactNode } from "react"
-
 import { ApolloProvider } from "@apollo/react-hooks"
+import React, { ReactNode } from "react"
 
 import apolloClient from "./apolloClient"
 import { ToastProvider } from "./toast"

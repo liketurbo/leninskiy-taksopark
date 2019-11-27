@@ -6,7 +6,7 @@
     "build": "gatsby build",
     "dev": "gatsby develop -p 3000",
     "deploy": "now --prod",
-    "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
+    "lint": "tsc --noEmit && eslint . --ext .js,.ts,.tsx --quiet --fix"
   },
   "husky": {
     "hooks": {
@@ -85,6 +85,7 @@
     "eslint-plugin-import": "2.18.2",
     "eslint-plugin-prettier": "3.1.1",
     "eslint-plugin-react": "7.16.0",
+    "eslint-plugin-simple-import-sort": "^5.0.0",
     "husky": "^3.1.0",
     "lint-staged": "^9.5.0",
     "now": "16.6.0",
