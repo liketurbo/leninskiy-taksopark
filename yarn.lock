@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@-taxi-parks-ui/button@1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/button/-/button-1.1.1.tgz#3d275ee63758537ae63c1cc30d3841a55ee67b9d"
-  integrity sha512-5Biik+ZXW395TDI94rF1GHHnCKUjz10Ygc5xdOutHd3KTEEPNQ8x0m2LVwyBXm9/dar3ZalPni63mAbIwKkh0Q==
+"@-taxi-parks-ui/button@1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/button/-/button-1.1.2.tgz#7b7a78b720130bdb198e7def75aa78c5fe9b84a1"
+  integrity sha512-93HWFbbEjwtOHXPpZ0JrsbyjoIueLsWW5wBih38AAEcg1gME1VM8vwmNp2lJHPgHoKu8RLQC5UJrP/hk+3stNA==
 
 "@-taxi-parks-ui/container@1.0.1":
   version "1.0.1"
