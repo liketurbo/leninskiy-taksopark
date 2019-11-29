@@ -75,7 +75,7 @@
     "@types/react-transition-group": "4.2.3",
     "@types/react-youtube": "7.6.2",
     "@types/styled-components": "4.4.0",
-    "@types/yup": "0.26.24",
+    "@types/yup": "0.26.26",
     "@typescript-eslint/eslint-plugin": "2.8.0",
     "@typescript-eslint/parser": "2.8.0",
     "eslint": "6.7.0",
