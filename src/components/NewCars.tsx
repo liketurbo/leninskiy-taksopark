@@ -64,14 +64,14 @@ const P = styled.p`
   ${tw`text-sm font-light text-center mt-4`}
 `
 
-const addRequestMutation = gql`
+const mutationRequestAdd = gql`
   mutation($input: InputRequest!) {
-    addRequest(input: $input)
+    requestAdd(input: $input)
   }
 `
 
 const NewCars = () => {
-  const [addRequestFunc] = useMutation(addRequestMutation)
+  const [funcRequestAdd] = useMutation(mutationRequestAdd)
 
   const toast = useToast()
 
@@ -125,7 +125,7 @@ const NewCars = () => {
           }}
           onSubmit={async ({ name, phone }) => {
             try {
-              await addRequestFunc({
+              await funcRequestAdd({
                 variables: {
                   input: {
                     name,

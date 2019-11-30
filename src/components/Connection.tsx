@@ -41,14 +41,14 @@ const P = styled.p`
   ${tw`text-grey-lightest text-sm font-light text-center mt-4`}
 `
 
-const mutationAddRequest = gql`
+const mutationRequestAdd = gql`
   mutation($input: InputRequest!) {
-    addRequest(input: $input)
+    requestAdd(input: $input)
   }
 `
 
 const Questions = () => {
-  const [funcAddRequest] = useMutation(mutationAddRequest)
+  const [funcRequestAdd] = useMutation(mutationRequestAdd)
 
   const toast = useToast()
 
@@ -84,17 +84,14 @@ const Questions = () => {
             note: "",
             phone: "",
           }}
-          onSubmit={async ({ name, note, phone }) => {
+          onSubmit={async input => {
             try {
-              await funcAddRequest({
+              await funcRequestAdd({
                 variables: {
-                  input: {
-                    name,
-                    note,
-                    phone,
-                  },
+                  input,
                 },
               })
+
               toast.show("Заявка успешно отправлена", "success")
             } catch {
               toast.show("Не удалось отправить заявку", "danger")
