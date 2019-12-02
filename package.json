@@ -37,7 +37,7 @@
     "escape-html": "1.0.3",
     "formik": "2.0.6",
     "gatsby": "2.18.6",
-    "gatsby-background-image": "0.9.10",
+    "gatsby-background-image": "0.9.11",
     "gatsby-image": "2.2.34",
     "gatsby-plugin-manifest": "2.2.31",
     "gatsby-plugin-react-helmet": "3.1.16",
