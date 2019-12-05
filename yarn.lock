@@ -14,10 +14,10 @@
   dependencies:
     "@-taxi-parks-ui/theme-spacing" "^1.0.1"
 
-"@-taxi-parks-ui/input-area@1.1.5":
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/input-area/-/input-area-1.1.5.tgz#91d60aaf30732788b3d291abf394568f9df60382"
-  integrity sha512-bO+rGa4ppjGvj+XcPWvOSMkxGrKooa1xlnPNZdAike8J1VqCet/Zuq5Z3HcA2tZhSXfHXxnbEzsTmLgDbvjlbA==
+"@-taxi-parks-ui/input-area@1.1.6":
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/input-area/-/input-area-1.1.6.tgz#16efeedf6871a49e95b8c23b8953409737c028e2"
+  integrity sha512-oD93UVw3hVxD7YeSB1AB4i9E60B/gry3EJAKyKtfL4Y38C75E7ZsDn+7SZ3avL2aiKHiFNERQRJHCjcrXH26Nw==
   dependencies:
     "@-taxi-parks-ui/input-base" "^1.1.1"
     "@-taxi-parks-ui/input-container" "^1.1.1"
