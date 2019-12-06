@@ -80,10 +80,10 @@
   resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/theme-colors/-/theme-colors-1.0.1.tgz#4100322c39fff74410ec472ca465c65f411ebede"
   integrity sha512-QIe1L2L5CF9qd4iuV3oH6p0N7T5M8zRAFijwrNtnHRwzh5aT4I4V6x23eu0Nku3bQgYsWMOLMMCrUyL+bF/YeQ==
 
-"@-taxi-parks-ui/theme-screens@1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/theme-screens/-/theme-screens-1.0.1.tgz#c67c413d44cb36c5a88b1bf97011af12810ee0f0"
-  integrity sha512-LbfT6lesoTNOPa56S9TeDe9AU/0fd1jRtmk+PKF5yrP9oRRRMMlEte8Yejz6RSYUzordu8daTvJESNIh2vmCuA==
+"@-taxi-parks-ui/theme-screens@1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/theme-screens/-/theme-screens-1.0.2.tgz#d9e0af2a7af24579e1706a50a3e34547e0b4129a"
+  integrity sha512-SIDz+F0SuEiKbLmjdoFC0JrEC5S8o82HVhVxF3qXFqMLcprjkw+XXCgr9wKKmpEG63yinX1KqOkO5t15J/mo+Q==
 
 "@-taxi-parks-ui/theme-spacing@1.0.1", "@-taxi-parks-ui/theme-spacing@^1.0.1":
   version "1.0.1"
