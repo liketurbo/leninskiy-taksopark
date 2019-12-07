@@ -3,6 +3,12 @@ import React from "react"
 import styled from "styled-components"
 
 import { ContainerRaw } from "@-taxi-parks-ui/container"
+import IconFacebook from "@-taxi-parks-ui/icon-facebook"
+import IconInstagram from "@-taxi-parks-ui/icon-instagram"
+import IconOk from "@-taxi-parks-ui/icon-ok"
+import IconTelegram from "@-taxi-parks-ui/icon-telegram"
+import IconTwitter from "@-taxi-parks-ui/icon-twitter"
+import IconVk from "@-taxi-parks-ui/icon-vk"
 import screens from "@-taxi-parks-ui/theme-screens"
 import spacing from "@-taxi-parks-ui/theme-spacing"
 
@@ -18,7 +24,7 @@ const SFooter = styled.footer`
   grid-template-columns: repeat(2, 1fr);
   grid-template-areas:
     "info address"
-    "info hours"
+    "social hours"
     "policy contacts";
   grid-gap: ${spacing["4"]};
 
@@ -27,6 +33,7 @@ const SFooter = styled.footer`
     grid-template-areas:
       "info"
       "address"
+      "social"
       "hours"
       "contacts"
       "policy";
@@ -62,6 +69,17 @@ const Email = styled.a`
   ${tw`underline hover:no-underline`}
 `
 
+const SocialLinks = styled.section`
+  ${tw`flex`}
+
+  grid-area: social;
+  align-self: center;
+`
+
+const SLink = styled.a`
+  ${tw`mr-2`}
+`
+
 const Footer = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -94,6 +112,26 @@ const Footer = () => {
         <p>{owner}</p>
         <p>{`© ${new Date().getFullYear()} ${brand}, Все права защищены.`}</p>
       </Info>
+      <SocialLinks>
+        <SLink href="https://www.facebook.com" target="_blank">
+          <IconFacebook />
+        </SLink>
+        <SLink href="https://twitter.com" target="_blank">
+          <IconTwitter />
+        </SLink>
+        <SLink href="https://vk.com" target="_blank">
+          <IconVk />
+        </SLink>
+        <SLink href="https://ok.ru" target="_blank">
+          <IconOk />
+        </SLink>
+        <SLink href="https://telegram.org" target="_blank">
+          <IconTelegram />
+        </SLink>
+        <SLink href="https://www.instagram.com" target="_blank">
+          <IconInstagram />
+        </SLink>
+      </SocialLinks>
       <Policy href="/policy" target="_blank">
         {"Политика конфиденциальности"}
       </Policy>
