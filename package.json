@@ -41,7 +41,7 @@
     "apollo-boost": "0.4.4",
     "babel-plugin-styled-components": "1.10.6",
     "escape-html": "1.0.3",
-    "formik": "2.0.7",
+    "formik": "2.0.8",
     "gatsby": "2.18.11",
     "gatsby-background-image": "0.9.12",
     "gatsby-image": "2.2.36",
