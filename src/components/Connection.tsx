@@ -47,7 +47,7 @@ const mutationRequestAdd = gql`
   }
 `
 
-const Questions = () => {
+const Connection = () => {
   const [funcRequestAdd] = useMutation(mutationRequestAdd)
 
   const toast = useToast()
@@ -167,4 +167,4 @@ const Questions = () => {
   )
 }
 
-export default Questions
+export default Connection
