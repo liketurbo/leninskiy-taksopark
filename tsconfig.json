@@ -8,7 +8,7 @@
       "es2017"
     ] /* Specify library files to be included in the compilation. */,
     "jsx": "react" /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */,
-    "types": ["react"],
+    "skipLibCheck": true,
 
     /* Strict Type-Checking Options */
     "strict": true /* Enable all strict type-checking options. */,
