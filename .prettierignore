@@ -1,0 +1,6 @@
+# Builded files
+/.cache/
+/public/
+
+# Node.js modules
+/node_modules/

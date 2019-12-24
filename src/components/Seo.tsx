@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet"
 const Seo = ({
   title,
   description = "",
-  lang = "en",
+  lang = "ru",
   index = true,
   meta = [],
 }: {

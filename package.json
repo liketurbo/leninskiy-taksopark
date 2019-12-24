@@ -6,7 +6,7 @@
     "build": "gatsby build",
     "dev": "gatsby develop -p 3000",
     "deploy": "now --prod",
-    "lint": "tsc --noEmit && eslint . --ext .js,.ts,.tsx --quiet --fix"
+    "lint": "tsc --noEmit && eslint . --ext .js,.jsx,.ts,.tsx --quiet --fix"
   },
   "husky": {
     "hooks": {
@@ -14,7 +14,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": [
+    "*.{js,jsx,ts,tsx,json,md}": [
       "prettier --write",
       "eslint --fix",
       "git add"
