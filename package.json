@@ -54,7 +54,7 @@
     "gatsby-plugin-tailwindcss": "1.0.3",
     "gatsby-plugin-typescript": "2.1.27",
     "gatsby-source-filesystem": "2.1.48",
-    "gatsby-transformer-sharp": "2.3.15",
+    "gatsby-transformer-sharp": "2.3.16",
     "graphql": "14.6.0",
     "graphql-tag": "2.10.3",
     "isomorphic-fetch": "2.2.1",
