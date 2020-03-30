@@ -58,7 +58,7 @@
     "graphql": "14.6.0",
     "graphql-tag": "2.10.3",
     "isomorphic-fetch": "2.2.1",
-    "libphonenumber-js": "1.7.48",
+    "libphonenumber-js": "1.7.49",
     "prop-types": "15.7.2",
     "react": "16.13.1",
     "react-anchor-link-smooth-scroll": "1.0.12",
