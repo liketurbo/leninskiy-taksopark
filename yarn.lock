@@ -11574,10 +11574,10 @@ react-yandex-maps@4.2.0:
     prop-types "^15.7.2"
     react-display-name "^0.2.4"
 
-react-youtube@7.11.0:
-  version "7.11.0"
-  resolved "https://registry.yarnpkg.com/react-youtube/-/react-youtube-7.11.0.tgz#9f19017f4f76659c96dd8f14b4ae49d70569ab49"
-  integrity sha512-go1ACl3fksvropZ5Pku0ssKDjQpbIXGW9B5ermwu8n8Zdmt3kvqfILuDkqVpoOQnTW1d+X/xw39nYM29DupjxA==
+react-youtube@7.11.1:
+  version "7.11.1"
+  resolved "https://registry.yarnpkg.com/react-youtube/-/react-youtube-7.11.1.tgz#d380a1f5137aca8190eca5c4b2813278434057b9"
+  integrity sha512-h78ZNLEDleq31WT1AZXU9hRZOFWCunLx4zCQCHydLXfMLAfmS5rgjB3atVnBJUoWmQLuj/A1NfIJuyMEM1m5AA==
   dependencies:
     fast-deep-equal "3.1.1"
     prop-types "15.7.2"
