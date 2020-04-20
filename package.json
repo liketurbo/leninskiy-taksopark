@@ -68,7 +68,7 @@
     "react-youtube": "7.11.2",
     "styled-components": "4.4.1",
     "tailwindcss": "1.2.0",
-    "yup": "0.28.3"
+    "yup": "0.28.4"
   },
   "keywords": [
     "gatsby"
