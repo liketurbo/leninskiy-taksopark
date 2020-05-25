@@ -12331,10 +12331,10 @@ react-side-effect@^1.1.0:
   dependencies:
     shallowequal "^1.0.1"
 
-react-yandex-maps@4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/react-yandex-maps/-/react-yandex-maps-4.3.0.tgz#6e52a7ebf69bf359049f95d372cb2eb39fb04fca"
-  integrity sha512-sM5QqvPAQqEsoezpsvRF5YQXbBVUIwqcqVFcMqpi87QcbnDYcu2+zR3WuSseBPVa0oFfCHvJARKnzXmkTwdWAA==
+react-yandex-maps@4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/react-yandex-maps/-/react-yandex-maps-4.4.0.tgz#42b116b94675dd3845fc808110f5e981fc3e7000"
+  integrity sha512-AdLah4/xtCXFvuVAA3S76k6/otMsGnDp8G6Z5ku6rF4Rag3cSfv33GZOoDKQXXY4O7QefNFY3v+BWoDuzKSZvQ==
   dependencies:
     create-react-context "^0.2.3"
     prop-types "^15.7.2"
