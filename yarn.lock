@@ -95,10 +95,10 @@
   resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/input-star/-/input-star-1.1.4.tgz#4ef994552067f61d94fb558f8a1defe28726d567"
   integrity sha512-9miEpSlsNq+xFCHcvNCawKzMS3Cug28DADCDw2V93xNBNTELIk9U2wGnxuXz7tcNNJmNk87D/tIOqpBSQ5MeNg==
 
-"@-taxi-parks-ui/list-item@1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/list-item/-/list-item-1.1.1.tgz#8dce0026a7cdb6d113223aa1af19a8ab7cd2fb51"
-  integrity sha512-sAINoRQ9vAFOOox7C4nd1tt3iM2DRzyAyThIkkrXpawlvq2h5pwtd0DuxmFvqxijixETbxxLtGo3AlIkmiY7Ug==
+"@-taxi-parks-ui/list-item@1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@-taxi-parks-ui/list-item/-/list-item-1.1.2.tgz#252b879748c55fe8b5cc3d3dfcc8ce0fe953bae2"
+  integrity sha512-ek9XIA9gSJghm5k5qEEF4LTArqJYLe9joDnD6B6JnsI5jwp4qGxe50+ceI1bHnppikhFIE5AQB/+9AUnmNlslA==
 
 "@-taxi-parks-ui/list-ordered@1.1.1":
   version "1.1.1"
