@@ -36,7 +36,7 @@
     "@-taxi-parks-ui/list-ordered": "1.1.1",
     "@-taxi-parks-ui/theme-colors": "1.0.2",
     "@-taxi-parks-ui/theme-screens": "1.0.1",
-    "@-taxi-parks-ui/theme-spacing": "1.0.1",
+    "@-taxi-parks-ui/theme-spacing": "1.0.2",
     "@apollo/react-hooks": "3.1.5",
     "apollo-boost": "0.4.9",
     "babel-plugin-styled-components": "1.11.1",
