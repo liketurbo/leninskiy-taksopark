@@ -67,7 +67,7 @@
     "react-yandex-maps": "4.4.0",
     "react-youtube": "7.11.3",
     "styled-components": "4.4.1",
-    "tailwindcss": "1.6.2",
+    "tailwindcss": "1.6.3",
     "yup": "0.29.3"
   },
   "keywords": [
