@@ -93,7 +93,7 @@
     "eslint-plugin-simple-import-sort": "5.0.3",
     "husky": "3.1.0",
     "lint-staged": "9.5.0",
-    "now": "16.7.3",
+    "now": "20.0.0",
     "prettier": "1.19.1",
     "typescript": "3.9.7"
   },
