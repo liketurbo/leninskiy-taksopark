@@ -74,7 +74,7 @@
     "gatsby"
   ],
   "devDependencies": {
-    "@types/escape-html": "0.0.20",
+    "@types/escape-html": "1.0.0",
     "@types/isomorphic-fetch": "0.0.35",
     "@types/prop-types": "15.7.3",
     "@types/react-helmet": "5.0.16",
