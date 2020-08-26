@@ -21,7 +21,7 @@
     ]
   },
   "dependencies": {
-    "@-taxi-parks-ui/button": "1.1.4",
+    "@-taxi-parks-ui/button": "2.0.0",
     "@-taxi-parks-ui/container": "1.0.1",
     "@-taxi-parks-ui/icon-facebook": "1.0.3",
     "@-taxi-parks-ui/icon-instagram": "1.0.4",
