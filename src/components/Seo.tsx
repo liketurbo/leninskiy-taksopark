@@ -9,7 +9,7 @@ const Seo = ({
   index = true,
   meta = [],
 }: {
-  title: string
+  title?: string
   description?: string
   lang?: string
   index?: boolean
@@ -75,8 +75,11 @@ const Seo = ({
         },
         ...meta,
       ]}
-      title={title}
-      titleTemplate={`%s — ${site.siteMetadata.title}`}
+      title={
+        title
+          ? `${title} - ${site.siteMetadata.title}`
+          : site.siteMetadata.title
+      }
     />
   )
 }

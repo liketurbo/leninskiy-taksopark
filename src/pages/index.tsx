@@ -15,7 +15,7 @@ import WorkStart from "../components/WorkStart"
 
 const Index = () => (
   <Layout>
-    <Seo title="Главная" />
+    <Seo />
     <NewCars />
     <Conditions />
     <Requirements />
