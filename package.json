@@ -5,7 +5,7 @@
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop -p 3000",
-    "deploy": "now --prod",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "lint": "tsc --noEmit && eslint . --ext .js,.jsx,.ts,.tsx --quiet --fix"
   },
   "husky": {
@@ -91,6 +91,7 @@
     "eslint-plugin-prettier": "3.1.4",
     "eslint-plugin-react": "7.20.6",
     "eslint-plugin-simple-import-sort": "5.0.3",
+    "gh-pages": "^3.2.0",
     "husky": "3.1.0",
     "lint-staged": "9.5.0",
     "now": "16.7.3",

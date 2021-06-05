@@ -3,6 +3,7 @@ const city = "Москва"
 const url = "https://leninskiy-taksopark.su"
 
 module.exports = {
+  pathPrefix: "/leninskiy-taksopark",
   siteMetadata: {
     title: "Ленинский таксопарк",
     author: "Ramazan Chasygov <theliketurbo@gmail.com>",
